@@ -1,7 +1,14 @@
 package ru.project.IStudyEnglish.DTO;
 
-public class ListAnswers {
+import java.util.ArrayList;
 
+public class ListAnswers {
+    public ArrayList<Answer> listAnswers;
+
+    public ListAnswers(){
+        listAnswers = new ArrayList<Answer>();
+
+    }
     private ListAnswers newListAnswers(){
         return new ListAnswers();
     }
@@ -12,4 +19,11 @@ public class ListAnswers {
 
     }
 
+    public ArrayList<Answer> getListAnswers() {
+        return listAnswers;
+    }
+
+    public void setListAnswers(ArrayList<Answer> listAnswers) {
+        this.listAnswers = listAnswers;
+    }
 }

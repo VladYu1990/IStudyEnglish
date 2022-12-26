@@ -7,7 +7,7 @@ public class Answer {
     private int idWord;
     private String spelling;
     private String value;
-    private static PartOfSpeech partOfSpeech;
+    //private static PartOfSpeech partOfSpeech;
     private int formVerb;
 
     public Answer(){
@@ -35,7 +35,41 @@ public class Answer {
 
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
 
+    public int getIdWord() {
+        return idWord;
+    }
+
+    public void setIdWord(int idWord) {
+        this.idWord = idWord;
+    }
+
+    public String getSpelling() {
+        return spelling;
+    }
+
+    public void setSpelling(String spelling) {
+        this.spelling = spelling;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    public int getFormVerb() {
+        return formVerb;
+    }
+
+    public void setFormVerb(int formVerb) {
+        this.formVerb = formVerb;
+    }
 
     public static ArrayList<Answer> getListOfSimilarAnswers(int pieces){
         //тут возвращаем список похожих ответов
