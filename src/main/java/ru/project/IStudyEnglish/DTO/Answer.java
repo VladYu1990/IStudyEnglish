@@ -11,7 +11,9 @@ public class Answer {
     private int formVerb;
 
     public Answer(){
-
+        this.id = 1;
+        this.value = "test Answer";
+        System.out.println("ответ создан");
     }
 
     public int getId(){
@@ -80,6 +82,7 @@ public class Answer {
         listWrongAnswers.add(new Answer());
         listWrongAnswers.add(new Answer());
         listWrongAnswers.add(new Answer());
+        System.out.println("3 ответвета созданы");
         return listWrongAnswers;
     }
 

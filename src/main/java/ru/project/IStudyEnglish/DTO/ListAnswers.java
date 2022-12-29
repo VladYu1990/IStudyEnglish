@@ -1,29 +1,24 @@
 package ru.project.IStudyEnglish.DTO;
 
-import java.util.ArrayList;
-
 public class ListAnswers {
-    public ArrayList<Answer> listAnswers;
+    //private ArrayList<Answer> listAnswers;
+    private String test;
 
     public ListAnswers(){
-        listAnswers = new ArrayList<Answer>();
 
-    }
-    private ListAnswers newListAnswers(){
-        return new ListAnswers();
-    }
-    
-    public ListAnswers createListAnswers(){
-        ListAnswers listAnswers = newListAnswers();
-        return listAnswers;
+        //this.listAnswers = Answer.getListOfSimilarAnswers(3);
+        this.test = "test";
+        System.out.println("лист ответов создан");
 
     }
 
-    public ArrayList<Answer> getListAnswers() {
-        return listAnswers;
+
+
+    public String getTest() {
+        return test;
     }
 
-    public void setListAnswers(ArrayList<Answer> listAnswers) {
-        this.listAnswers = listAnswers;
+    public void setTest(String test) {
+        this.test = test;
     }
 }

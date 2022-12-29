@@ -5,6 +5,7 @@ public class RepetitionExercise {
     private int idStudyTask; //храним в бд
     private Question question;
     private ListAnswers listAnswers;
+    private String TypeTopic;
 
     public RepetitionExercise(){
         this.idStudyTask = 12;
