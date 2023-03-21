@@ -2,7 +2,7 @@ package ru.project.IStudyEnglish.controllers;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import ru.project.IStudyEnglish.core.Word;
+import ru.project.IStudyEnglish.DTO.Word;
 import ru.project.IStudyEnglish.infrastructure.ConnectDB;
 
 import java.sql.SQLException;

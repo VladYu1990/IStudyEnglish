@@ -1,16 +1,17 @@
 package ru.project.IStudyEnglish.DTO;
 
 
+import java.sql.SQLException;
+
 public class RepetitionExercise {
     private int idStudyTask; //храним в бд
     private Question question;
     private ListAnswers listAnswers;
     private String TypeTopic;
 
-    public RepetitionExercise(){
+    public RepetitionExercise() throws SQLException {
         this.idStudyTask = 12;
         this.question = new Question();
-        this.listAnswers = new ListAnswers();
     }
 
     public int getIdStudyTask() {

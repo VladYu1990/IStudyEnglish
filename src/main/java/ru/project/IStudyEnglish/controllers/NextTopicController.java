@@ -3,31 +3,38 @@ package ru.project.IStudyEnglish.controllers;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import ru.project.IStudyEnglish.DAO.WordDAO;
-import ru.project.IStudyEnglish.DTO.RepetitionExercise;
 import ru.project.IStudyEnglish.DTO.TaskForRepetition;
+import ru.project.IStudyEnglish.core.ChoicerNextTask;
+
+import java.sql.SQLException;
 
 //класс для работы с фронтом
 @RestController
-@RequestMapping("/NewTopic/")
+@RequestMapping("/v1/new-topic/")
 public class NextTopicController {
 
     @RequestMapping("/{id}")
-    public TaskForRepetition greeting(@PathVariable int id) {
-        TaskForRepetition taskForRepetition = new TaskForRepetition();
+    public TaskForRepetition greetingId(@PathVariable int id) {
+
         System.out.println("запрос по id исполнен");
 
-        return taskForRepetition;
+        return ChoicerNextTask.genNextTask();
     }
 
+    @RequestMapping("/next")
+    public TaskForRepetition greetingNext() throws SQLException {
+
+        System.out.println("запрос слудующего исполнен");
+        return ChoicerNextTask.genNextTask();
+    }
+
+
+
     @RequestMapping
-    public WordDAO greeting() {
-        RepetitionExercise repetitionExercise
-                = new RepetitionExercise();
+    public TaskForRepetition greeting() throws SQLException {
+
         System.out.println("запрос следующего исполнен");
 
-        WordDAO wordDAO = WordDAO.getNextWordDAO();
-
-        return wordDAO;
+        return ChoicerNextTask.genNextTask();
     }
 }

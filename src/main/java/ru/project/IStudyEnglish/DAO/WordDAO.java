@@ -1,170 +1,85 @@
 package ru.project.IStudyEnglish.DAO;
 
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
+import ru.project.IStudyEnglish.infrastructure.ConnectDB;
+import ru.project.IStudyEnglish.infrastructure.SourceData;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.util.List;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 
 @Entity
-@Table(name="words")
-public class WordDAO {
+@Table(name="word")
+public class WordDAO implements SourceData {
     @Id
     @Column(name = "id")
     public int id;
     @Column
+    public String writing;
+    @Column
     public String value;
     @Column
-    public String translate;
-    // ссылкой на перевод не делать,
-    // будут проблемы,
-    // когда с 1 языка переводим на 2, а со 2 на 3 и тд
-    @Column
-    public String bunchOfLanguages; //например, en-ru или ru-en
-    @Column
-    public int codePartOfSpeech;
-    @Column
-    public String listRules;
-    @Column
-    public String linkOnSoundForValue;
-    @Column
-    public String linkOnPictureForValue;
-    @Column
-    public int idReverse;
+    public String likeThisWord;
+    String sql = "Select * from word where id=";
 
-    public WordDAO(String value, String translate, String bunchOfLanguages, int codePartOfSpeech, String listRules, String linkOnSoundForValue, String linkOnPictureForValue, int idReverse) {
-        this.value = value;
-        this.translate = translate;
-        this.bunchOfLanguages = bunchOfLanguages;
-        this.codePartOfSpeech = codePartOfSpeech;
-        this.listRules = listRules;
-        this.linkOnSoundForValue = linkOnSoundForValue;
-        this.linkOnPictureForValue = linkOnPictureForValue;
-        this.idReverse = idReverse;
-    }
 
     public WordDAO() {
 
     }
 
-    public static WordDAO getWordDAO(int id) {
-
-        SessionFactory factory = new Configuration()
-                .configure("hibernate.cfg.xml")
-                .addAnnotatedClass(WordDAO.class)
-                .buildSessionFactory();
-
-        Session session = factory.getCurrentSession();
-        session.beginTransaction();
-        WordDAO wordDAO = session.get(WordDAO.class,id);
-        session.getTransaction().commit();
-        return wordDAO;
+    @Override
+    public String getData() {
+        return null;
     }
 
-    public static WordDAO getNextWordDAO(){
-        SessionFactory factory = new Configuration()
-                .configure("hibernate.cfg.xml")
-                .addAnnotatedClass(WordDAO.class)
-                .buildSessionFactory();
+    @Override
+    public String getData(int id) throws SQLException {
+        ConnectDB conDB = new ConnectDB();
+        Statement statement = conDB.getStatement();
+        sql = sql + String.valueOf(id);//"+String.valueOf(number_word);
 
-        Session session = factory.getCurrentSession();
-        session.beginTransaction();
-        List<WordDAO> wordDAO = session.createQuery("from WordDAO where idReverse>0 order by idReverse desc").getResultList();
+        ResultSet result = statement.executeQuery(sql);
 
-        WordDAO wordDAOq = wordDAO.get(0);
-        System.out.println(wordDAOq.toString());
-        session.getTransaction().commit();
-        return wordDAOq;
+        while (result.next()) {
+            id = result.getInt("id");
+            this.writing = result.getString(2);
+            this.value = result.getString(3);
+            this.likeThisWord = result.getString(4);
+            return "test";
+        }
+        return null;
     }
 
 
     @Override
-    public String toString() {
-        return "WordDAO{" +
-                "id=" + id +
-                ", value='" + value + '\'' +
-                ", translate='" + translate + '\'' +
-                ", bunchOfLanguages='" + bunchOfLanguages + '\'' +
-                ", codePartOfSpeech=" + codePartOfSpeech +
-                ", listRules='" + listRules + '\'' +
-                ", linkOnSoundForValue='" + linkOnSoundForValue + '\'' +
-                ", linkOnPictureForValue='" + linkOnPictureForValue + '\'' +
-                ", idReverse=" + idReverse +
-                '}';
+    public String getDataNext() {
+        return null;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    @Override
+    public String getWriting() {
+        return this.writing;
+    }
+
+    @Override
+    public String getLikeThisWord() {
+        return this.likeThisWord;
+    }
+
+    @Override
+    public String getValue() {
+        return this.value;
+    }
 
     public void setId(int id) {
         this.id = id;
     }
-
-    public String getValue() {
-        return value;
-    }
-
-    public void setValue(String value) {
-        this.value = value;
-    }
-
-    public String getTranslate() {
-        return translate;
-    }
-
-    public void setTranslate(String translate) {
-        this.translate = translate;
-    }
-
-    public String getBunchOfLanguages() {
-        return bunchOfLanguages;
-    }
-
-    public void setBunchOfLanguages(String bunchOfLanguages) {
-        this.bunchOfLanguages = bunchOfLanguages;
-    }
-
-    public int getCodePartOfSpeech() {
-        return codePartOfSpeech;
-    }
-
-    public void setCodePartOfSpeech(int codePartOfSpeech) {
-        this.codePartOfSpeech = codePartOfSpeech;
-    }
-
-    public String getListRules() {
-        return listRules;
-    }
-
-    public void setListRules(String listRules) {
-        this.listRules = listRules;
-    }
-
-    public String getLinkOnSoundForValue() {
-        return linkOnSoundForValue;
-    }
-
-    public void setLinkOnSoundForValue(String linkOnSoundForValue) {
-        this.linkOnSoundForValue = linkOnSoundForValue;
-    }
-
-    public String getLinkOnPictureForValue() {
-        return linkOnPictureForValue;
-    }
-
-    public void setLinkOnPictureForValue(String linkOnPictureForValue) {
-        this.linkOnPictureForValue = linkOnPictureForValue;
-    }
-
-    public int getIdReverse() {
-        return idReverse;
-    }
-
-    public void setIdReverse(int idReverse) {
-        this.idReverse = idReverse;
-    }
-
 }

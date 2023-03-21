@@ -1,24 +1,37 @@
 package ru.project.IStudyEnglish.DTO;
 
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
+
 public class ListAnswers {
-    //private ArrayList<Answer> listAnswers;
-    private String test;
 
-    public ListAnswers(){
+    public List<String> list = new ArrayList<String>();
+    public int number;
 
-        //this.listAnswers = Answer.getListOfSimilarAnswers(3);
-        this.test = "test";
-        System.out.println("лист ответов создан");
 
+    public ListAnswers() throws SQLException {
+        // сначала получаем верный ответ
+        //потом подтягиваем по кодам 3 похожих
+        // потом верный ответ в рандомное место
     }
 
+    public ListAnswers(int idWordTrue,int idWord2,int idWord3,int idWord4) throws SQLException {
 
 
-    public String getTest() {
-        return test;
-    }
+        this.list.add(Answer.getAnswer(idWord2));
+        this.list.add(Answer.getAnswer(idWord3));
+        this.list.add(Answer.getAnswer(idWord4));
 
-    public void setTest(String test) {
-        this.test = test;
+        this.number = ThreadLocalRandom.current().nextInt(0,3);
+        System.out.println(this.number);
+        this.list.add(this.number,Answer.getAnswer(idWordTrue));
+        System.out.println(this.list);
+
+
     }
 }
+
+
+

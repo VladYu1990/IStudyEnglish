@@ -5,12 +5,13 @@ public class Question {
     private String linkOnSound;
     private String linkOnPicture;
 
-    public Question(){
+    public Question() {
         value = "вопрос";
         linkOnPicture = "";
         linkOnSound = "";
     }
-
+}
+/*
     public String getValue() {
         return value;
     }
@@ -35,3 +36,4 @@ public class Question {
         this.linkOnPicture = linkOnPicture;
     }
 }
+*/
