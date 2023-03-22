@@ -44,11 +44,4 @@ public class WordForRepetition extends Word {
     }
 
 
-    public String getWriting() {
-        return writing;
-    }
-
-    public void setWriting(String writing) {
-        this.writing = writing;
-    }
 }
