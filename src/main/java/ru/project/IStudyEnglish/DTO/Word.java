@@ -37,16 +37,8 @@ public class Word extends Question{
         this.likeThisWord=date.getLikeThisWord();
 
 
-
-
-
     }
-    public Word(int id, String value,String translate) {
-        this.id = id;
-        this.writing = value;
-        this.value = translate;
 
-    }
 
 
 

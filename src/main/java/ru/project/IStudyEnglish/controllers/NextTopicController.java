@@ -13,7 +13,7 @@ import java.sql.SQLException;
 @RequestMapping("/v1/new-topic/")
 public class NextTopicController {
 
-    @RequestMapping("/{id}")
+    @RequestMapping("/{type-object}/{id}")
     public TaskForRepetition greetingId(@PathVariable int id) {
 
         System.out.println("запрос по id исполнен");
@@ -21,17 +21,8 @@ public class NextTopicController {
         return ChoicerNextTask.genNextTask();
     }
 
-    @RequestMapping("/next")
-    public TaskForRepetition greetingNext() throws SQLException {
-
-        System.out.println("запрос слудующего исполнен");
-        return ChoicerNextTask.genNextTask();
-    }
-
-
-
     @RequestMapping
-    public TaskForRepetition greeting() throws SQLException {
+    public Object greeting() throws SQLException {
 
         System.out.println("запрос следующего исполнен");
 

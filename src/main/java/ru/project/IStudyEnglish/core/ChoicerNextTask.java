@@ -17,16 +17,33 @@ public class ChoicerNextTask {
 
     public static TaskForRepetition genNextTask() {
 
-        //выбирает и тип учим/повторяем и тип объекта и id объекта
+
         TaskForRepetition taskForRepetition = null;
         try {
-            int number = ThreadLocalRandom.current().nextInt(1,100);
-            taskForRepetition = new TaskForRepetition("word",number);
+            int numberNext = ChoicerNextTask.chouceNextObject();
+            taskForRepetition = new TaskForRepetition("word",numberNext);
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
         return taskForRepetition;
+    }
+
+    public static TaskForRepetition genNextTask(String typeObject, int id) {
+
+        TaskForRepetition taskForRepetition = null;
+        try {
+            taskForRepetition = new TaskForRepetition(typeObject,id);
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return taskForRepetition;
+    }
+    //выбирает и тип учим/повторяем и тип объекта и id объекта
+    public static int chouceNextObject(){
+        int number = ThreadLocalRandom.current().nextInt(1,100);//за выбор будет отвечать от
+        return number;
     }
 
 }

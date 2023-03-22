@@ -7,26 +7,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7fbeed74-25ef-4154-a687-4792b9d50a21" name="Changes" comment="get next topic on request">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/DAO/RepetitionExerciseDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/core/ChoicerNextTask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/core/ForLearning.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/core/WordForLearning.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/core/WordForRepetition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/infrastructure/SourceData.java" afterDir="false" />
+    <list default="true" id="7fbeed74-25ef-4154-a687-4792b9d50a21" name="Changes" comment="в БД релаьные слова&#10;слова бертуся из БД&#10;слова отправляются запросом&#10;я молодец)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/DAO/WordDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/DAO/WordDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/DTO/Answer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/DTO/Answer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/DTO/Example.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/DTO/Example.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/DTO/ListAnswers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/DTO/ListAnswers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/DTO/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/DTO/Question.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/DTO/RepetitionExercise.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/DTO/RepetitionExercise.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/DTO/TaskForRepetition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/DTO/TaskForRepetition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/DTO/Word.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/DTO/Word.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/controllers/NextTopicController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/controllers/NextTopicController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/controllers/WordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/controllers/WordController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/core/NextTopicService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/core/Word.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/DTO/Word.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/core/ChoicerNextTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/core/ChoicerNextTask.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/infrastructure/ConnectDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/infrastructure/ConnectDB.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -143,7 +131,8 @@
       <workItem from="1676615749297" duration="8357000" />
       <workItem from="1676823200822" duration="6957000" />
       <workItem from="1679233768114" duration="969000" />
-      <workItem from="1679301679247" duration="21768000" />
+      <workItem from="1679301679247" duration="24988000" />
+      <workItem from="1679485685191" duration="4701000" />
     </task>
     <task id="LOCAL-00001" summary="restart project">
       <created>1672068848554</created>
@@ -173,7 +162,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672296048615</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="в БД релаьные слова&#10;слова бертуся из БД&#10;слова отправляются запросом&#10;я молодец)">
+      <created>1679394638943</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1679394638943</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,7 +201,8 @@
     <MESSAGE value="restart project" />
     <MESSAGE value="I configurated connect with DB" />
     <MESSAGE value="get next topic on request" />
-    <option name="LAST_COMMIT_MESSAGE" value="get next topic on request" />
+    <MESSAGE value="в БД релаьные слова&#10;слова бертуся из БД&#10;слова отправляются запросом&#10;я молодец)" />
+    <option name="LAST_COMMIT_MESSAGE" value="в БД релаьные слова&#10;слова бертуся из БД&#10;слова отправляются запросом&#10;я молодец)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -213,6 +210,10 @@
         <breakpoint enabled="true" type="java-exception">
           <properties class="org.springframework.beans.factory.BeanDefinitionStoreException" package="org.springframework.beans.factory" />
           <option name="timeStamp" value="3" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NumberFormatException" package="java.lang" />
+          <option name="timeStamp" value="4" />
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>

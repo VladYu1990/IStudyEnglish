@@ -18,8 +18,4 @@ public class Answer {
        return word.value;
     }
 
-
-    public String getValue() {
-        return null;
-    }
 }
