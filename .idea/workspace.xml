@@ -7,13 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7fbeed74-25ef-4154-a687-4792b9d50a21" name="Changes" comment="удалил лишние атрибуты и функции">
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/DTO/Example.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/DTO/Example.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/DTO/RepetitionExercise.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/controllers/ProfController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/controllers/WordController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/core/ForLearning.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/core/WordForRepetition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/core/WordForRepetition.java" afterDir="false" />
+    <list default="true" id="7fbeed74-25ef-4154-a687-4792b9d50a21" name="Changes" comment="удалил несколько лишних файлов:&#10;ForLearning.java&#10;ProfController.java&#10;RepetitionExercise.java&#10;WordController.java">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +125,10 @@
       <workItem from="1676823200822" duration="6957000" />
       <workItem from="1679233768114" duration="969000" />
       <workItem from="1679301679247" duration="24988000" />
-      <workItem from="1679485685191" duration="5162000" />
+      <workItem from="1679485685191" duration="5622000" />
+      <workItem from="1680091348526" duration="601000" />
+      <workItem from="1681190111947" duration="611000" />
+      <workItem from="1681355415222" duration="426000" />
     </task>
     <task id="LOCAL-00001" summary="restart project">
       <created>1672068848554</created>
@@ -174,7 +172,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679492918427</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="удалил несколько лишних файлов:&#10;ForLearning.java&#10;ProfController.java&#10;RepetitionExercise.java&#10;WordController.java">
+      <created>1679493256402</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1679493256402</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,7 +213,8 @@
     <MESSAGE value="get next topic on request" />
     <MESSAGE value="в БД релаьные слова&#10;слова бертуся из БД&#10;слова отправляются запросом&#10;я молодец)" />
     <MESSAGE value="удалил лишние атрибуты и функции" />
-    <option name="LAST_COMMIT_MESSAGE" value="удалил лишние атрибуты и функции" />
+    <MESSAGE value="удалил несколько лишних файлов:&#10;ForLearning.java&#10;ProfController.java&#10;RepetitionExercise.java&#10;WordController.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="удалил несколько лишних файлов:&#10;ForLearning.java&#10;ProfController.java&#10;RepetitionExercise.java&#10;WordController.java" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
