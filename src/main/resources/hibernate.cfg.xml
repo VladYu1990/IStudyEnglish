@@ -24,7 +24,7 @@
         <property name="hibernate.current_session_context_class">thread</property>
 
         <!-- Annotated entity classes -->
-        <mapping class="ru.project.IStudyEnglish.DAO.WordDAO"/>
+        <mapping class="ru.project.IStudyEnglish.infrastructure.DAO.WordDAO"/>
 
 
 

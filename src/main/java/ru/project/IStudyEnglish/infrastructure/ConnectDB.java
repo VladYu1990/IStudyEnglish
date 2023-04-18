@@ -1,39 +1,48 @@
 package ru.project.IStudyEnglish.infrastructure;
 
+import lombok.extern.log4j.Log4j2;
+
+import java.sql.ResultSet;
 import java.sql.*;
 
+@Log4j2
 public class ConnectDB {
-    private String DB_url = "jdbc:postgresql://localhost:5432/IStudyEnglishDemo";
-    private String user = "postgres";
-    private String password ="5240";
+    private final String DB_url = "jdbc:postgresql://localhost:5432/IStudyEnglishDemo";
+    private final String user = "postgres";
+    private final String password = "5240";
+    private Statement statement;
 
-    private String SqlOneWord = "select * from test";
-
-    public ConnectDB() {
+    public ConnectDB()  {
+        try {
+            this.statement = DriverManager.getConnection(
+                    this.DB_url,
+                    this.user,
+                    this.password)
+                    .createStatement();
+        }
+        catch (SQLException sqlException){
+            log.error(sqlException);
+        }
     }
 
 
-    public void connectionDB() throws SQLException {
-        String sql = SqlOneWord;
-        Connection connectionDB = DriverManager.getConnection(DB_url,user,password);
+    public Statement getStatement() {
+        return this.statement;
+    }
 
-        Statement statement = connectionDB.createStatement();
-        ResultSet result = statement.executeQuery(sql);//запрос, в ответ результат
-        //int result2 = statement.executeUpdate(Sql);// апдейте, делет и инсерт, в ответ инт-кол-ва строк
-        int id = 3;
-        while (result.next()){
-            System.out.println(result.getInt("id"));
-            System.out.println(result.getString(2));
+    public ResultSet getResultSet(String strSQL) {
+        try {
+            ResultSet result = this.statement.executeQuery(strSQL);
+
+            return result;
+        }
+        catch (SQLException sqlException){
+            log.error(sqlException);
+            return null;
         }
 
+
     }
-    public Statement getStatement() throws SQLException {
-        ConnectDB conDB = new ConnectDB();
-        Connection connectionDB = DriverManager.getConnection(conDB.DB_url,conDB.user,conDB.password);
-
-        Statement statement = connectionDB.createStatement();
-        return statement;
-    }
-
-
 }
+
+
