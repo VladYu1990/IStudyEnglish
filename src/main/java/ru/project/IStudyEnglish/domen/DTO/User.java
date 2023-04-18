@@ -30,7 +30,8 @@ public class User {
         //сохраняем токен в БД
         return token;
     }
-    public void validationToken(){
+    public void validationToken(String token){
+        token = "18";
          //возможно, это отдельный объект валидатор
     }
     public void getNewPassword(String login){
