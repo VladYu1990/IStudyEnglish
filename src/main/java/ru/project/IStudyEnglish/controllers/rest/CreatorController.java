@@ -1,4 +1,4 @@
-package ru.project.IStudyEnglish.controllers.rest.v1;
+package ru.project.IStudyEnglish.controllers.rest;
 
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
