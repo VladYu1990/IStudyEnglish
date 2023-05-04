@@ -2106,3 +2106,87 @@ Consider defining a bean of type 'java.lang.String' in your configuration.
 2023-17-18 00:17:16.396 [http-nio-8080-exec-4] ERROR ru.project.IStudyEnglish.domen.DTO.Task.UserTask.UserTask - updateStatus
 2023-17-18 00:17:21.376 [http-nio-8080-exec-5] ERROR ru.project.IStudyEnglish.domen.DTO.Task.UserTask.UserTask - updateStatus
 2023-17-18 00:17:23.005 [http-nio-8080-exec-6] ERROR ru.project.IStudyEnglish.domen.DTO.Task.UserTask.UserTask - updateStatus
+2023-24-04 10:24:55.917 [main] INFO  ru.project.IStudyEnglish.Main - Starting Main using Java 18.0.2 on MacBook-Air-Vladimir.local with PID 11574 (/Users/vladimir/IdeaProjects/IStudyEnglish/target/classes started by vladimir in /Users/vladimir/IdeaProjects/IStudyEnglish)
+2023-24-04 10:24:55.921 [main] INFO  ru.project.IStudyEnglish.Main - No active profile set, falling back to 1 default profile: "default"
+2023-24-04 10:24:56.425 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-24-04 10:24:56.475 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 533 ms
+2023-24-04 10:24:56.918 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-24-04 10:24:56.923 [main] INFO  ru.project.IStudyEnglish.Main - Started Main in 1.152 seconds (JVM running for 1.855)
+2023-24-04 10:24:56.924 [main] INFO  ru.project.IStudyEnglish.Main - The application is started
+2023-25-04 10:25:50.865 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-25-04 10:25:50.867 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2023-26-04 10:26:28.546 [main] INFO  ru.project.IStudyEnglish.Main - Starting Main using Java 18.0.2 on MacBook-Air-Vladimir.local with PID 11605 (/Users/vladimir/IdeaProjects/IStudyEnglish/target/classes started by vladimir in /Users/vladimir/IdeaProjects/IStudyEnglish)
+2023-26-04 10:26:28.550 [main] INFO  ru.project.IStudyEnglish.Main - No active profile set, falling back to 1 default profile: "default"
+2023-26-04 10:26:28.997 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-26-04 10:26:29.038 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 471 ms
+2023-26-04 10:26:29.450 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-26-04 10:26:29.455 [main] INFO  ru.project.IStudyEnglish.Main - Started Main in 1.033 seconds (JVM running for 1.457)
+2023-26-04 10:26:29.456 [main] INFO  ru.project.IStudyEnglish.Main - The application is started
+2023-26-04 10:26:35.509 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-26-04 10:26:35.510 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2023-26-04 10:26:35.620 [http-nio-8080-exec-1] ERROR ru.project.IStudyEnglish.domen.DTO.Task.UserTask.UserTask - updateStatus
+2023-26-04 10:26:42.114 [http-nio-8080-exec-2] ERROR ru.project.IStudyEnglish.domen.DTO.Task.UserTask.UserTask - updateStatus
+2023-26-04 10:26:44.649 [http-nio-8080-exec-3] ERROR ru.project.IStudyEnglish.domen.DTO.Task.UserTask.UserTask - updateStatus
+2023-26-04 10:26:47.137 [http-nio-8080-exec-5] ERROR ru.project.IStudyEnglish.domen.DTO.Task.UserTask.UserTask - updateStatus
+2023-26-04 10:26:49.786 [http-nio-8080-exec-6] ERROR ru.project.IStudyEnglish.domen.DTO.Task.UserTask.UserTask - updateStatus
+2023-29-04 10:29:25.677 [main] INFO  ru.project.IStudyEnglish.Main - Starting Main using Java 18.0.2 on MacBook-Air-Vladimir.local with PID 11662 (/Users/vladimir/IdeaProjects/IStudyEnglish/target/classes started by vladimir in /Users/vladimir/IdeaProjects/IStudyEnglish)
+2023-29-04 10:29:25.680 [main] INFO  ru.project.IStudyEnglish.Main - No active profile set, falling back to 1 default profile: "default"
+2023-29-04 10:29:26.125 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-29-04 10:29:26.168 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 470 ms
+2023-29-04 10:29:26.586 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-29-04 10:29:26.591 [main] INFO  ru.project.IStudyEnglish.Main - Started Main in 1.024 seconds (JVM running for 1.492)
+2023-29-04 10:29:26.592 [main] INFO  ru.project.IStudyEnglish.Main - The application is started
+2023-29-04 10:29:30.118 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-29-04 10:29:30.120 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2023-29-04 10:29:31.634 [http-nio-8080-exec-2] ERROR ru.project.IStudyEnglish.domen.DTO.Task.UserTask.UserTask - updateStatus
+2023-29-04 10:29:36.116 [http-nio-8080-exec-5] ERROR ru.project.IStudyEnglish.domen.DTO.Task.UserTask.UserTask - updateStatus
+2023-29-04 10:29:58.783 [http-nio-8080-exec-6] ERROR ru.project.IStudyEnglish.domen.DTO.Task.UserTask.UserTask - updateStatus
+2023-30-04 10:30:00.834 [http-nio-8080-exec-7] ERROR ru.project.IStudyEnglish.domen.DTO.Task.UserTask.UserTask - updateStatus
+2023-35-04 10:35:16.954 [main] INFO  ru.project.IStudyEnglish.Main - Starting Main using Java 18.0.2 on MacBook-Air-Vladimir.local with PID 11750 (/Users/vladimir/IdeaProjects/IStudyEnglish/target/classes started by vladimir in /Users/vladimir/IdeaProjects/IStudyEnglish)
+2023-35-04 10:35:16.957 [main] INFO  ru.project.IStudyEnglish.Main - No active profile set, falling back to 1 default profile: "default"
+2023-35-04 10:35:17.419 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-35-04 10:35:17.464 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 489 ms
+2023-35-04 10:35:17.876 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-35-04 10:35:17.881 [main] INFO  ru.project.IStudyEnglish.Main - Started Main in 1.039 seconds (JVM running for 1.618)
+2023-35-04 10:35:17.881 [main] INFO  ru.project.IStudyEnglish.Main - The application is started
+2023-35-04 10:35:25.943 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-35-04 10:35:25.944 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2023-35-04 10:35:29.835 [http-nio-8080-exec-2] ERROR ru.project.IStudyEnglish.domen.DTO.Task.UserTask.UserTask - updateStatus
+2023-36-04 10:36:43.182 [main] INFO  ru.project.IStudyEnglish.Main - Starting Main using Java 18.0.2 on MacBook-Air-Vladimir.local with PID 11791 (/Users/vladimir/IdeaProjects/IStudyEnglish/target/classes started by vladimir in /Users/vladimir/IdeaProjects/IStudyEnglish)
+2023-36-04 10:36:43.186 [main] INFO  ru.project.IStudyEnglish.Main - No active profile set, falling back to 1 default profile: "default"
+2023-36-04 10:36:43.692 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-36-04 10:36:43.744 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 541 ms
+2023-36-04 10:36:44.230 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-36-04 10:36:44.235 [main] INFO  ru.project.IStudyEnglish.Main - Started Main in 1.178 seconds (JVM running for 1.559)
+2023-36-04 10:36:44.236 [main] INFO  ru.project.IStudyEnglish.Main - The application is started
+2023-36-04 10:36:47.564 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-36-04 10:36:47.566 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2023-36-04 10:36:47.662 [http-nio-8080-exec-1] ERROR ru.project.IStudyEnglish.domen.DTO.Task.UserTask.UserTask - updateStatus
+2023-37-04 10:37:32.259 [main] INFO  ru.project.IStudyEnglish.Main - Starting Main using Java 18.0.2 on MacBook-Air-Vladimir.local with PID 11805 (/Users/vladimir/IdeaProjects/IStudyEnglish/target/classes started by vladimir in /Users/vladimir/IdeaProjects/IStudyEnglish)
+2023-37-04 10:37:32.262 [main] INFO  ru.project.IStudyEnglish.Main - No active profile set, falling back to 1 default profile: "default"
+2023-37-04 10:37:32.700 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-37-04 10:37:32.750 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 468 ms
+2023-37-04 10:37:33.155 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-37-04 10:37:33.160 [main] INFO  ru.project.IStudyEnglish.Main - Started Main in 1.023 seconds (JVM running for 1.362)
+2023-37-04 10:37:33.161 [main] INFO  ru.project.IStudyEnglish.Main - The application is started
+2023-37-04 10:37:35.836 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-37-04 10:37:35.837 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2023-37-04 10:37:41.927 [http-nio-8080-exec-3] ERROR ru.project.IStudyEnglish.domen.DTO.Task.UserTask.UserTask - updateStatus
+2023-38-04 10:38:10.357 [main] INFO  ru.project.IStudyEnglish.Main - Starting Main using Java 18.0.2 on MacBook-Air-Vladimir.local with PID 11823 (/Users/vladimir/IdeaProjects/IStudyEnglish/target/classes started by vladimir in /Users/vladimir/IdeaProjects/IStudyEnglish)
+2023-38-04 10:38:10.360 [main] INFO  ru.project.IStudyEnglish.Main - No active profile set, falling back to 1 default profile: "default"
+2023-38-04 10:38:10.796 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-38-04 10:38:10.841 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 464 ms
+2023-38-04 10:38:11.249 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-38-04 10:38:11.254 [main] INFO  ru.project.IStudyEnglish.Main - Started Main in 1.005 seconds (JVM running for 1.501)
+2023-38-04 10:38:11.255 [main] INFO  ru.project.IStudyEnglish.Main - The application is started
+2023-38-04 10:38:12.905 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-38-04 10:38:12.906 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2023-42-04 10:42:22.169 [main] INFO  ru.project.IStudyEnglish.Main - Starting Main using Java 18.0.2 on MacBook-Air-Vladimir.local with PID 11849 (/Users/vladimir/IdeaProjects/IStudyEnglish/target/classes started by vladimir in /Users/vladimir/IdeaProjects/IStudyEnglish)
+2023-42-04 10:42:22.172 [main] INFO  ru.project.IStudyEnglish.Main - No active profile set, falling back to 1 default profile: "default"
+2023-42-04 10:42:22.649 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-42-04 10:42:22.692 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 501 ms
+2023-42-04 10:42:23.101 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-42-04 10:42:23.106 [main] INFO  ru.project.IStudyEnglish.Main - Started Main in 1.041 seconds (JVM running for 1.507)
+2023-42-04 10:42:23.107 [main] INFO  ru.project.IStudyEnglish.Main - The application is started
+2023-42-04 10:42:28.401 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-42-04 10:42:28.402 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms

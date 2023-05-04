@@ -1,21 +1,24 @@
 package ru.project.IStudyEnglish.infrastructure.repository;
 
+import java.sql.Timestamp;
+
 public interface SourceUserTask {
 
     static String getNext() {
         return null;
     }
     void setStatus(String status);
-    void setTimeLastRepetition(String timeLastRepetition);
-    void setTimeNextRepetition(String timeNextRepetition);
+    void setTimeLastRepetition(Timestamp timeLastRepetition);
+    void setTimeNextRepetition(Timestamp timeNextRepetition);
     void setCorrectAttemptsCounter(String correctAttemptsCounter);
-    void update(String id);
     String getId();
     String getUserCode();
     String getIdTask();
     String getTypeTask();
     String getStatus();
-    String getTimeLastRepetition();
-    String getTimeNextRepetition();
+    Timestamp getTimeLastRepetition();
+    Timestamp getTimeNextRepetition();
     String getCorrectAttemptsCounter();
+    void getById(String id);
+    void getNextForUser(String userCode);
 }

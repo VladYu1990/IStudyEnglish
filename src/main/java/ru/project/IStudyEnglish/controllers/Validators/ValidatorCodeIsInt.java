@@ -1,6 +1,6 @@
 package ru.project.IStudyEnglish.controllers.Validators;
 
-public class ValidatorCodeIsInt implements Validator{
+public class ValidatorCodeIsInt{
 
 
 

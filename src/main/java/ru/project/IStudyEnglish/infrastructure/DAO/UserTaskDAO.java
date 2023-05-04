@@ -7,6 +7,7 @@ import ru.project.IStudyEnglish.infrastructure.repository.SourceUserTask;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Timestamp;
 
 @Log4j2
 public class UserTaskDAO implements SourceUserTask {
@@ -15,15 +16,33 @@ public class UserTaskDAO implements SourceUserTask {
     private String idTask;
     private String typeTask;
     private String status;
-    private String timeLastRepetition;
-    private String timeNextRepetition;
+    private Timestamp timeLastRepetition;
+    private Timestamp timeNextRepetition;
     private String correctAttemptsCounter;
+    private ConnectDB conDB = new ConnectDB();
 
-    public UserTaskDAO(String id){
+    public UserTaskDAO(){
+    }
+
+    public void getById(String id){
+        String sql = "select * from user_task where id in ('"+ id + "') limit 1";
+        readFromDB(sql);
+
+    }
+
+    public void getNextForUser(String userCode){
+        String sql = "select * " +
+                "from user_task " +
+                "where user_code in ('"+ id + "')  " +
+                "and status <> ('8')" +
+                "and time_next_repetition <= clock_timestamp()" + //наступившее
+                "order by time_next_repetition " + // но самое новое, иначе если пользователь будет редко заходить он будет повторять только старые слова не доходя до недавних и тем самым, будут большие перерерывы в повторении
+                "limit 1";
+    }
+
+    private void readFromDB(String sql){
         try {
-            ConnectDB conDB = new ConnectDB();
-            String sql = "select * from user_task  where id in ('";
-            ResultSet resultSet = conDB.getResultSet(sql + id + "') limit 1");
+            ResultSet resultSet = conDB.getResultSet(sql );
 
             while (resultSet.next()) {
                 this.id = resultSet.getString("id");
@@ -31,60 +50,42 @@ public class UserTaskDAO implements SourceUserTask {
                 this.idTask = resultSet.getString("id_task");
                 this.typeTask = resultSet.getString("type_task");
                 this.status = resultSet.getString("status");
-                this.timeLastRepetition = resultSet.getString("time_last_repetition");
-                this.timeNextRepetition = resultSet.getString("time_next_repetition");
+                this.timeLastRepetition = resultSet.getTimestamp("time_last_repetition");
+                this.timeNextRepetition = resultSet.getTimestamp("time_next_repetition");
                 this.correctAttemptsCounter = resultSet.getString("correct_attempts_counter");
 
             }
-
-            resultSet.close();
-        }
-        catch (Exception ex){
+            conDB.getStatement().close();
+        } catch (Exception ex) {
             log.error(ex);
         }
-
-
     }
 
 
-    public static String getNext(String userCode){
-        return null;
-    }
+
 
     public void setStatus(String status) {
-        try {
-            this.status = status;
-            String sqlUpdate = "UPDATE user_task SET status = '" + this.status + "' WHERE id = '" + this.id + "';";
-            ConnectDB conDB = new ConnectDB();
-            Statement statement = conDB.getStatement();
-            statement.executeUpdate(sqlUpdate);
-        }
-        catch (SQLException sqlException){
-            log.error(sqlException);
-        }
+        this.status = status;
+        String sqlUpdate = "UPDATE user_task SET status = '" + this.status + "' WHERE id = '" + this.id + "';";
+        conDB.update(sqlUpdate);
     }
 
-    public void setTimeLastRepetition(String timeLastRepetition) {
+    public void setTimeLastRepetition(Timestamp timeLastRepetition) {
         this.timeLastRepetition = timeLastRepetition;
+        String sqlUpdate = "UPDATE user_task SET timeLastRepetition = '" + this.timeLastRepetition + "' WHERE id = '" + this.id + "';";
+        conDB.update(sqlUpdate);
     }
 
-    public void setTimeNextRepetition(String timeNextRepetition) {
+    public void setTimeNextRepetition(Timestamp timeNextRepetition) {
         this.timeNextRepetition = timeNextRepetition;
+        String sqlUpdate = "UPDATE user_task SET timeNextRepetition = '" + this.timeNextRepetition + "' WHERE id = '" + this.id + "';";
+        conDB.update(sqlUpdate);
     }
 
     public void setCorrectAttemptsCounter(String correctAttemptsCounter) {
         this.correctAttemptsCounter = correctAttemptsCounter;
-    }
-
-    @Override
-    public void update(String id) {
-        try {
-            ConnectDB conDB = new ConnectDB();
-
-        }
-        catch (Exception ex){
-            log.error(ex);
-        }
+        String sqlUpdate = "UPDATE user_task SET correctAttemptsCounter = '" + this.correctAttemptsCounter + "' WHERE id = '" + this.id + "';";
+        conDB.update(sqlUpdate);
     }
 
 
@@ -108,11 +109,11 @@ public class UserTaskDAO implements SourceUserTask {
         return status;
     }
 
-    public String getTimeLastRepetition() {
+    public Timestamp getTimeLastRepetition() {
         return timeLastRepetition;
     }
 
-    public String getTimeNextRepetition() {
+    public Timestamp getTimeNextRepetition() {
         return timeNextRepetition;
     }
 

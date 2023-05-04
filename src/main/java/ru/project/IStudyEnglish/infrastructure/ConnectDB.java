@@ -12,15 +12,14 @@ public class ConnectDB {
     private final String password = "5240";
     private Statement statement;
 
-    public ConnectDB()  {
+    public ConnectDB() {
         try {
             this.statement = DriverManager.getConnection(
-                    this.DB_url,
-                    this.user,
-                    this.password)
+                            this.DB_url,
+                            this.user,
+                            this.password)
                     .createStatement();
-        }
-        catch (SQLException sqlException){
+        } catch (SQLException sqlException) {
             log.error(sqlException);
         }
     }
@@ -35,13 +34,22 @@ public class ConnectDB {
             ResultSet result = this.statement.executeQuery(strSQL);
 
             return result;
-        }
-        catch (SQLException sqlException){
+        } catch (SQLException sqlException) {
             log.error(sqlException);
             return null;
         }
 
 
+    }
+
+    public void update(String sqlUpdate) {
+        try {
+            Statement statement = this.getStatement();
+            statement.executeUpdate(sqlUpdate);
+            this.getStatement().close();
+        } catch (SQLException sqlException) {
+            log.error(sqlException);
+        }
     }
 }
 

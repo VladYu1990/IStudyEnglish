@@ -7,12 +7,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7fbeed74-25ef-4154-a687-4792b9d50a21" name="Changes" comment="+ Log4j2">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/controllers/rest/ReturnAnswerOnTaskController.java" afterDir="false" />
+    <list default="true" id="7fbeed74-25ef-4154-a687-4792b9d50a21" name="Changes" comment="+ ReturnAnswerOnTaskController.java&#10;rename NextTopicController.java -&gt; NextTaskController.java&#10;- AnswerController">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/controllers/Validators/ValidationContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/domen/DTO/Task/ForRepetition/TaskForListening.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/domen/DTO/Task/ForRepetition/TaskForReading.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/domen/DTO/Task/ForRepetition/TaskForSpeaking.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/domen/DTO/Task/ForRepetition/TaskForWriting.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/infrastructure/DAO/UserDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/infrastructure/repository/SourceUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/infrastructure/repository/Sql.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/app.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/app2.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/app2.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/controllers/rest/NextTopicController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/controllers/rest/NextTaskController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/controllers/Validators/Validator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/controllers/Validators/Validator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/controllers/Validators/ValidatorCodeIsInt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/controllers/Validators/ValidatorCodeIsInt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/controllers/Validators/ValidatorFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/controllers/Validators/ValidatorFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/controllers/Validators/ValidatorToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/controllers/Validators/ValidatorToken.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/controllers/Validators/ValidatorTypeTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/controllers/Validators/ValidatorTypeTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/controllers/rest/AnswerController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/controllers/rest/NextTaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/controllers/rest/NextTaskController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/controllers/rest/ReturnAnswerOnTaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/controllers/rest/ReturnAnswerOnTaskController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/domen/Choicers/ChoicerUserTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/domen/Choicers/ChoicerUserTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/domen/DTO/Task/ForRepetition/TaskForRepetition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/domen/DTO/Task/ForRepetition/TaskForRepetition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/domen/DTO/Task/ForStudying/TaskForStudying.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/domen/DTO/Task/ForStudying/TaskForLearning.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/domen/DTO/Task/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/domen/DTO/Task/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/domen/DTO/Task/TaskFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/domen/DTO/Task/TaskFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/domen/DTO/Task/UserTask/UserTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/domen/DTO/Task/UserTask/UserTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/domen/DTO/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/domen/DTO/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/infrastructure/ConnectDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/infrastructure/ConnectDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/infrastructure/DAO/UserTaskDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/infrastructure/DAO/UserTaskDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/infrastructure/repository/SourceUserTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/infrastructure/repository/SourceUserTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,8 +53,8 @@
         <option value="HTML File" />
         <option value="Record" />
         <option value="AnnotationType" />
-        <option value="Interface" />
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -157,7 +182,7 @@
       <workItem from="1681799590779" duration="1244000" />
       <workItem from="1681886139297" duration="603000" />
       <workItem from="1683000217756" duration="2450000" />
-      <workItem from="1683123723168" duration="1899000" />
+      <workItem from="1683123723168" duration="21033000" />
     </task>
     <task id="LOCAL-00001" summary="restart project">
       <created>1672068848554</created>
@@ -229,7 +254,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681800587335</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="+ ReturnAnswerOnTaskController.java&#10;rename NextTopicController.java -&gt; NextTaskController.java&#10;- AnswerController">
+      <created>1683169777908</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1683169777908</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -268,7 +300,8 @@
     <MESSAGE value="delete Notes.md&#10;add Notes.txt" />
     <MESSAGE value="+ Log4j2" />
     <MESSAGE value="+ deep refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ deep refactoring" />
+    <MESSAGE value="+ ReturnAnswerOnTaskController.java&#10;rename NextTopicController.java -&gt; NextTaskController.java&#10;- AnswerController" />
+    <option name="LAST_COMMIT_MESSAGE" value="+ ReturnAnswerOnTaskController.java&#10;rename NextTopicController.java -&gt; NextTaskController.java&#10;- AnswerController" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

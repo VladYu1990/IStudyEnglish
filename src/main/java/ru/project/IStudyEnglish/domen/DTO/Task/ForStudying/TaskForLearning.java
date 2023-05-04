@@ -2,7 +2,7 @@ package ru.project.IStudyEnglish.domen.DTO.Task.ForStudying;
 
 import ru.project.IStudyEnglish.domen.DTO.Task.UserTask.UserTask;
 
-public class TaskForStudying extends UserTask {
+public class TaskForLearning extends UserTask {
 
     public String id;
     public String idSource;
@@ -12,7 +12,7 @@ public class TaskForStudying extends UserTask {
     public String example;
 
 
-    public TaskForStudying(String  id){
+    public TaskForLearning(String  id){
         this.id = id;
 
     }

@@ -5,7 +5,7 @@ import ru.project.IStudyEnglish.domen.DTO.Task.TaskType;
 
 
 @Log4j2
-public class ValidatorTypeTask implements Validator{
+public class ValidatorTypeTask{
 
 
 

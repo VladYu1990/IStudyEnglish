@@ -1,39 +1,52 @@
 package ru.project.IStudyEnglish.domen.DTO;
 
-import java.sql.Time;
+import ru.project.IStudyEnglish.infrastructure.DAO.UserDAO;
+import ru.project.IStudyEnglish.infrastructure.repository.SourceUser;
+
+import java.sql.Timestamp;
 
 public class User {
-    String id;
-    String token;
-    String login;
-    String password;
-    Time blokedBeforeToThisTime;
+    private String id;
+    private String token;
+    private String timeLifeToken;
+    private String login;
+    private String password;
+    private Timestamp blockedBeforeToThisTime;
+    private SourceUser data = new UserDAO();
 
 
     public User(){
         //источником из БД, через ДАО
     }
 
-    public User getUser(int code) {
-        User user = new User(); // заменить на запрос юзера из БД c проверкой логин пароля
-        return user;
-    }
+    public String getId() {
 
-    public String getIdUser(String token) {
-         // идем в бд и ищем юзера по токену
         return this.id;
     }
 
-    public String getNewToken(String login, String password){
-        String token = null;
+    public void fillViaToken(String token){
+        //TODO идем в бд и ищем юзера по токену
+        //идем в бд, ищем юзера, через токен
+        //заполняем юзера
+    }
+    public void fillViaId(String id){
+        //идем в бд, ищем юзера, через токен
+        //заполняем юзера
+    }
+    public void fillViaLogin(String login){
+        //идем в бд, ищем юзера, через токен
+        //заполняем юзера
+    }
+
+
+    public void setNewToken(String login, String password){
+        this.token = null;
         //идем в бд, ищем юзера, если находим, генерим токен
         //сохраняем токен в БД
-        return token;
     }
-    public void validationToken(){
-         //возможно, это отдельный объект валидатор
-    }
-    public void getNewPassword(String login){
+
+
+    private void setNewPassword(String login){
         //генерим новый код
         //шлем код в смс/ватсап
         //сохраняем код в БД, если отправка была успешной

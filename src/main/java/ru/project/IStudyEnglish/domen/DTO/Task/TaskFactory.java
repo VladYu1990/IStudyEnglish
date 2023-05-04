@@ -1,8 +1,5 @@
 package ru.project.IStudyEnglish.domen.DTO.Task;
 
-import ru.project.IStudyEnglish.domen.DTO.Task.ForRepetition.TaskForRepetition;
-import ru.project.IStudyEnglish.domen.DTO.Task.ForStudying.TaskForStudying;
-
 public class TaskFactory {
     Task task = null;
     public TaskFactory(){
@@ -19,10 +16,8 @@ public class TaskFactory {
 
         switch (taskType){
             case repetition:
-                this.task = new TaskForRepetition(id);
                 break;
             case studying:
-                this.task = new TaskForStudying(id);
                 break;
         }
         return task;

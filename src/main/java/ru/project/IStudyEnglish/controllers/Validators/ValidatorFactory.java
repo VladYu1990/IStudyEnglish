@@ -12,7 +12,7 @@ public class ValidatorFactory {
                 validator = new ValidatorToken();
                 break;
             case test:
-                validator = new ValidatorTypeTask();
+                //validator = new ValidatorTypeTask();
                 break;
             default:
                 new String("ошибка2");
