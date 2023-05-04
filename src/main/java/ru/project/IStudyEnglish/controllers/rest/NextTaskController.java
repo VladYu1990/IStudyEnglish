@@ -13,13 +13,13 @@ import ru.project.IStudyEnglish.domen.DTO.Task.UserTask.UserTask;
 
 //класс для работы с фронтом
 @RestController
-@RequestMapping("/v1/new_topic/{token}/")
+@RequestMapping("/v1/next_user_task/{token}/")
 @Log4j2
-public class NextTopicController {
+public class NextTaskController {
 
     @RequestMapping("/")
     public Object greetingNextTopic(@PathVariable String token) {
-        Validator validator = ValidatorFactory.createValidator(ValidatorEnum.token);//валидация токена, через фабрику валидаций
+        Validator validator = ValidatorFactory.createValidator(ValidatorEnum.token); //валидация токена, через фабрику валидаций
         if(Validator.validation(token)==true){
 
         }
