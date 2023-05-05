@@ -7,9 +7,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+ Create_User_In_DB_and_working_with_him
+    <list default="true" id="7fbeed74-25ef-4154-a687-4792b9d50a21" name="Changes" comment="It's work with DB honestly" />
+
     <list default="true" id="7fbeed74-25ef-4154-a687-4792b9d50a21" name="Changes" comment="Test working with branch">
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/controllers/Validators/ValidatorTypeTask.java" beforeDir="false" />
     </list>
+main
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,8 +28,8 @@
         <option value="HTML File" />
         <option value="Record" />
         <option value="AnnotationType" />
-        <option value="Interface" />
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -40,6 +44,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/pom.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/domen/DTO/User.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -61,32 +66,32 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;18&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;3691c9865e89483312459259093fc4ed&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "create.test.in.the.same.root": "true",
+    "jdk.selected.JAVA_MODULE": "18",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.grazie",
+    "spring.configuration.checksum": "3691c9865e89483312459259093fc4ed"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="ru.project.IStudyEnglish.infrastructure" />
@@ -96,6 +101,7 @@
       <recent name="ru.project.IStudyEnglish.DTO" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/infrastructure/repository/PostqresDB" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/lib" />
@@ -150,7 +156,10 @@
       <workItem from="1681582228339" duration="24179000" />
       <workItem from="1681711216321" duration="23894000" />
       <workItem from="1681753593759" duration="1708000" />
-      <workItem from="1681799590779" duration="1967000" />
+      <workItem from="1681799590779" duration="1244000" />
+      <workItem from="1681886139297" duration="603000" />
+      <workItem from="1683000217756" duration="2450000" />
+      <workItem from="1683123723168" duration="21033000" />
     </task>
     <task id="LOCAL-00001" summary="restart project">
       <created>1672068848554</created>
@@ -222,14 +231,28 @@
       <option name="project" value="LOCAL" />
       <updated>1681800587335</updated>
     </task>
-    <task id="LOCAL-00011" summary="Test working with branch">
-      <created>1681800951841</created>
+    <task id="LOCAL-00011" summary="+ ReturnAnswerOnTaskController.java&#10;rename NextTopicController.java -&gt; NextTaskController.java&#10;- AnswerController">
+      <created>1683169777908</created>
       <option name="number" value="00011" />
       <option name="presentableId" value="LOCAL-00011" />
       <option name="project" value="LOCAL" />
-      <updated>1681800951841</updated>
+      <updated>1683169777908</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="It's work with DB honestly">
+      <created>1683294474574</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1683294474574</updated>
+    </task>
+    <task id="LOCAL-00013" summary="It's work with DB honestly">
+      <created>1683295462032</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1683295462032</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -253,6 +276,16 @@
             <State />
           </value>
         </entry>
+        <entry key="a0e0cbcf-1135-48a8-96cd-be033f144934">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="a0e0cbcf-1135-48a8-96cd-be033f144934" value="TOOL_WINDOW" />
       </map>
     </option>
   </component>
@@ -268,8 +301,9 @@
     <MESSAGE value="delete Notes.md&#10;add Notes.txt" />
     <MESSAGE value="+ Log4j2" />
     <MESSAGE value="+ deep refactoring" />
-    <MESSAGE value="Test working with branch" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test working with branch" />
+    <MESSAGE value="+ ReturnAnswerOnTaskController.java&#10;rename NextTopicController.java -&gt; NextTaskController.java&#10;- AnswerController" />
+    <MESSAGE value="It's work with DB honestly" />
+    <option name="LAST_COMMIT_MESSAGE" value="It's work with DB honestly" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

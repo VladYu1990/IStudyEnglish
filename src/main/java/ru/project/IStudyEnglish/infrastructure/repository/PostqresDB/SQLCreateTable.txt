@@ -1,0 +1,52 @@
+
+
+create table user_task (
+id text,
+user_code text,
+id_task text,
+type_task text,
+status text,
+time_last_repetition timestamptz,
+time_next_repetition timestamptz,
+correct_attempts_counter text);
+
+
+select  * from user_task
+
+
+INSERT INTO user_task VALUES (
+'1',
+'123',
+'1',
+'repetition',
+'3',
+'2023-04-17 23:00:00'::timestamp,
+'2023-04-18 00:00:01'::timestamp,
+'0'
+);
+
+
+select * from information_schema."columns" c where table_name in ('user_task')
+
+create table users (
+    id text PRIMARY key,
+    token text,
+    time_life_token timestamp  with time zone,
+    login text,
+    password text,
+    blocked_before_to_this_time timestamp  with time zone );
+
+create table tasks (
+    id text PRIMARY key,
+    type_task text,
+    question text,
+    list_false_answers text,
+    list_true_answers text,
+    translation_direction text);
+
+
+create table answers (
+    id text PRIMARY key,
+    value text);
+
+CREATE SEQUENCE serial_id_tasks START 1;
