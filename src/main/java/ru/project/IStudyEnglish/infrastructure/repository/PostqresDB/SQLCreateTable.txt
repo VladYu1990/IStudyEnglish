@@ -34,4 +34,19 @@ create table users (
     time_life_token timestamp  with time zone,
     login text,
     password text,
-    blocked_before_to_this_time timestamp  with time zone )
+    blocked_before_to_this_time timestamp  with time zone );
+
+create table tasks (
+    id text PRIMARY key,
+    type_task text,
+    question text,
+    list_false_answers text,
+    list_true_answers text,
+    translation_direction text);
+
+
+create table answers (
+    id text PRIMARY key,
+    value text);
+
+CREATE SEQUENCE serial_id_tasks START 1;

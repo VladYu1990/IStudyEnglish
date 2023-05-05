@@ -1,9 +1,11 @@
-package ru.project.IStudyEnglish.infrastructure;
+package ru.project.IStudyEnglish.infrastructure.repository.PostqresDB;
 
 import lombok.extern.log4j.Log4j2;
 
+import java.sql.DriverManager;
 import java.sql.ResultSet;
-import java.sql.*;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 @Log4j2
 public class ConnectDB {
@@ -31,22 +33,16 @@ public class ConnectDB {
 
     public ResultSet getResultSet(String strSQL) {
         try {
-            ResultSet result = this.statement.executeQuery(strSQL);
-
-            return result;
+            return this.statement.executeQuery(strSQL);
         } catch (SQLException sqlException) {
             log.error(sqlException);
             return null;
         }
-
-
     }
 
     public void update(String sqlUpdate) {
         try {
-            Statement statement = this.getStatement();
-            statement.executeUpdate(sqlUpdate);
-            this.getStatement().close();
+            this.statement.executeUpdate(sqlUpdate);
         } catch (SQLException sqlException) {
             log.error(sqlException);
         }

@@ -1,4 +1,6 @@
 package ru.project.IStudyEnglish.domen.DTO.Questions;
 
-public class QuestionWriting {
+public enum QuestionsType {
+    text,
+    sound
 }

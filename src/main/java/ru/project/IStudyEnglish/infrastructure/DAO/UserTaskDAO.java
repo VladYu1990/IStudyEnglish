@@ -1,61 +1,61 @@
 package ru.project.IStudyEnglish.infrastructure.DAO;
 
 import lombok.extern.log4j.Log4j2;
-import ru.project.IStudyEnglish.infrastructure.ConnectDB;
+import ru.project.IStudyEnglish.domen.DTO.Task.TypeTask;
+import ru.project.IStudyEnglish.infrastructure.repository.PostqresDB.WorkerWithPostgresDB;
 import ru.project.IStudyEnglish.infrastructure.repository.SourceUserTask;
 
 import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.sql.Timestamp;
 
 @Log4j2
-public class UserTaskDAO implements SourceUserTask {
+public class UserTaskDAO implements SourceUserTask, WorkerWithPostgresDB {
     private String id;
     private String userCode;
     private String idTask;
-    private String typeTask;
+    private TypeTask typeTask;
     private String status;
     private Timestamp timeLastRepetition;
     private Timestamp timeNextRepetition;
     private String correctAttemptsCounter;
-    private ConnectDB conDB = new ConnectDB();
+    private ResultSet data;
 
     public UserTaskDAO(){
     }
 
-    public void getById(String id){
-        String sql = "select * from user_task where id in ('"+ id + "') limit 1";
-        readFromDB(sql);
 
+    @Override
+    public void fillById(String id){
+        String sql = "select * from user_task where id in ('"+ id + "') limit 1";
+        fillFromDB(sql);
+        log.error("fillById");
     }
 
-    public void getNextForUser(String userCode){
+    public void fillNextForUser(String userCode){
         String sql = "select * " +
                 "from user_task " +
-                "where user_code in ('"+ id + "')  " +
-                "and status <> ('8')" +
+                "where user_code in ('"+ userCode + "')  " +
+                "and status <> ('3')" + //это статус заданий для изучения/повторения, остальные или рано или уже выучили
                 "and time_next_repetition <= clock_timestamp()" + //наступившее
                 "order by time_next_repetition " + // но самое новое, иначе если пользователь будет редко заходить он будет повторять только старые слова не доходя до недавних и тем самым, будут большие перерерывы в повторении
                 "limit 1";
+        fillFromDB(sql);
     }
 
-    private void readFromDB(String sql){
+    private void fillFromDB(String sql){
+        data = read(sql);
         try {
-            ResultSet resultSet = conDB.getResultSet(sql );
-
-            while (resultSet.next()) {
-                this.id = resultSet.getString("id");
-                this.userCode = resultSet.getString("user_code");
-                this.idTask = resultSet.getString("id_task");
-                this.typeTask = resultSet.getString("type_task");
-                this.status = resultSet.getString("status");
-                this.timeLastRepetition = resultSet.getTimestamp("time_last_repetition");
-                this.timeNextRepetition = resultSet.getTimestamp("time_next_repetition");
-                this.correctAttemptsCounter = resultSet.getString("correct_attempts_counter");
+            while (data.next()) {
+                this.id = data.getString("id");
+                this.userCode = data.getString("user_code");
+                this.idTask = data.getString("id_task");
+                this.typeTask = TypeTask.valueOf(data.getString("type_task"));
+                this.status = data.getString("status");
+                this.timeLastRepetition = data.getTimestamp("time_last_repetition");
+                this.timeNextRepetition = data.getTimestamp("time_next_repetition");
+                this.correctAttemptsCounter = data.getString("correct_attempts_counter");
 
             }
-            conDB.getStatement().close();
         } catch (Exception ex) {
             log.error(ex);
         }
@@ -101,7 +101,7 @@ public class UserTaskDAO implements SourceUserTask {
         return idTask;
     }
 
-    public String getTypeTask() {
+    public TypeTask getTypeTask() {
         return typeTask;
     }
 

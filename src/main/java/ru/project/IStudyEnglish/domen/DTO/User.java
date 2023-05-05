@@ -6,7 +6,7 @@ import ru.project.IStudyEnglish.infrastructure.repository.SourceUser;
 import java.sql.Timestamp;
 
 public class User {
-    private String id;
+    private String id="1";
     private String token;
     private String timeLifeToken;
     private String login;

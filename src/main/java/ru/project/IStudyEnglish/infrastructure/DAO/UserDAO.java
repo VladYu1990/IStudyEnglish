@@ -1,7 +1,7 @@
 package ru.project.IStudyEnglish.infrastructure.DAO;
 
 import lombok.extern.log4j.Log4j2;
-import ru.project.IStudyEnglish.infrastructure.ConnectDB;
+import ru.project.IStudyEnglish.infrastructure.repository.PostqresDB.ConnectDB;
 import ru.project.IStudyEnglish.infrastructure.repository.SourceUser;
 
 import java.sql.ResultSet;

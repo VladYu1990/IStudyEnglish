@@ -1,7 +1,5 @@
 package ru.project.IStudyEnglish.domen.DTO.Task;
 
-public enum TaskType {
+public enum TranslationDirection {
 
-    repetition,
-    studying
 }

@@ -1,6 +1,9 @@
 package ru.project.IStudyEnglish.infrastructure.repository;
 
+import ru.project.IStudyEnglish.domen.DTO.Task.TypeTask;
+
 import java.sql.Timestamp;
+
 
 public interface SourceUserTask {
 
@@ -14,11 +17,12 @@ public interface SourceUserTask {
     String getId();
     String getUserCode();
     String getIdTask();
-    String getTypeTask();
+    TypeTask getTypeTask();
     String getStatus();
     Timestamp getTimeLastRepetition();
     Timestamp getTimeNextRepetition();
     String getCorrectAttemptsCounter();
-    void getById(String id);
-    void getNextForUser(String userCode);
+    void fillNextForUser(String userCode);
+    void fillById(String taskId);
+
 }

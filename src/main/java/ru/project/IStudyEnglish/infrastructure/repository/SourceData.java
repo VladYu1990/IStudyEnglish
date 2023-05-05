@@ -1,4 +1,4 @@
-package ru.project.IStudyEnglish.infrastructure;
+package ru.project.IStudyEnglish.infrastructure.repository;
 
 public interface SourceData {
 

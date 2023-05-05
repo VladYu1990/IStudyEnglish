@@ -1,40 +1,30 @@
 package ru.project.IStudyEnglish.domen.DTO.Questions;
 
-public abstract class Question{
+import ru.project.IStudyEnglish.infrastructure.DAO.QuestionDAO;
+import ru.project.IStudyEnglish.infrastructure.repository.SourceQuestion;
+
+public class Question {
+    private String id;
     private String value;
-    private String linkOnSound;
-    private String linkOnPicture;
+    private SourceQuestion data = new QuestionDAO();
 
-    public Question() {
-
-        value = "вопрос";
-        linkOnPicture = "";
-        linkOnSound = "";
+    public Question(String id){
+        data.getOnId(id);
+        fillFromData();
     }
-}
-/*
+
+
+    private void fillFromData() {
+        this.id = this.data.getId();
+        this.value = this.data.getValue();
+
+    }
+
+    public String getId() {
+        return id;
+    }
+
     public String getValue() {
         return value;
     }
-
-    public void setValue(String value) {
-        this.value = value;
-    }
-
-    public String getLinkOnSound() {
-        return linkOnSound;
-    }
-
-    public void setLinkOnSound(String linkOnSound) {
-        this.linkOnSound = linkOnSound;
-    }
-
-    public String getLinkOnPicture() {
-        return linkOnPicture;
-    }
-
-    public void setLinkOnPicture(String linkOnPicture) {
-        this.linkOnPicture = linkOnPicture;
-    }
 }
-*/

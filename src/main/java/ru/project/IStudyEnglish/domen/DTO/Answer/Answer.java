@@ -1,17 +1,28 @@
 package ru.project.IStudyEnglish.domen.DTO.Answer;
 
+import org.springframework.stereotype.Component;
+import ru.project.IStudyEnglish.infrastructure.DAO.AnswerDAO;
+import ru.project.IStudyEnglish.infrastructure.repository.SourceAnswer;
+
+
+@Component
 public class Answer {
     private String id;
     private String value;
+    private boolean correct;
+    private SourceAnswer data;
 
-    public Answer(){
+
+    public Answer() {
 
     }
 
-    public Answer(String id)  {
-        //WordForRepetition w = new WordForRepetition(idWord);
-        this.id = id;
-        this.value="тестовое значение";
+    public Answer(String id,boolean correct) {
+        //TODO получаем из бд
+        this.data = new AnswerDAO(id);
+        this.id = this.data.getId();
+        this.value = this.data.getValue();
+        this.correct = correct;
 
     }
 
@@ -19,15 +30,11 @@ public class Answer {
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
     public String getValue() {
         return value;
     }
 
-    public void setValue(String value) {
-        this.value = value;
+    public boolean isCorrect() {
+        return correct;
     }
 }
