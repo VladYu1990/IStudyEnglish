@@ -2,12 +2,12 @@ package ru.project.IStudyEnglish.domen.DTO.Answer;
 
 import org.springframework.stereotype.Component;
 import ru.project.IStudyEnglish.infrastructure.DAO.AnswerDAO;
-import ru.project.IStudyEnglish.infrastructure.repository.SourceAnswer;
+import ru.project.IStudyEnglish.infrastructure.SourceAnswer;
 
 
 @Component
 public class Answer {
-    private String id;
+    private int id;
     private String value;
     private boolean correct;
     private SourceAnswer data;
@@ -26,7 +26,7 @@ public class Answer {
 
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 

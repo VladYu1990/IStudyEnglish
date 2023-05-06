@@ -1,10 +1,10 @@
 package ru.project.IStudyEnglish.domen.DTO.Questions;
 
 import ru.project.IStudyEnglish.infrastructure.DAO.QuestionDAO;
-import ru.project.IStudyEnglish.infrastructure.repository.SourceQuestion;
+import ru.project.IStudyEnglish.infrastructure.SourceQuestion;
 
 public class Question {
-    private String id;
+    private int id;
     private String value;
     private SourceQuestion data = new QuestionDAO();
 
@@ -20,7 +20,7 @@ public class Question {
 
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 

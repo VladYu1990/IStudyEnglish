@@ -1,8 +1,8 @@
-package ru.project.IStudyEnglish.infrastructure.repository;
+package ru.project.IStudyEnglish.infrastructure;
 
 public interface SourceQuestion {
 
     void getOnId(String id);
-    String getId();
+    int getId();
     String getValue();
 }

@@ -1,8 +1,8 @@
-package ru.project.IStudyEnglish.infrastructure.repository;
+package ru.project.IStudyEnglish.infrastructure;
 
 public interface SourceTask {
 
-    public String getId();
+    public int getId();
 
     public String getTypeTask() ;
 

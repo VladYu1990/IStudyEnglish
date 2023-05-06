@@ -1,11 +1,12 @@
 package ru.project.IStudyEnglish.domen.DTO;
 
 import ru.project.IStudyEnglish.infrastructure.DAO.UserDAO;
-import ru.project.IStudyEnglish.infrastructure.repository.SourceUser;
+import ru.project.IStudyEnglish.infrastructure.SourceUser;
 
 import java.sql.Timestamp;
 
 public class User {
+    //TODO пока хардкод
     private String id="1";
     private String token;
     private String timeLifeToken;

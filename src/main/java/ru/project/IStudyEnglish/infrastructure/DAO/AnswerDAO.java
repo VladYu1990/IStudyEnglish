@@ -1,14 +1,14 @@
 package ru.project.IStudyEnglish.infrastructure.DAO;
 
 import lombok.extern.log4j.Log4j2;
-import ru.project.IStudyEnglish.infrastructure.repository.SourceAnswer;
+import ru.project.IStudyEnglish.infrastructure.SourceAnswer;
 import ru.project.IStudyEnglish.infrastructure.repository.PostqresDB.WorkerWithPostgresDB;
 
 import java.sql.ResultSet;
 @Log4j2
 public class AnswerDAO implements SourceAnswer, WorkerWithPostgresDB {
 
-    private String id;
+    private int id;
     private String value;
     private ResultSet data;
 
@@ -26,7 +26,7 @@ public class AnswerDAO implements SourceAnswer, WorkerWithPostgresDB {
         this.data = read(sql);
         try {
             while (data.next()) {
-                this.id = data.getString("id");
+                this.id = Integer.valueOf(data.getString("id"));
                 this.value = data.getString("value");
             }
         } catch (Exception ex) {
@@ -34,7 +34,7 @@ public class AnswerDAO implements SourceAnswer, WorkerWithPostgresDB {
         }
     }
 
-    public String getId() {
+    public int getId() {
         return this.id;
     }
 

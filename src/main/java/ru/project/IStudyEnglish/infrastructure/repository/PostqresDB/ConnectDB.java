@@ -36,6 +36,8 @@ public class ConnectDB {
             return this.statement.executeQuery(strSQL);
         } catch (SQLException sqlException) {
             log.error(sqlException);
+
+            //TODO возвращать нул плохо, нужно переделать
             return null;
         }
     }

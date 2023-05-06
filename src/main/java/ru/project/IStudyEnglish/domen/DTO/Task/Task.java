@@ -4,16 +4,17 @@ import org.springframework.stereotype.Component;
 import ru.project.IStudyEnglish.domen.DTO.Answer.ListAnswers;
 import ru.project.IStudyEnglish.domen.DTO.Questions.Question;
 import ru.project.IStudyEnglish.infrastructure.DAO.TaskDAO;
-import ru.project.IStudyEnglish.infrastructure.repository.SourceTask;
+import ru.project.IStudyEnglish.infrastructure.SourceTask;
 
 
 
 @Component
 public class Task {
-    private String id;
+    private int id;
     private TypeTask typeTask;
     private Question question;
     private ListAnswers listAnswers;
+    //TODO сделать заполнение из списка
     private String translationDirection;
     private SourceTask date;
 
@@ -22,7 +23,7 @@ public class Task {
     }
 
 
-    public Task(String id){
+    public Task(int id){
         this.date = new TaskDAO(id);
         this.id = this.date.getId();
         this.typeTask = TypeTask.valueOf(this.date.getTypeTask());
@@ -33,11 +34,11 @@ public class Task {
         this.translationDirection = this.date.getTranslationDirection();
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

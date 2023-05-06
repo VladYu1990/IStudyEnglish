@@ -3,32 +3,31 @@ package ru.project.IStudyEnglish.infrastructure.DAO;
 import lombok.extern.log4j.Log4j2;
 import ru.project.IStudyEnglish.domen.DTO.Task.TypeTask;
 import ru.project.IStudyEnglish.infrastructure.repository.PostqresDB.WorkerWithPostgresDB;
-import ru.project.IStudyEnglish.infrastructure.repository.SourceUserTask;
+import ru.project.IStudyEnglish.infrastructure.SourceUserTask;
 
 import java.sql.ResultSet;
 import java.sql.Timestamp;
 
 @Log4j2
 public class UserTaskDAO implements SourceUserTask, WorkerWithPostgresDB {
-    private String id;
-    private String userCode;
-    private String idTask;
+    private int id;
+    private int userCode;
+    private int idTask;
     private TypeTask typeTask;
-    private String status;
+    private int status;
     private Timestamp timeLastRepetition;
     private Timestamp timeNextRepetition;
-    private String correctAttemptsCounter;
+    private int correctAttemptsCounter;
     private ResultSet data;
 
     public UserTaskDAO(){
     }
 
 
-    @Override
-    public void fillById(String id){
+
+    public void fillViaId(int id){
         String sql = "select * from user_task where id in ('"+ id + "') limit 1";
         fillFromDB(sql);
-        log.error("fillById");
     }
 
     public void fillNextForUser(String userCode){
@@ -46,14 +45,15 @@ public class UserTaskDAO implements SourceUserTask, WorkerWithPostgresDB {
         data = read(sql);
         try {
             while (data.next()) {
-                this.id = data.getString("id");
-                this.userCode = data.getString("user_code");
-                this.idTask = data.getString("id_task");
+                //TODO изменить типы данных в БД
+                this.id = Integer.parseInt(data.getString("id"));
+                this.userCode = Integer.parseInt(data.getString("user_code"));
+                this.idTask = Integer.parseInt(data.getString("id_task"));
                 this.typeTask = TypeTask.valueOf(data.getString("type_task"));
-                this.status = data.getString("status");
+                this.status = Integer.valueOf(data.getString("status"));
                 this.timeLastRepetition = data.getTimestamp("time_last_repetition");
                 this.timeNextRepetition = data.getTimestamp("time_next_repetition");
-                this.correctAttemptsCounter = data.getString("correct_attempts_counter");
+                this.correctAttemptsCounter = Integer.parseInt(data.getString("correct_attempts_counter"));
 
             }
         } catch (Exception ex) {
@@ -61,43 +61,30 @@ public class UserTaskDAO implements SourceUserTask, WorkerWithPostgresDB {
         }
     }
 
-
-
-
-    public void setStatus(String status) {
-        this.status = status;
-        String sqlUpdate = "UPDATE user_task SET status = '" + this.status + "' WHERE id = '" + this.id + "';";
-        conDB.update(sqlUpdate);
-    }
-
-    public void setTimeLastRepetition(Timestamp timeLastRepetition) {
-        this.timeLastRepetition = timeLastRepetition;
-        String sqlUpdate = "UPDATE user_task SET timeLastRepetition = '" + this.timeLastRepetition + "' WHERE id = '" + this.id + "';";
-        conDB.update(sqlUpdate);
-    }
-
-    public void setTimeNextRepetition(Timestamp timeNextRepetition) {
-        this.timeNextRepetition = timeNextRepetition;
-        String sqlUpdate = "UPDATE user_task SET timeNextRepetition = '" + this.timeNextRepetition + "' WHERE id = '" + this.id + "';";
-        conDB.update(sqlUpdate);
-    }
-
-    public void setCorrectAttemptsCounter(String correctAttemptsCounter) {
-        this.correctAttemptsCounter = correctAttemptsCounter;
-        String sqlUpdate = "UPDATE user_task SET correctAttemptsCounter = '" + this.correctAttemptsCounter + "' WHERE id = '" + this.id + "';";
-        conDB.update(sqlUpdate);
+    public void update(){
+        String sqlUpdate = "UPDATE user_task " +
+                "SET  id = '" + this.id + "'" +
+                ", user_code = '" + this.userCode + "'" +
+                ",id_task = '" + this.idTask + "'" +
+                ",type_task = '" + this.typeTask + "'" +
+                ",status = '" + this.status + "' " +
+                ",time_last_repetition = '" + this.timeLastRepetition + "' " +
+                ",time_next_repetition  = '" + this.timeNextRepetition + "' " +
+                ",correct_attempts_counter = '" + this.correctAttemptsCounter + "' " +
+                "WHERE id = '" + this.id + "';";
+        update(sqlUpdate);
     }
 
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public String getUserCode() {
+    public int getUserCode() {
         return userCode;
     }
 
-    public String getIdTask() {
+    public int getIdTask() {
         return idTask;
     }
 
@@ -105,7 +92,7 @@ public class UserTaskDAO implements SourceUserTask, WorkerWithPostgresDB {
         return typeTask;
     }
 
-    public String getStatus() {
+    public int getStatus() {
         return status;
     }
 
@@ -117,7 +104,24 @@ public class UserTaskDAO implements SourceUserTask, WorkerWithPostgresDB {
         return timeNextRepetition;
     }
 
-    public String getCorrectAttemptsCounter() {
+    public int getCorrectAttemptsCounter() {
         return correctAttemptsCounter;
+    }
+
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    public void setTimeLastRepetition(Timestamp timeLastRepetition) {
+        this.timeLastRepetition = timeLastRepetition;
+    }
+
+    public void setTimeNextRepetition(Timestamp timeNextRepetition) {
+        this.timeNextRepetition = timeNextRepetition;
+    }
+
+    public void setCorrectAttemptsCounter(int correctAttemptsCounter) {
+        this.correctAttemptsCounter = correctAttemptsCounter;
     }
 }

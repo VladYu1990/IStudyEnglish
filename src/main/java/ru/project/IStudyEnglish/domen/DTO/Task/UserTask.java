@@ -1,29 +1,31 @@
 package ru.project.IStudyEnglish.domen.DTO.Task;
 
 import lombok.extern.log4j.Log4j2;
+import org.springframework.stereotype.Component;
 import ru.project.IStudyEnglish.infrastructure.DAO.UserTaskDAO;
-import ru.project.IStudyEnglish.infrastructure.repository.SourceUserTask;
+import ru.project.IStudyEnglish.infrastructure.SourceUserTask;
 
 import java.sql.Timestamp;
 
 @Log4j2
+@Component
 public class UserTask {
-    private String id;
-    private String userId;
+    private int id;
+    private int userId;
     private Task task;
-    private String status;
+    private int status;
     private UserTaskStatusEnum statusEnum;
     private Timestamp timeLastRepetition;
     private Timestamp timeNextRepetition;
-    private String correctAttemptsCounter;
+    private int correctAttemptsCounter;
     private SourceUserTask data = new UserTaskDAO();
 
     public UserTask() {
 
     }
 
-    public void fillById(String taskId) {
-        data.fillById(taskId);
+    public void fillById(int taskId) {
+        data.fillViaId(taskId);
         fillFromData();
 
     }
@@ -40,22 +42,40 @@ public class UserTask {
         this.status = data.getStatus();
         this.timeLastRepetition = data.getTimeLastRepetition();
         this.timeNextRepetition = data.getTimeNextRepetition();
-        this.correctAttemptsCounter = data.getCorrectAttemptsCounter();
-        this.task = new Task(this.id);
+        this.correctAttemptsCounter = Integer.valueOf(data.getCorrectAttemptsCounter());
+        this.task = new Task(data.getIdTask());
+    }
+
+    public void update(Boolean answerIsCorrect) {
+        //TODO вынести в конфиги или отдельну функции расчет времени смешения
+        // в зависимости от кол-ва успешных повторений
+        int daysAfterCorrect = 7;
+        int daysAfterIncorrect = 2;
+        //TODO добавить метод в котором будет логика апдейта статуса
+        this.timeLastRepetition = new Timestamp(System.currentTimeMillis());
+        if (answerIsCorrect == true) {
+            //TODO что-то надо сделать с умножением
+            this.timeNextRepetition.setTime(System.currentTimeMillis() + daysAfterCorrect*24*60*60*1000);
+            this.correctAttemptsCounter = this.correctAttemptsCounter + 1;
+
+        } else {
+            this.timeNextRepetition = new Timestamp(System.currentTimeMillis()+daysAfterIncorrect*24*60*60*1000);
+            this.correctAttemptsCounter = 0;
+        }
+
+        data.setStatus(this.status);
+        data.setTimeLastRepetition(this.timeLastRepetition);
+        data.setTimeNextRepetition(this.timeNextRepetition);
+        data.setCorrectAttemptsCounter(this.correctAttemptsCounter);
+        data.update();
     }
 
 
-
-    public static void update(String idUserTask,Boolean answerIsTrue){
-        //TODO реализацию метода
-
-    }
-
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public String getUserId() {
+    public int getUserId() {
         return userId;
     }
 
@@ -63,11 +83,11 @@ public class UserTask {
         return task;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public void setUserId(String userId) {
+    public void setUserId(int userId) {
         this.userId = userId;
     }
 

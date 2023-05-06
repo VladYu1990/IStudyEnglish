@@ -15,22 +15,25 @@ import ru.project.IStudyEnglish.domen.DTO.User;
 public class NextTaskController {
 
     @RequestMapping("/")
-    public Object greetingNextTopic(@PathVariable String token){
+    public UserTask greetingNextTopic(@PathVariable String token){
         try {
 
             ValidationContext validationContext = new ValidationContext();
             validationContext.setValidator(new ValidatorToken());
+            //TODO разобраться с SQL инекцией через токен
             validationContext.validation(token);
-            //TODO сделать и проверить получение юзера
+
             User user = new User();
             user.fillViaToken(token);
+
             UserTask userTask = new UserTask();
             userTask.fillNext(user.getId());
 
             return userTask;
         }
         catch (Exception exception) {
-            return exception.getMessage();
+            //TODO возвращать null плохо, надо изучить вопрос
+            return null;
         }
     }
 }

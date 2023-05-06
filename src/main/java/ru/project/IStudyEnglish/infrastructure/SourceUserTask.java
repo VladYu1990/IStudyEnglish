@@ -1,4 +1,4 @@
-package ru.project.IStudyEnglish.infrastructure.repository;
+package ru.project.IStudyEnglish.infrastructure;
 
 import ru.project.IStudyEnglish.domen.DTO.Task.TypeTask;
 
@@ -10,19 +10,20 @@ public interface SourceUserTask {
     static String getNext() {
         return null;
     }
-    void setStatus(String status);
+    void setStatus(int status);
     void setTimeLastRepetition(Timestamp timeLastRepetition);
     void setTimeNextRepetition(Timestamp timeNextRepetition);
-    void setCorrectAttemptsCounter(String correctAttemptsCounter);
-    String getId();
-    String getUserCode();
-    String getIdTask();
+    void setCorrectAttemptsCounter(int correctAttemptsCounter);
+    int getId();
+    int getUserCode();
+    int getIdTask();
     TypeTask getTypeTask();
-    String getStatus();
+    int getStatus();
     Timestamp getTimeLastRepetition();
     Timestamp getTimeNextRepetition();
-    String getCorrectAttemptsCounter();
+    int getCorrectAttemptsCounter();
     void fillNextForUser(String userCode);
-    void fillById(String taskId);
+    void fillViaId(int taskId);
 
+    void update();
 }
