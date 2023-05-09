@@ -1,6 +1,6 @@
 package ru.project.IStudyEnglish.domen.DTO;
 
-import ru.project.IStudyEnglish.infrastructure.DAO.UserDAO;
+import ru.project.IStudyEnglish.infrastructure.repository.PostqresDB.DAO.UserDAO;
 import ru.project.IStudyEnglish.infrastructure.SourceUser;
 
 import java.sql.Timestamp;

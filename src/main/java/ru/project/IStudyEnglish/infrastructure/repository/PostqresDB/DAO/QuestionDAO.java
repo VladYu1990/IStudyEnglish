@@ -1,25 +1,23 @@
-package ru.project.IStudyEnglish.infrastructure.DAO;
+package ru.project.IStudyEnglish.infrastructure.repository.PostqresDB.DAO;
 
 import lombok.extern.log4j.Log4j2;
-import ru.project.IStudyEnglish.infrastructure.SourceAnswer;
 import ru.project.IStudyEnglish.infrastructure.repository.PostqresDB.WorkerWithPostgresDB;
+import ru.project.IStudyEnglish.infrastructure.SourceQuestion;
 
 import java.sql.ResultSet;
-@Log4j2
-public class AnswerDAO implements SourceAnswer, WorkerWithPostgresDB {
 
+@Log4j2
+public class QuestionDAO implements SourceQuestion, WorkerWithPostgresDB {
     private int id;
     private String value;
     private ResultSet data;
 
-    public AnswerDAO(){
+    public QuestionDAO(){
 
     }
-
-    public AnswerDAO(String id) {
-        String sql = "Select * from answers where id = ('" + id + "') limit 1";
+    public void getOnId(String id){
+        String sql = "select * from questions where id = ('" + id + "') limit 1";
         fillFromData(sql);
-
     }
 
     private void fillFromData(String sql){
@@ -35,10 +33,10 @@ public class AnswerDAO implements SourceAnswer, WorkerWithPostgresDB {
     }
 
     public int getId() {
-        return this.id;
+        return id;
     }
 
     public String getValue() {
-        return this.value;
+        return value;
     }
 }

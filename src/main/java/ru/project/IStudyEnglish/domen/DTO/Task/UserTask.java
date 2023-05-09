@@ -1,14 +1,12 @@
 package ru.project.IStudyEnglish.domen.DTO.Task;
 
 import lombok.extern.log4j.Log4j2;
-import org.springframework.stereotype.Component;
-import ru.project.IStudyEnglish.infrastructure.DAO.UserTaskDAO;
 import ru.project.IStudyEnglish.infrastructure.SourceUserTask;
+import ru.project.IStudyEnglish.infrastructure.repository.PostqresDB.DAO.UserTaskDAO;
 
 import java.sql.Timestamp;
 
 @Log4j2
-@Component
 public class UserTask {
     private int id;
     private int userId;
@@ -18,20 +16,21 @@ public class UserTask {
     private Timestamp timeLastRepetition;
     private Timestamp timeNextRepetition;
     private int correctAttemptsCounter;
-    private SourceUserTask data = new UserTaskDAO();
+    private SourceUserTask data = new UserTaskDAO(); //TODO тут быть не должно
+
 
     public UserTask() {
 
     }
 
-    public void fillById(int taskId) {
-        data.fillViaId(taskId);
+    public void getOnId(int taskId) {
+        data.getOnId(taskId);
         fillFromData();
 
     }
 
     public void fillNext(String idUser) {
-        data.fillNextForUser(idUser);
+        data.getNext(idUser);
         fillFromData();
 
     }

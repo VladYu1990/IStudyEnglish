@@ -1,7 +1,7 @@
 package ru.project.IStudyEnglish.domen.DTO.Answer;
 
 import org.springframework.stereotype.Component;
-import ru.project.IStudyEnglish.infrastructure.DAO.AnswerDAO;
+import ru.project.IStudyEnglish.infrastructure.repository.PostqresDB.DAO.AnswerDAO;
 import ru.project.IStudyEnglish.infrastructure.SourceAnswer;
 
 

@@ -3,7 +3,7 @@ package ru.project.IStudyEnglish.domen.DTO.Task;
 import org.springframework.stereotype.Component;
 import ru.project.IStudyEnglish.domen.DTO.Answer.ListAnswers;
 import ru.project.IStudyEnglish.domen.DTO.Questions.Question;
-import ru.project.IStudyEnglish.infrastructure.DAO.TaskDAO;
+import ru.project.IStudyEnglish.infrastructure.repository.PostqresDB.DAO.TaskDAO;
 import ru.project.IStudyEnglish.infrastructure.SourceTask;
 
 

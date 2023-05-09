@@ -29,7 +29,7 @@ public class ReturnAnswerOnTaskController {
                 user.fillViaToken(token);
 
                 UserTask userTask = new UserTask();
-                userTask.fillById(id_user_task);
+                userTask.getOnId(id_user_task);
                 userTask.update(Boolean.valueOf(correct_answer));
             }
         catch (Exception ex){

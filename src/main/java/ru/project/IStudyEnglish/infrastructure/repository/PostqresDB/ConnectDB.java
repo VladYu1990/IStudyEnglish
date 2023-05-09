@@ -1,6 +1,9 @@
 package ru.project.IStudyEnglish.infrastructure.repository.PostqresDB;
 
+
 import lombok.extern.log4j.Log4j2;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -8,13 +11,26 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 @Log4j2
+@Component
 public class ConnectDB {
-    private final String DB_url = "jdbc:postgresql://localhost:5432/IStudyEnglishDemo";
-    private final String user = "postgres";
-    private final String password = "5240";
+    @Value("${spring.datasource.url}")
+    private String DB_url;
+    @Value("postgres")
+    private String user;
+    //@Value("${spring.datasource.password}")
+    private String password="5240";
+    @Value("${test.test}")
+    private String str1;
+    @Value("${test.test}")
+    public String str2;
     private Statement statement;
 
     public ConnectDB() {
+        log.info(DB_url);
+        log.info(user);
+        log.info(password);
+        log.info(str1);
+        log.info(str2);
         try {
             this.statement = DriverManager.getConnection(
                             this.DB_url,

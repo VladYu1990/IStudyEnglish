@@ -1,15 +1,17 @@
 package ru.project.IStudyEnglish.infrastructure;
 
+import org.springframework.stereotype.Component;
 import ru.project.IStudyEnglish.domen.DTO.Task.TypeTask;
 
 import java.sql.Timestamp;
 
 
+@Component
 public interface SourceUserTask {
 
-    static String getNext() {
-        return null;
-    }
+
+    void getNext(String idUser);
+    void getOnId(int id);
     void setStatus(int status);
     void setTimeLastRepetition(Timestamp timeLastRepetition);
     void setTimeNextRepetition(Timestamp timeNextRepetition);
@@ -22,8 +24,5 @@ public interface SourceUserTask {
     Timestamp getTimeLastRepetition();
     Timestamp getTimeNextRepetition();
     int getCorrectAttemptsCounter();
-    void fillNextForUser(String userCode);
-    void fillViaId(int taskId);
-
     void update();
 }

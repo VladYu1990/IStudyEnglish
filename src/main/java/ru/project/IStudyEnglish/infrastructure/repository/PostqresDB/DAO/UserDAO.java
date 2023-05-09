@@ -1,4 +1,4 @@
-package ru.project.IStudyEnglish.infrastructure.DAO;
+package ru.project.IStudyEnglish.infrastructure.repository.PostqresDB.DAO;
 
 import lombok.extern.log4j.Log4j2;
 import ru.project.IStudyEnglish.infrastructure.SourceUser;

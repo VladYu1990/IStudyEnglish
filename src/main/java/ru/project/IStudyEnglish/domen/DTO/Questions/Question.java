@@ -1,6 +1,6 @@
 package ru.project.IStudyEnglish.domen.DTO.Questions;
 
-import ru.project.IStudyEnglish.infrastructure.DAO.QuestionDAO;
+import ru.project.IStudyEnglish.infrastructure.repository.PostqresDB.DAO.QuestionDAO;
 import ru.project.IStudyEnglish.infrastructure.SourceQuestion;
 
 public class Question {
