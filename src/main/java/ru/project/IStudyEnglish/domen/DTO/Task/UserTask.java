@@ -23,6 +23,10 @@ public class UserTask {
 
     }
 
+    public UserTask(UserTaskDAO userTaskDAO){
+
+    }
+
     public void getOnId(int taskId) {
         data.getOnId(taskId);
         fillFromData();

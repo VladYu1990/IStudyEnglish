@@ -1,13 +1,11 @@
 package ru.project.IStudyEnglish.infrastructure.repository.PostqresDB;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 import java.sql.ResultSet;
 
 public interface WorkerWithPostgresDB {
 
-    @Autowired
-    ConnectDB conDB = new ConnectDB();
+    
+    ConnectDB conDB=null;
 
     public default void create(String sqlString){
         conDB.update(sqlString);
@@ -22,4 +20,6 @@ public interface WorkerWithPostgresDB {
         conDB.update(sqlString);
     }
     private void fillFromData(String sql) {}
-}
+
+    }
+
