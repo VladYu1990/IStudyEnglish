@@ -1,12 +1,17 @@
 package ru.project.IStudyEnglish.infrastructure.repository.PostqresDB.DAO;
 
 import lombok.extern.log4j.Log4j2;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import ru.project.IStudyEnglish.infrastructure.repository.PostqresDB.ConnectDB;
 import ru.project.IStudyEnglish.infrastructure.repository.PostqresDB.WorkerWithPostgresDB;
 import ru.project.IStudyEnglish.infrastructure.SourceTask;
+import ru.project.IStudyEnglish.infrastructure.repository.StringSQL;
 
 import java.sql.ResultSet;
 
 @Log4j2
+@Component
 public class TaskDAO implements SourceTask, WorkerWithPostgresDB {
     private int id;
     private String typeTask;
@@ -15,19 +20,27 @@ public class TaskDAO implements SourceTask, WorkerWithPostgresDB {
     private String listFalseAnswers;
 
     private String translationDirection;
-    private ResultSet data;
+    private ConnectDB conDB;
+    public TaskDAO(){
+
+    }
 
 
-    public TaskDAO(int id){
-        String sql = "select * from tasks where id = ('" + id + "') limit 1";
+    public void fillOnId(int id){
+        StringSQL sql = new StringSQL("select * from tasks where id = ('" + id + "') limit 1");
         readFromDB(sql);
 
     }
 
-    private void readFromDB(String sql){
-        this.data = read(sql);
+    @Autowired
+    public TaskDAO(ConnectDB conDB){
+        this.conDB = conDB;
+    }
+
+    private void readFromDB(StringSQL sql){
+        ResultSet data = read(sql,conDB);
         try {
-            while (this.data.next()) {
+            while (data.next()) {
                 this.id = Integer.parseInt(data.getString("id"));
                 this.typeTask = data.getString("type_task");
                 this.question = data.getString("question");

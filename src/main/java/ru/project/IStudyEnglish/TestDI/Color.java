@@ -7,7 +7,10 @@ public class Color {
 
     String color = "grey";
 
-    public Color() {
+    public Color(){}
+
+    public Color(String color) {
+        this.color = color;
     }
 
     public String getColor() {

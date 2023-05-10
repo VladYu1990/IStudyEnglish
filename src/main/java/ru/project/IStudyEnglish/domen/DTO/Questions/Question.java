@@ -1,12 +1,18 @@
 package ru.project.IStudyEnglish.domen.DTO.Questions;
 
+import org.springframework.stereotype.Component;
 import ru.project.IStudyEnglish.infrastructure.repository.PostqresDB.DAO.QuestionDAO;
 import ru.project.IStudyEnglish.infrastructure.SourceQuestion;
 
+@Component
 public class Question {
     private int id;
     private String value;
     private SourceQuestion data = new QuestionDAO();
+
+    public Question(){
+
+    }
 
     public Question(String id){
         data.getOnId(id);

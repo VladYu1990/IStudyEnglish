@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 public class rim {
     private String diameter = "17";
 
-    public void rim(){
+    public rim(){
         log.error("rim created");
     }
 

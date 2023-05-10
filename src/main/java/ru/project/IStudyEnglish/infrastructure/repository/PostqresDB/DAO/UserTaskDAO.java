@@ -1,11 +1,13 @@
 package ru.project.IStudyEnglish.infrastructure.repository.PostqresDB.DAO;
 
 import lombok.extern.log4j.Log4j2;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import ru.project.IStudyEnglish.domen.DTO.Task.TypeTask;
 import ru.project.IStudyEnglish.infrastructure.SourceUserTask;
 import ru.project.IStudyEnglish.infrastructure.repository.PostqresDB.ConnectDB;
 import ru.project.IStudyEnglish.infrastructure.repository.PostqresDB.WorkerWithPostgresDB;
+import ru.project.IStudyEnglish.infrastructure.repository.StringSQL;
 
 import java.sql.ResultSet;
 import java.sql.Timestamp;
@@ -27,8 +29,11 @@ public class UserTaskDAO implements SourceUserTask, WorkerWithPostgresDB {
     }
 
     //@Autowired
+    @Autowired
     public UserTaskDAO(ConnectDB conDB){
         this.conDB = conDB;
+        log.info("conDB filled UserTask" + conDB.toString());
+
     }
 
 
@@ -53,7 +58,8 @@ public class UserTaskDAO implements SourceUserTask, WorkerWithPostgresDB {
     }
 
     private void fill(String sql){
-        ResultSet data = read(sql);
+        log.error(conDB.equals(null) + conDB.toString());
+        ResultSet data = read(new StringSQL(sql),conDB);
         try {
             while (data.next()) {
                 //TODO изменить типы данных в БД
@@ -73,18 +79,15 @@ public class UserTaskDAO implements SourceUserTask, WorkerWithPostgresDB {
     }
 
     public void update(){
-        String sqlUpdate = "UPDATE user_task " +
-                "SET status = '" + this.status + "' " +
-                ",time_last_repetition = '" + this.timeLastRepetition + "' " +
-                ",time_next_repetition  = '" + this.timeNextRepetition + "' " +
-                ",correct_attempts_counter = '" + this.correctAttemptsCounter + "' " +
-                "WHERE id = '" + this.id + "';";
-        update(sqlUpdate);
+        update(new StringSQL("UPDATE user_task " +
+                    "SET status = '" + this.status + "' " +
+                    ",time_last_repetition = '" + this.timeLastRepetition + "' " +
+                    ",time_next_repetition  = '" + this.timeNextRepetition + "' " +
+                    ",correct_attempts_counter = '" + this.correctAttemptsCounter + "' " +
+                    "WHERE id = '" + this.id + "';"),
+                conDB);
     }
 
-    public void create(String sqlString) {
-        WorkerWithPostgresDB.super.create(sqlString);
-    }
 
     public int getId() {
         return id;

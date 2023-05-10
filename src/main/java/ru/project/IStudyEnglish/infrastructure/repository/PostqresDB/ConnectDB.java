@@ -2,7 +2,10 @@ package ru.project.IStudyEnglish.infrastructure.repository.PostqresDB;
 
 
 import lombok.extern.log4j.Log4j2;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Repository;
+import ru.project.IStudyEnglish.infrastructure.repository.StringSQL;
 
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -10,35 +13,26 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 @Log4j2
-//@Repository
+@Repository
+@Scope("prototype")
 public class ConnectDB {
-    @Value("${spring.datasource.url}")
-    private String DB_url;
-    @Value("postgres")
-    private String user;
-    //@Value("${spring.datasource.password}")
-    private String password="5240";
-    @Value("${test.test}")
-    private String str1;
-    @Value("${test.test}")
-    public String str2;
+
     private Statement statement;
 
-    public ConnectDB() {
-        log.info(DB_url);
-        log.info(user);
-        log.info(password);
-        log.info(str1);
-        log.info(str2);
+    @Autowired
+    public ConnectDB(ConConfig conConfig) {
+
         try {
             this.statement = DriverManager.getConnection(
-                            this.DB_url,
-                            this.user,
-                            this.password)
+                            conConfig.getDB_url(),
+                            conConfig.getUser(),
+                            conConfig.getPassword())
                     .createStatement();
+
         } catch (SQLException sqlException) {
             log.error(sqlException);
         }
+        log.info("conDB created");
     }
 
 
@@ -57,9 +51,10 @@ public class ConnectDB {
         }
     }
 
-    public void update(String sqlUpdate) {
+    public void update(StringSQL sqlString) {
+        String sql = sqlString.getStringSQL();
         try {
-            this.statement.executeUpdate(sqlUpdate);
+            this.statement.executeUpdate(sql);
         } catch (SQLException sqlException) {
             log.error(sqlException);
         }

@@ -1,12 +1,15 @@
 package ru.project.IStudyEnglish.domen.DTO.Task;
 
 import lombok.extern.log4j.Log4j2;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import ru.project.IStudyEnglish.infrastructure.SourceUserTask;
 import ru.project.IStudyEnglish.infrastructure.repository.PostqresDB.DAO.UserTaskDAO;
 
 import java.sql.Timestamp;
 
 @Log4j2
+@Component
 public class UserTask {
     private int id;
     private int userId;
@@ -16,14 +19,17 @@ public class UserTask {
     private Timestamp timeLastRepetition;
     private Timestamp timeNextRepetition;
     private int correctAttemptsCounter;
-    private SourceUserTask data = new UserTaskDAO(); //TODO тут быть не должно
+    private SourceUserTask data; //TODO тут быть не должно
 
 
     public UserTask() {
 
     }
 
-    public UserTask(UserTaskDAO userTaskDAO){
+    @Autowired
+    public UserTask(UserTaskDAO userTaskDAO,Task task){
+        this.data = userTaskDAO;
+        this.task = task;
 
     }
 
@@ -46,7 +52,7 @@ public class UserTask {
         this.timeLastRepetition = data.getTimeLastRepetition();
         this.timeNextRepetition = data.getTimeNextRepetition();
         this.correctAttemptsCounter = Integer.valueOf(data.getCorrectAttemptsCounter());
-        this.task = new Task(data.getIdTask());
+        this.task.fillOnId(data.getIdTask());
     }
 
     public void update(Boolean answerIsCorrect) {

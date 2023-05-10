@@ -1,8 +1,11 @@
 package ru.project.IStudyEnglish.infrastructure.repository.PostqresDB.DAO;
 
 import lombok.extern.log4j.Log4j2;
+import org.springframework.beans.factory.annotation.Autowired;
 import ru.project.IStudyEnglish.infrastructure.SourceUser;
+import ru.project.IStudyEnglish.infrastructure.repository.PostqresDB.ConnectDB;
 import ru.project.IStudyEnglish.infrastructure.repository.PostqresDB.WorkerWithPostgresDB;
+import ru.project.IStudyEnglish.infrastructure.repository.StringSQL;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -18,8 +21,15 @@ public class UserDAO implements SourceUser, WorkerWithPostgresDB {
     private Timestamp blockedBeforeToThisTime;
 
     private ResultSet resultSet;
+    private ConnectDB conDB;
 
     public UserDAO() {
+
+    }
+
+    @Autowired
+    public UserDAO(ConnectDB conDB) {
+        this.conDB = conDB;
 
     }
 
@@ -40,7 +50,7 @@ public class UserDAO implements SourceUser, WorkerWithPostgresDB {
 
     private void parsingDateFromDB(String sql) {
         try {
-            resultSet = read(sql);
+            resultSet = read(new StringSQL(sql),conDB);;
 
             while (resultSet.next()) {
                 this.id = Integer.valueOf(resultSet.getString("id"));

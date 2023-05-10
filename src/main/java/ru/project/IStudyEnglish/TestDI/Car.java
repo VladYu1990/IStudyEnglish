@@ -2,6 +2,7 @@ package ru.project.IStudyEnglish.TestDI;
 
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Log4j2
@@ -13,7 +14,12 @@ public class Car {
     private wheel wheel4;
 
     private Color color;
-    private String brand = "BMW";
+
+    @Value("${car.brand}")
+    private String brand;
+
+    @Value("${test.test}")
+    private String str;
 
 
     @Autowired
@@ -23,7 +29,12 @@ public class Car {
         this.wheel2 = wheel2;
         this.wheel3 = wheel3;
         this.wheel4 = wheel4;
-        log.error("car " + this.color + " created");
+        log.error("car " + this.color +" " + this.brand + str + " created");
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
+        log.error("car " + this.color +" " + this.brand + str + " created");
     }
 
     public wheel getWheel1() {
@@ -48,5 +59,9 @@ public class Car {
 
     public String getBrand() {
         return brand;
+    }
+
+    public String getStr() {
+        return str;
     }
 }

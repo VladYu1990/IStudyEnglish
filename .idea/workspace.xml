@@ -7,23 +7,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7fbeed74-25ef-4154-a687-4792b9d50a21" name="Changes" comment="ConnectDB doesn't work with value">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/ConfigurationSpring.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/TestDI/Car.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/TestDI/Color.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/TestDI/ControllerTest1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/TestDI/rim.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/TestDI/wheel.java" afterDir="false" />
+    <list default="true" id="7fbeed74-25ef-4154-a687-4792b9d50a21" name="Changes" comment="+ TestDI">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/infrastructure/repository/PostqresDB/ConConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/infrastructure/repository/StringSQL.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/IStudyEnglish_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/IStudyEnglish_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/app.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/app2.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/app2.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/TestDI/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/TestDI/Car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/TestDI/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/TestDI/Color.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/TestDI/ControllerTest1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/TestDI/ControllerTest1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/TestDI/rim.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/TestDI/rim.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/TestDI/wheel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/TestDI/wheel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/controllers/rest/NextTaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/controllers/rest/NextTaskController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/domen/DTO/Answer/Answer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/domen/DTO/Answer/Answer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/domen/DTO/Answer/ListAnswers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/domen/DTO/Answer/ListAnswers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/domen/DTO/Questions/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/domen/DTO/Questions/Question.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/domen/DTO/Task/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/domen/DTO/Task/Task.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/domen/DTO/Task/UserTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/domen/DTO/Task/UserTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/infrastructure/SourceAnswer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/infrastructure/SourceAnswer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/infrastructure/SourceTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/infrastructure/SourceTask.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/infrastructure/repository/PostqresDB/ConnectDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/infrastructure/repository/PostqresDB/ConnectDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/infrastructure/repository/PostqresDB/DAO/AnswerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/infrastructure/repository/PostqresDB/DAO/AnswerDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/infrastructure/repository/PostqresDB/DAO/QuestionDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/infrastructure/repository/PostqresDB/DAO/QuestionDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/infrastructure/repository/PostqresDB/DAO/TaskDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/infrastructure/repository/PostqresDB/DAO/TaskDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/infrastructure/repository/PostqresDB/DAO/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/infrastructure/repository/PostqresDB/DAO/UserDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/infrastructure/repository/PostqresDB/DAO/UserTaskDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/infrastructure/repository/PostqresDB/DAO/UserTaskDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/infrastructure/repository/PostqresDB/WorkerWithPostgresDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/infrastructure/repository/PostqresDB/WorkerWithPostgresDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,7 +188,7 @@
       <workItem from="1681886139297" duration="603000" />
       <workItem from="1683000217756" duration="2450000" />
       <workItem from="1683123723168" duration="21033000" />
-      <workItem from="1683653546330" duration="7921000" />
+      <workItem from="1683653546330" duration="23048000" />
     </task>
     <task id="LOCAL-00001" summary="restart project">
       <created>1672068848554</created>
@@ -290,7 +302,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683650769655</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="+ TestDI">
+      <created>1683689144092</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1683689144092</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -344,7 +363,8 @@
     <MESSAGE value="many updates in different places" />
     <MESSAGE value="- SourceTaskForRepetition.java&#10;- SourceData.java&#10;don't use" />
     <MESSAGE value="ConnectDB doesn't work with value" />
-    <option name="LAST_COMMIT_MESSAGE" value="ConnectDB doesn't work with value" />
+    <MESSAGE value="+ TestDI" />
+    <option name="LAST_COMMIT_MESSAGE" value="+ TestDI" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -357,8 +377,64 @@
           <properties class="java.lang.NumberFormatException" package="java.lang" />
           <option name="timeStamp" value="4" />
         </breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/controllers/rest/NextTaskController.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/infrastructure/repository/PostqresDB/DAO/UserTaskDAO.java</url>
+          <line>60</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/infrastructure/repository/PostqresDB/DAO/UserTaskDAO.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/domen/DTO/Task/Task.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/infrastructure/repository/PostqresDB/DAO/AnswerDAO.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/domen/DTO/Answer/ListAnswers.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/infrastructure/repository/PostqresDB/DAO/QuestionDAO.java</url>
+          <line>22</line>
+          <properties class="ru.project.IStudyEnglish.infrastructure.repository.PostqresDB.DAO.QuestionDAO" method="&lt;init&gt;">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/infrastructure/repository/PostqresDB/ConnectDB.java</url>
+          <line>53</line>
+          <properties class="ru.project.IStudyEnglish.infrastructure.repository.PostqresDB.ConnectDB" method="update">
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="java.lang.String" memberName="value" />
+      </pinned-members>
+    </pin-to-top-manager>
+  </component>
+  <component name="XPathView.XPathProjectComponent">
+    <history />
+    <find-history />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
