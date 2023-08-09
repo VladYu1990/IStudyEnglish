@@ -4,7 +4,7 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
-import ru.project.IStudyEnglish.learning_module.entity.User.User;
+import ru.project.IStudyEnglish.user_module.entity.User.User;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -22,7 +22,7 @@ public class UserMapper  implements RowMapper<User> {
     @Override
     public User mapRow(ResultSet resultSet, int rowNum) throws SQLException {
 
-        this.user.setId(resultSet.getInt(""));
+        this.user.setId(resultSet.getInt("id"));
         this.user.setLogin(resultSet.getString("login"));
         this.user.setPassword(resultSet.getString("password"));
 

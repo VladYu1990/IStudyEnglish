@@ -3,7 +3,7 @@ package ru.project.IStudyEnglish.learning_module.service;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Component;
 import ru.project.IStudyEnglish.learning_module.entity.Answer.Answer;
-import ru.project.IStudyEnglish.learning_module.repository.ListAnswers.ListAnswersDAO;
+import ru.project.IStudyEnglish.learning_module.repository.Answer.AnswersListDAO;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -15,18 +15,13 @@ public class BuilderListAnswers {
 
     private List<Answer> answerList = new ArrayList<Answer>();
 
-    private ListAnswersDAO listAnswersDAO;
+    private AnswersListDAO answersListDAO;
 
     public BuilderListAnswers() {
 
     }
 
-    public List<Answer> getAnswersList(String answer){
-        this.answerList.addAll(
-                listAnswersDAO.getList(answer));
-        randomizeList(this.answerList);
-        return answerList;
-    }
+
 
     private void randomizeList(List list){
         Collections.shuffle(list);

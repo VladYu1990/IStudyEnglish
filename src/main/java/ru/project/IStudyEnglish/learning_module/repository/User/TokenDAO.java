@@ -3,7 +3,7 @@ package ru.project.IStudyEnglish.learning_module.repository.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
-import ru.project.IStudyEnglish.learning_module.entity.User.Token;
+import ru.project.IStudyEnglish.user_module.entity.User.Token;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,33 +30,47 @@ public class TokenDAO {
     }
 
     public Token getToken(String tokenStr){
-        ArrayList<String> stringArrayList = new ArrayList<>();
-        stringArrayList.add(tokenStr);
-        return getToken(stringArrayList).get(0);
+        String sql =
+                "SELECT * " +
+                        "FROM  user_token " +
+                        "where tokenstr in (?) ";
+        return jdbcTemplate.query(sql, new Object[]{tokenStr}, tokenMapper).get(0);
     }
 
     public List<Token> getToken(ArrayList<String> tokenStr){
+        String s = tokenStr.toString().
+                replace("[","'").
+                replace("]","'");
+
         String sql =
                 "SELECT * " +
-                        "FROM  user_token" +
-                        "where tokenstr = (?) ";
-        return jdbcTemplate.query(sql, new Object[]{tokenStr}, tokenMapper);
+                        "FROM  user_token " +
+                        "where tokenstr in (?) ";
+        return jdbcTemplate.query(sql, new Object[]{s}, tokenMapper);
     }
 
     public void save(Token token){
-        List<Token> tokenList = new ArrayList<>();
-        tokenList.add(token);
-        save(tokenList);
+        jdbs(createSql(token));
     }
 
     public void save(List<Token> tokenList) {
         String sql = "";
         for (int i = 0; tokenList.size() < i; i++) {
-            sql = sql + "insert into user_token (id_user, tokenstr,  token_date_created, token_date_die) " +
-                    "values ('" + tokenList.get(i).getIdUser() + "','"
-                    + tokenList.get(i).getTokenStr() + "','"
-                    + tokenList.get(i).getDateCreated() +"','"
-                    + tokenList.get(i).getDateDie() + "');";
+            sql = sql + createSql(tokenList.get(i));
         }
+        jdbs(sql);
     }
+
+    private String createSql(Token token){
+        return "insert into user_token (id_user, tokenstr,  token_date_created, token_date_die) " +
+                "values ('" + token.getIdUser() + "','"
+                + token.getTokenStr() + "','"
+                + token.getDateCreated() +"','"
+                + token.getDateDie() + "');";
+    }
+
+    private void jdbs(String sql){
+        jdbcTemplate.update(sql);
+    }
+
 }

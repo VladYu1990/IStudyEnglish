@@ -4,7 +4,7 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
-import ru.project.IStudyEnglish.learning_module.entity.User.Token;
+import ru.project.IStudyEnglish.user_module.entity.User.Token;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

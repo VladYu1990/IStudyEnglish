@@ -7,115 +7,79 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7fbeed74-25ef-4154-a687-4792b9d50a21" name="Changes" comment="+ DI on most of application">
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/SpringConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/dictionary_module/BuilderWord.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/dictionary_module/controller/WordController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/dictionary_module/entity/Article.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/dictionary_module/entity/Rule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/dictionary_module/entity/Source.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/dictionary_module/entity/Word.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/dictionary_module/repository/SourceWord.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/dictionary_module/repository/WordDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/dictionary_module/repository/WordMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/controller/Validators/ValidationLoginPassword.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/controller/Validators/ValidatorToken.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/controller/rest/TaskController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/controller/rest/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/controller/rest/UserTaskController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/entity/Answer/Answer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/entity/Answer/AnswerOnQuestion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/entity/Example.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/entity/Questions/Question.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/entity/SourcesEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/entity/Task/Task.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/entity/Task/TranslationDirection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/entity/TypeSource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/entity/User/Token.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/entity/User/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/entity/UserTask/UserTask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/entity/UserTask/UserTaskStatusEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/Answer/AnswerDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/Answer/AnswerMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/Answer/SourceAnswer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/ListAnswers/ListAnswersDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/ListAnswers/ListAnswersMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/Task/SourceTask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/Task/TaskDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/User/DirectorUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/User/SourceUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/User/TokenDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/User/TokenMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/User/UserDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/User/UserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/UserTask/SourceUserTask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/UserTask/UserTaskDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/UserTask/UserTaskMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/BuilderAnswer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/BuilderListAnswers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/BuilderTask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/BuilderToken.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/BuilderUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/BuilderUserTask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/CreatorTask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/CreatorToken.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/CreatorUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/CreatorUserTack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/CreatorUserTask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/DirectorBuildUserTask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/DirectorBuilderQuestion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/DirectorBuilderTask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/DirectorBuilderUser.java" afterDir="false" />
+    <list default="true" id="7fbeed74-25ef-4154-a687-4792b9d50a21" name="Changes" comment="optimization">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/dictionary_module/entity/Language.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/dictionary_module/entity/PartOfSpeech.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/dictionary_module/service/BuilderSource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/dictionary_module/service/CreatorSource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/dictionary_module/service/CreatorWord.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/controller/rest/AnswerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/entity/Answer/TypeAnswer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/Answer/AnswersDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/Answer/AnswersListDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/Answer/ListAnswersMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/BuilderAnswersList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/CreatorAnswer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/CreatorAnswersList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/object/UserTaskDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/like_is_module/controller/SimilarAnswersController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/like_is_module/service/CreatorOfSimilarAnswers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/user_module/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/IStudyEnglish_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/IStudyEnglish_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_05_2023,_15_41_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_05_2023,_15_42_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_05_2023__15_41__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_05_2023__15_42__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_05_05_2023,_21_19_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_05_05_2023__21_19__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_05_2023,_21_19_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_05_2023__21_19__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/app.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/app2.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/app2.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/TestDI/Car.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/TestDI/Color.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/TestDI/ControllerTest1.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/TestDI/rim.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/TestDI/wheel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/controllers/Validators/ValidationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/controller/Validators/ValidationContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/controllers/Validators/Validator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/controller/Validators/Validator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/controllers/Validators/ValidatorToken.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/controllers/rest/NextTaskController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/controllers/rest/ReturnAnswerOnTaskController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/domen/DTO/Answer/Answer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/domen/DTO/Answer/ListAnswers.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/domen/DTO/Questions/Question.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/domen/DTO/Task/Task.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/domen/DTO/Task/TranslationDirection.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/domen/DTO/Task/TypeTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/entity/Task/TypeTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/domen/DTO/Task/UserTask.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/domen/DTO/Task/UserTaskStatusEnum.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/domen/DTO/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/infrastructure/SourceAnswer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/infrastructure/SourceQuestion.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/infrastructure/SourceTask.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/infrastructure/SourceUser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/infrastructure/SourceUserTask.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/infrastructure/repository/PostqresDB/ConConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/infrastructure/repository/PostqresDB/ConnectDB.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/infrastructure/repository/PostqresDB/DAO/AnswerDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/infrastructure/repository/PostqresDB/DAO/QuestionDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/infrastructure/repository/PostqresDB/DAO/TaskDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/infrastructure/repository/PostqresDB/DAO/UserDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/infrastructure/repository/PostqresDB/DAO/UserTaskDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/infrastructure/repository/PostqresDB/WorkerWithPostgresDB.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/infrastructure/repository/StringSQL.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/dictionary_module/BuilderWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/dictionary_module/BuilderWord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/dictionary_module/controller/WordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/dictionary_module/controller/WordController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/dictionary_module/entity/Source.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/dictionary_module/entity/Source.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/dictionary_module/entity/Word.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/dictionary_module/entity/Word.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/dictionary_module/repository/SourceWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/dictionary_module/repository/SourceWord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/dictionary_module/repository/WordDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/dictionary_module/repository/WordDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/dictionary_module/repository/WordMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/dictionary_module/repository/WordMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/controller/Validators/ValidatorToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/controller/Validators/ValidatorToken.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/controller/rest/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/controller/rest/TaskController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/controller/rest/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/user_module/controller/UserController2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/controller/rest/UserTaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/controller/rest/UserTaskController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/entity/Answer/Answer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/entity/Answer/Answer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/entity/Task/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/entity/Task/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/entity/TypeSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/entity/TypeSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/entity/User/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/user_module/entity/User/Token.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/entity/User/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/user_module/entity/User/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/entity/UserTask/UserTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/entity/UserTask/UserTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/entity/UserTask/UserTaskStatusEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/entity/UserTask/UserTaskStatusEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/Answer/AnswerDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/Answer/AnswerMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/Answer/AnswerMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/Answer/SourceAnswer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/ListAnswers/ListAnswersDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/ListAnswers/ListAnswersMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/Task/SourceTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/Task/SourceTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/Task/TaskDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/Task/TaskDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/Task/TaskMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/Task/TaskMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/User/DirectorUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/User/DirectorUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/User/TokenDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/User/TokenDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/User/TokenMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/User/TokenMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/User/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/User/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/User/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/User/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/UserTask/SourceUserTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/UserTask/SourceUserTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/UserTask/UserTaskDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/UserTask/UserTaskDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/UserTask/UserTaskMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/UserTask/UserTaskMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/BuilderAnswer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/BuilderAnswer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/BuilderListAnswers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/BuilderListAnswers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/BuilderTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/BuilderTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/BuilderToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/BuilderToken.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/BuilderUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/BuilderUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/BuilderUserTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/BuilderUserTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/CreatorTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/CreatorTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/CreatorToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/CreatorToken.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/CreatorUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/CreatorUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/CreatorUserTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/CreatorUserTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/DirectorBuildUserTask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/DirectorBuilderQuestion.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/DirectorBuilderTask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/DirectorBuilderUser.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/SQLCreateTable.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/SQLCreateTable.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,8 +96,8 @@
         <option value="Record" />
         <option value="AnnotationType" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -147,7 +111,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/pom.xml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/entity/User/User.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/user_module/entity/User/User.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -197,11 +161,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
-      <recent name="ru.project.IStudyEnglish" />
+      <recent name="ru.project.IStudyEnglish.dictionary_module.service" />
       <recent name="ru.project.IStudyEnglish.learning_module.service" />
+      <recent name="ru.project.IStudyEnglish.like_is_module.repository" />
+      <recent name="ru.project.IStudyEnglish" />
       <recent name="ru.project.IStudyEnglish.Application_UseCase" />
-      <recent name="ru.project.IStudyEnglish.infrastructure" />
-      <recent name="ru.project.IStudyEnglish.repository" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources" />
@@ -217,6 +181,8 @@
       <recent name="" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ru.project.IStudyEnglish.like_is_module.repository" />
+      <recent name="ru.project.IStudyEnglish.like_is_module.repository.Answer" />
       <recent name="ru.project.IStudyEnglish.infrastructure.repository.PostqresDB" />
     </key>
   </component>
@@ -228,6 +194,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="generated-requests | #16" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="16" requestIdentifier="#16" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <configuration name="Main" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <option name="ACTIVE_PROFILES" />
       <module name="IStudyEnglish" />
@@ -238,8 +207,14 @@
     </configuration>
     <list>
       <item itemvalue="Application.ApkController" />
+      <item itemvalue="HTTP Request.generated-requests | #16" />
       <item itemvalue="Spring Boot.Main" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="HTTP Request.generated-requests | #16" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -291,7 +266,11 @@
       <workItem from="1691407648470" duration="13763000" />
       <workItem from="1691494528971" duration="707000" />
       <workItem from="1691580185050" duration="3612000" />
-      <workItem from="1691590704111" duration="9255000" />
+      <workItem from="1691590704111" duration="31868000" />
+      <workItem from="1691909174340" duration="11186000" />
+      <workItem from="1692185372306" duration="5956000" />
+      <workItem from="1695616007509" duration="37359000" />
+      <workItem from="1695891514323" duration="713000" />
     </task>
     <task id="LOCAL-00001" summary="restart project">
       <created>1672068848554</created>
@@ -419,7 +398,21 @@
       <option name="project" value="LOCAL" />
       <updated>1683704813500</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="epic changes comparable to the new version">
+      <created>1691600114404</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1691600114404</updated>
+    </task>
+    <task id="LOCAL-00020" summary="add TaskMapper">
+      <created>1691600220353</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1691600220353</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -475,9 +468,115 @@
     <MESSAGE value="ConnectDB doesn't work with value" />
     <MESSAGE value="+ TestDI" />
     <MESSAGE value="+ DI on most of application" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ DI on most of application" />
+    <MESSAGE value="epic changes comparable to the new version" />
+    <MESSAGE value="add TaskMapper" />
+    <MESSAGE value="optimization" />
+    <option name="LAST_COMMIT_MESSAGE" value="optimization" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/UserTask/UserTaskDAO.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/CreatorUserTask.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/CreatorUser.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/CreatorUser.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/CreatorToken.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="57" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/like_is_module/service/CreatorOfSimilarAnswers.java</url>
+          <line>76</line>
+          <option name="timeStamp" value="90" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/like_is_module/service/CreatorOfSimilarAnswers.java</url>
+          <line>72</line>
+          <option name="timeStamp" value="91" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/like_is_module/service/CreatorOfSimilarAnswers.java</url>
+          <line>70</line>
+          <option name="timeStamp" value="92" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/controller/rest/UserTaskController.java</url>
+          <line>73</line>
+          <option name="timeStamp" value="122" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/CreatorUserTask.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="123" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/UserTask/UserTaskDAO.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="134" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/UserTask/UserTaskDAO.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="135" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/UserTask/UserTaskDAO.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="136" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/controller/rest/UserTaskController.java</url>
+          <line>81</line>
+          <option name="timeStamp" value="138" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/controller/rest/UserTaskController.java</url>
+          <line>86</line>
+          <option name="timeStamp" value="139" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/Task/TaskDAO.java</url>
+          <line>67</line>
+          <option name="timeStamp" value="140" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/Task/TaskDAO.java</url>
+          <line>64</line>
+          <option name="timeStamp" value="141" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/Task/TaskDAO.java</url>
+          <line>92</line>
+          <option name="timeStamp" value="143" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/repository/Task/TaskDAO.java</url>
+          <line>70</line>
+          <properties class="ru.project.IStudyEnglish.learning_module.repository.Task.TaskDAO" method="createSQL">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="142" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="java.lang.String" memberName="value" />

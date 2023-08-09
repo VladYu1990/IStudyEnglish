@@ -4,10 +4,10 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
-import ru.project.IStudyEnglish.learning_module.service.DirectorBuilderTask;
-import ru.project.IStudyEnglish.learning_module.service.DirectorBuilderUser;
 import ru.project.IStudyEnglish.learning_module.entity.UserTask.UserTask;
 import ru.project.IStudyEnglish.learning_module.entity.UserTask.UserTaskStatusEnum;
+import ru.project.IStudyEnglish.learning_module.service.BuilderTask;
+import ru.project.IStudyEnglish.learning_module.service.BuilderUser;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -17,29 +17,25 @@ import java.sql.SQLException;
 public class UserTaskMapper implements RowMapper<UserTask> {
 
     private UserTask userTask = new UserTask();
-    private DirectorBuilderUser directorBuilderUser;
-    private DirectorBuilderTask directorBuilderTask;
-
-    public UserTaskMapper() {
-    }
+    BuilderUser builderUser;
+    BuilderTask builderTask;
 
     @Autowired
-    public UserTaskMapper(DirectorBuilderUser directorBuilderUser, DirectorBuilderTask directorBuilderTask) {
-        this.directorBuilderUser = directorBuilderUser;
-        this.directorBuilderTask = directorBuilderTask;
+    public UserTaskMapper(BuilderUser builderUser, BuilderTask builderTask) {
+        this.builderUser = builderUser;
+        this.builderTask = builderTask;
     }
+
 
     @Override
     public UserTask mapRow(ResultSet resultSet, int rowNum) throws SQLException {
         userTask.setId(resultSet.getInt("id"));
         userTask.setUser(
-                directorBuilderUser.getOnId(
-                        resultSet.getInt("user_code")));
+                        builderUser.getUser(resultSet.getInt("user_code")));
         userTask.setTask(
-                directorBuilderTask.getOnId(
-                        resultSet.getInt("id_task")));
-        userTask.setStatus(UserTaskStatusEnum.cast(
-                resultSet.getInt("status")));
+                        builderTask.get(resultSet.getInt("id_task")));
+        userTask.setStatus(UserTaskStatusEnum.valueOf(
+                resultSet.getString("status")));
         userTask.setCorrectAttemptsCounter(resultSet.getInt("correct_attempts_counter"));
         userTask.setTimeLastRepetition(resultSet.getTimestamp("time_last_repetition"));
         userTask.setTimeNextRepetition(resultSet.getTimestamp("time_next_repetition"));

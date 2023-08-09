@@ -3,21 +3,36 @@ package ru.project.IStudyEnglish.learning_module.entity.Answer;
 public class Answer {
     // цель: ответ на конкретный вопрос
     // TODO Для этой цели завести справочник ответов :цель объекта это хранение возможных ответов, например "Да","облако","костыль"
-    private String value = "тестовый ответ";
-    private boolean correct;
+    private int id;
+    private String value;
 
-    public Answer() {
-    }
+    private TypeAnswer typeAnswer;
 
-    public Answer(String value,boolean correct){
+    public Answer(int id, String value, TypeAnswer typeAnswer) {
+        this.id = id;
         this.value = value;
-        this.correct = correct;
-
+        this.typeAnswer = typeAnswer;
     }
 
     public Answer(int id, String value) {
         //TODO получаем из бд
         this.value = value;
+    }
+
+    public Answer() {
+
+    }
+
+    //TODO delete
+    public Answer(String answer_true, boolean b) {
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getValue() {
@@ -26,5 +41,13 @@ public class Answer {
 
     public void setValue(String value) {
         this.value = value;
+    }
+
+    public TypeAnswer getTypeAnswer() {
+        return typeAnswer;
+    }
+
+    public void setTypeAnswer(TypeAnswer typeAnswer) {
+        this.typeAnswer = typeAnswer;
     }
 }

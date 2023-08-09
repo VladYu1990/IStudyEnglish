@@ -1,4 +1,4 @@
-package ru.project.IStudyEnglish.learning_module.entity.User;
+package ru.project.IStudyEnglish.user_module.entity.User;
 
 public class User {
     private int id=1;

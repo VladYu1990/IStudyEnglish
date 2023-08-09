@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 import ru.project.IStudyEnglish.dictionary_module.entity.Word;
-import ru.project.IStudyEnglish.dictionary_module.repository.WordMapper;
-import ru.project.IStudyEnglish.dictionary_module.repository.SourceWord;
+
+import java.util.List;
 
 @Component
 public class WordDAO implements SourceWord {
@@ -20,11 +20,54 @@ public class WordDAO implements SourceWord {
     }
 
     @Override
-    public Word getOnId(int id) {
+    public Word get(int id) {
 
-        String sql = "SELECT * FROM words WHERE id in (?) limit 1";
-        //TODO повторяется
+        String sql = "SELECT * FROM words WHERE id = (?) limit 1";
         return jdbcTemplate.query(sql, new Object[]{id}, wordMapper)
                 .stream().findAny().orElse(null);
+    }
+
+    @Override
+    public List<Word> get() {
+        String sql = "SELECT * FROM words";
+        //TODO повторяется
+        return jdbcTemplate.query(sql,wordMapper);
+    }
+
+    public void save(Word word) {
+        jdbsUpdate(createSQL(word));
+    }
+
+    public void save(List<Word> wordList) {
+
+        for (int i = 0; i < wordList.size(); i++) {
+            jdbsUpdate(createSQL(wordList.get(i)));
+        }
+    }
+
+    private String createSQL(Word word) {
+        String sql =
+                "insert into words  (" +
+                        "id," +
+                        "rus_text, " +
+                        "eng_text, " +
+                        "rus_sound, " +
+                        "eng_sound, " +
+                        "part_of_speech) " +
+                        "values ( " +
+                        "nextval('id_words')," +
+                        "'" + word.getRusTextStr() + "'," +
+                        "'" + word.getEngTextStr() + "'," +
+                        "'" + word.getRusSoundStr() + "'," +
+                        "'" + word.getEngSoundStr() + "'," +
+                        "'" + word.getPartOfSpeech() + "');";
+        return sql;
+    }
+
+    private void jdbsUpdate(String sql){
+        try {
+            jdbcTemplate.update(sql);
+        }
+        catch (Exception e){}
     }
 }

@@ -3,7 +3,7 @@ package ru.project.IStudyEnglish.learning_module.entity.UserTask;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Component;
 import ru.project.IStudyEnglish.learning_module.entity.Task.Task;
-import ru.project.IStudyEnglish.learning_module.entity.User.User;
+import ru.project.IStudyEnglish.user_module.entity.User.User;
 
 import java.sql.Timestamp;
 
@@ -13,59 +13,73 @@ import static ru.project.IStudyEnglish.learning_module.entity.UserTask.UserTaskS
 @Component
 public class UserTask {
     private int id;
-    private int idUser;
-    private int idTask;
+    private User user;
+    private Task task;
     private UserTaskStatusEnum status;
     private Timestamp timeLastRepetition;
     private Timestamp timeNextRepetition;
+    private Timestamp timeCreated;
+    private Timestamp timeUpdated;
     private int correctAttemptsCounter;
 
 
     public UserTask() {
     }
 
-    public UserTask(User user,Task task){
-        this.idUser = user.getId();
-        this.idTask = task.getId();
+    public UserTask(int id, User user, Task task, UserTaskStatusEnum status, Timestamp timeLastRepetition, Timestamp timeNextRepetition, Timestamp timeCreated, Timestamp timeUpdated, int correctAttemptsCounter) {
+        //генерит таску из хранилища
+        this.id = id;
+        this.user = user;
+        this.task = task;
+        this.status = status;
+        this.timeLastRepetition = timeLastRepetition;
+        this.timeNextRepetition = timeNextRepetition;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.correctAttemptsCounter = correctAttemptsCounter;
+    }
+
+    public UserTask(User user, Task task){
+        //используется для создания новой таски
+        this.user = user;
+        this.task = task;
         fill();
     }
 
-    public UserTask(int idUser,int idTask){
-        this.idUser = idUser;
-        this.idTask = idTask;
-        fill();
-    }
 
     private void fill(){
         this.status = readyToExplore;
         this.timeLastRepetition = new Timestamp(System.currentTimeMillis());
         this.timeNextRepetition = new Timestamp(System.currentTimeMillis());
+        this.timeCreated = new Timestamp(System.currentTimeMillis());
+        this.timeUpdated = new Timestamp(System.currentTimeMillis());
         this.correctAttemptsCounter = 0;
     }
 
+    public User getUser() {
+        return user;
+    }
 
-     public int getId() {
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Task getTask() {
+        return task;
+    }
+
+    public void setTask(Task task) {
+        this.task = task;
+
+    }
+
+
+    public int getId() {
         return id;
     }
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public int getIdUser() {
-        return idUser;
-    }
-
-    public void setIdUser(int idUser) {
-        this.idUser = idUser;
-    }
-
-    public int getIdTask() {
-        return idTask;
-    }
-
-    public void setIdTask(int idTask) {
-        this.idTask = idTask;
     }
 
     public UserTaskStatusEnum getStatus() {
@@ -90,6 +104,22 @@ public class UserTask {
 
     public void setTimeNextRepetition(Timestamp timeNextRepetition) {
         this.timeNextRepetition = timeNextRepetition;
+    }
+
+    public Timestamp getTimeCreated() {
+        return timeCreated;
+    }
+
+    public void setTimeCreated(Timestamp timeCreated) {
+        this.timeCreated = timeCreated;
+    }
+
+    public Timestamp getTimeUpdated() {
+        return timeUpdated;
+    }
+
+    public void setTimeUpdated(Timestamp timeUpdated) {
+        this.timeUpdated = timeUpdated;
     }
 
     public int getCorrectAttemptsCounter() {

@@ -1,4 +1,4 @@
-package ru.project.IStudyEnglish.learning_module.entity.User;
+package ru.project.IStudyEnglish.user_module.entity.User;
 
 import org.apache.commons.lang3.RandomStringUtils;
 
@@ -13,10 +13,12 @@ public class Token {
 
 
     public Token() {
-        Long timeLifeToken = Long.valueOf(30*24*60*60*1000); //30 days
-        this.generateTokenStr();
-        this.dateCreated = new Timestamp(System.currentTimeMillis());
-        this.dateDie = new Timestamp(System.currentTimeMillis() + timeLifeToken);
+        create();
+    }
+
+    public Token(User user){
+        this.setIdUser(user.getId());
+        create();
     }
 
     public Token(String tokenStr) {
@@ -27,6 +29,13 @@ public class Token {
         this.tokenStr = tokenStr;
         this.dateCreated = dateCreated;
         this.dateDie = dateDie;
+    }
+
+    private void create(){
+        Long timeLifeToken = Long.valueOf(30*24*60*60*1000); //30 days
+        this.generateTokenStr();
+        this.dateCreated = new Timestamp(System.currentTimeMillis());
+        this.dateDie = new Timestamp(System.currentTimeMillis() + timeLifeToken);
     }
 
     private void generateTokenStr(){

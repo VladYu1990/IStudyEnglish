@@ -6,12 +6,11 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import ru.project.IStudyEnglish.learning_module.service.BuilderTask;
-import ru.project.IStudyEnglish.learning_module.service.BuilderUser;
-import ru.project.IStudyEnglish.learning_module.service.BuilderUserTask;
+import ru.project.IStudyEnglish.dictionary_module.service.BuilderSource;
+import ru.project.IStudyEnglish.learning_module.entity.TypeSource;
 import ru.project.IStudyEnglish.learning_module.entity.UserTask.UserTask;
-import ru.project.IStudyEnglish.learning_module.service.BuilderToken;
-import ru.project.IStudyEnglish.learning_module.service.CreatorUserTask;
+import ru.project.IStudyEnglish.learning_module.service.*;
+import ru.project.IStudyEnglish.learning_module.service.object.UserTaskDTO;
 
 @RestController
 @RequestMapping("/v1/{token}/user_tasks/")
@@ -29,36 +28,69 @@ public class UserTaskController {
     private BuilderToken builderToken;
     @Autowired
     CreatorUserTask creatorUserTask;
+    @Autowired
+    BuilderAnswersList builderAnswersList;
+
+    @Autowired
+    BuilderAnswer builderAnswer;
+
+    @Autowired
+    BuilderSource builderSource;
 
 
-    @RequestMapping("/create/{source}/{id_source}")
-    public String createUserTask(@PathVariable String tokenStr, @PathVariable String source,@PathVariable int idSource) {
+    @RequestMapping("/create/{source}/{id_source}/")
+    public String createUserTask(@PathVariable String token, @PathVariable String source,@PathVariable int id_source) {
         //TODO
+
 
         creatorUserTask.create(
                 builderUser.getUser(
-                        builderToken.getToken(tokenStr)),
-
-                builderTask.get(source, Integer.parseInt(Integer.toString(idSource))));
+                        builderToken.getToken(token)),
+                builderTask.get(
+                        builderSource.get(source,id_source)));
 
         //получить юзера
         // найти таску по слову и источнику
         // создаю юзер таску
         // вернуть ок
+        log.info(source+" "+id_source);
+        return "ok";
+    }
 
+    @RequestMapping("/create/all/")
+    public String createUserTaskAll(@PathVariable String token) {
+        //TODO
+
+        creatorUserTask.create(
+                builderUser.getUser(
+                        builderToken.getToken(token)),
+
+                builderTask.get(builderSource.get(TypeSource.word)));
+
+        //получить юзера
+        // найти таску по слову и источнику
+        // создаю юзер таску
+        // вернуть ок
+        log.info("all");
         return "ok";
     }
 
 
     @RequestMapping("/get/next/")
-    public UserTask getNextUserTask(@PathVariable String tokenStr) {
+    public UserTaskDTO getNextUserTask(@PathVariable String token) {
         //проверить токен
-        return
-                builderUserTask.getNext(
-                    builderUser.getUser(
-                        builderToken.getToken(tokenStr)));
+        UserTask userTask = builderUserTask.getNext(
+                builderUser.getUser(
+                        builderToken.getToken(token)));
+
+//TODO
+        UserTaskDTO userTaskDTO = new UserTaskDTO(userTask,
+                builderAnswersList.get(userTask.getTask().getTrueAnswer()),
+                builderAnswer.get(userTask.getTask().getTrueAnswer()).getValue());
+        log.info("дернули");
 
 
+        return userTaskDTO;
     }
 
     @RequestMapping("/get/{id_user_task}/")

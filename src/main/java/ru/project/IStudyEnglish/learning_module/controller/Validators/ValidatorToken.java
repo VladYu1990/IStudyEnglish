@@ -1,6 +1,6 @@
 package ru.project.IStudyEnglish.learning_module.controller.Validators;
 
-import ru.project.IStudyEnglish.learning_module.entity.User.Token;
+import ru.project.IStudyEnglish.user_module.entity.User.Token;
 
 import java.sql.Timestamp;
 

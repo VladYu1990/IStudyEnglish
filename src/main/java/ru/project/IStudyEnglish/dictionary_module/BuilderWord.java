@@ -2,10 +2,12 @@ package ru.project.IStudyEnglish.dictionary_module;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import ru.project.IStudyEnglish.learning_module.entity.User.User;
 import ru.project.IStudyEnglish.dictionary_module.entity.Word;
-import ru.project.IStudyEnglish.dictionary_module.repository.WordDAO;
 import ru.project.IStudyEnglish.dictionary_module.repository.SourceWord;
+import ru.project.IStudyEnglish.dictionary_module.repository.WordDAO;
+import ru.project.IStudyEnglish.user_module.entity.User.User;
+
+import java.util.List;
 
 @Component
 public class BuilderWord {
@@ -19,9 +21,9 @@ public class BuilderWord {
         this.sourceWord = wordDAO;
     }
 
-    public Word getOnId(int id) {
+    public Word get(int id) {
 
-        return sourceWord.getOnId(id);
+        return sourceWord.get(id);
     }
 
     public Word create(User user){
@@ -29,9 +31,13 @@ public class BuilderWord {
         return null;
     }
 
-    public Word getOnUser(User user){
+    public Word get(User user){
         //TODO
         return null;
     }
 
+    public List<Word> get() {
+        List<Word> list = sourceWord.get();
+        return list;
+    }
 }

@@ -4,7 +4,7 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
-import ru.project.IStudyEnglish.learning_module.entity.User.User;
+import ru.project.IStudyEnglish.user_module.entity.User.User;
 import ru.project.IStudyEnglish.learning_module.entity.UserTask.UserTask;
 
 import java.util.List;
@@ -26,7 +26,7 @@ public class UserTaskDAO implements SourceUserTask {
     }
 
     public UserTask getOnId(int id) {
-        String sql = "SELECT * FROM user_tasks WHERE id in (?) limit 1";
+        String sql = "SELECT * FROM user_tasks WHERE id = (?) limit 1";
         //TODO повторяется
         return jdbcTemplate.query(sql, new Object[]{id}, userTaskMapper)
                 .stream().findAny().orElse(null);
@@ -34,8 +34,7 @@ public class UserTaskDAO implements SourceUserTask {
 
     @Override
     public void save(UserTask userTask) {
-        String strSQL = "";
-        createStrSQLForSave(strSQL,userTask);
+        String strSQL = createStrSQLForSave(userTask);
 
         jdbcTemplate.update(strSQL);
     }
@@ -44,31 +43,36 @@ public class UserTaskDAO implements SourceUserTask {
     public void save(List<UserTask> list) {
         String strSQL = "";
         for(int i =0;i<list.size();i++){
-            createStrSQLForSave(strSQL,list.get(i));
+            strSQL = strSQL + createStrSQLForSave(list.get(i));
         }
 
-        jdbcTemplate.update(strSQL);
+        try {
+            jdbcTemplate.update(strSQL);
+        }
+        catch (Exception e){
+
+        };
     }
 
-    private String createStrSQLForSave(String strSQL, UserTask userTask){
-        String sql = "insert into user_task (" +
-                "id," +
-                "user_code," +
-                "id_task," +
-                "status," +
-                "time_last_repetition," +
-                "time_next_repetition," +
-                "correct_attempts_counter)" +
-                "values (" +
-                "nextval('id_user_task')" + "," +
-                userTask.getIdUser() + "," +
-                userTask.getIdTask() + "," +
-                userTask.getStatus() + "," +
-                userTask.getTimeLastRepetition() + "," +
-                userTask.getTimeNextRepetition() + "," +
-                userTask.getCorrectAttemptsCounter() + ");";
+    private String createStrSQLForSave(UserTask userTask){
+            String sql = "\n insert into user_tasks (" +
+                    "id," +
+                    "user_code," +
+                    "id_task," +
+                    "status," +
+                    "time_last_repetition," +
+                    "time_next_repetition," +
+                    "correct_attempts_counter)" +
+                    "values (" +
+                    "nextval('id_user_tasks')" + "," +
+                    "" + userTask.getUser().getId() + "," +
+                    "" + userTask.getTask().getId() + "," +
+                    "'" + userTask.getStatus() + "'," +
+                    "'" + userTask.getTimeLastRepetition() + "'," +
+                    "'" + userTask.getTimeNextRepetition() + "'," +
+                    "" + userTask.getCorrectAttemptsCounter() + ");";
 
-        return strSQL + sql;
+            return sql;
     }
 
 
@@ -86,6 +90,21 @@ public class UserTaskDAO implements SourceUserTask {
                 "limit 1";
         return jdbcTemplate.query(sql, new Object[]{user.getId()}, userTaskMapper)
                 .stream().findAny().orElse(null);
+    }
+
+    public boolean ifExist(int idUser,int idTask) {
+        String sql = "SELECT * " +
+                "FROM user_tasks " +
+                "WHERE user_code = " + idUser;
+        //" and id_task = " + idTask;
+        //TODO повторяется
+
+        if (jdbcTemplate.query(sql, userTaskMapper).size() == 0) {
+
+            return false;
+        } else {
+            return true;
+        }
     }
 
 }

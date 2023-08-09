@@ -1,4 +1,4 @@
-package ru.project.IStudyEnglish.learning_module.controller.rest;
+package ru.project.IStudyEnglish.user_module.controller;
 
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,8 +14,7 @@ import java.io.IOException;
 @RestController
 @RequestMapping("/v1/users/")
 @Log4j2
-
-public class UserController {
+public class UserController2 {
 
     @Autowired
     BuilderUser builderUser;
@@ -30,6 +29,7 @@ public class UserController {
 
         if(builderUser.notExist(login) == true) {
             creatorUser.create(login, password);
+
             return "пользователь с логином " + login + " и паролем " + password + " создан";
         }
         else {

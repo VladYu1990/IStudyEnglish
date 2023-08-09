@@ -1,7 +1,7 @@
 package ru.project.IStudyEnglish.learning_module.repository.UserTask;
 
 import org.springframework.stereotype.Component;
-import ru.project.IStudyEnglish.learning_module.entity.User.User;
+import ru.project.IStudyEnglish.user_module.entity.User.User;
 import ru.project.IStudyEnglish.learning_module.entity.UserTask.UserTask;
 
 import java.util.List;
