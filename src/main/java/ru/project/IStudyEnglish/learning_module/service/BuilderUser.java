@@ -1,0 +1,43 @@
+package ru.project.IStudyEnglish.learning_module.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import ru.project.IStudyEnglish.learning_module.entity.User.Token;
+import ru.project.IStudyEnglish.learning_module.entity.User.User;
+import ru.project.IStudyEnglish.learning_module.repository.User.UserDAO;
+
+@Component
+public class BuilderUser {
+    private User user;
+    private String login;
+    private String password;
+    UserDAO userDAO;
+
+    @Autowired
+    public BuilderUser(UserDAO userDAO) {
+        this.userDAO = userDAO;
+    }
+
+    public User getUser(String login, String password){
+
+        return this.userDAO.getUser(login,password);
+    }
+
+    public User getUser(Token token){
+        return userDAO.getUser(token.getIdUser());
+    }
+
+    public User getUser(String login){
+        return userDAO.getUser(login);
+    }
+
+    public boolean notExist(String login){
+        if(getUser(login) == null){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+}

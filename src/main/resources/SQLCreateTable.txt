@@ -49,4 +49,105 @@ create table answers (
     id text PRIMARY key,
     value text);
 
-CREATE SEQUENCE serial_id_tasks START 1;
+===User_task=======================================================
+
+drop table user_tasks;
+drop SEQUENCE id_user_tasks;
+
+
+create SEQUENCE id_user_tasks start 1;
+
+create table user_tasks (
+id int,
+user_code int,
+id_task int,
+status int,
+time_last_repetition timestamptz,
+time_next_repetition timestamptz,
+correct_attempts_counter int);
+
+CREATE SEQUENCE id_user_task START 1;
+
+
+insert into user_task values (
+nextval('id_user_task'),
+1,
+1,
+'writing',
+4,
+'2023-04-17 23:00:00'::timestamp,
+'2023-04-18 00:00:01'::timestamp,
+2);
+
+
+=========TASK=========
+
+drop table tasks ;
+drop SEQUENCE id_tasks;
+
+create table tasks (
+id int primary key,
+type_task text,
+question text,
+translation_direction text,
+created timestamp,
+updated timestamp,
+id_source int,
+type_source text);
+
+CREATE SEQUENCE id_tasks START 1;
+
+insert into tasks values(
+nextval('id_tasks'),
+'writing',
+'где?',
+'rus-eng');
+
+
+drop table words;
+
+create table words (
+id int,
+valueENG text,
+valueRUS text,
+code_of_part_speech int
+);
+
+CREATE SEQUENCE id_words START 1;
+
+===========User==============
+
+
+create table users (
+id int,
+login text,
+password text,
+token text,
+token_date_created timestamptz,
+token_date_die timestamptz
+);
+
+CREATE SEQUENCE id_users START 1;
+
+insert into users values(
+nextval('id_users'),
+'login',
+'password',
+null,
+null,
+null);
+
+
+
+create table User_token (
+tokenSTR text,
+id_user int4,
+token_date_created timestamptz,
+token_date_die timestamptz)
+
+================AnswerAndSimilar==============
+
+
+create table answer_and_similar (
+answer_true text,
+similar_str text)

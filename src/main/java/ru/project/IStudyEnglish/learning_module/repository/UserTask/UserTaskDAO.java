@@ -1,0 +1,91 @@
+package ru.project.IStudyEnglish.learning_module.repository.UserTask;
+
+import lombok.extern.log4j.Log4j2;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Component;
+import ru.project.IStudyEnglish.learning_module.entity.User.User;
+import ru.project.IStudyEnglish.learning_module.entity.UserTask.UserTask;
+
+import java.util.List;
+
+@Log4j2
+@Component
+public class UserTaskDAO implements SourceUserTask {
+
+    private JdbcTemplate jdbcTemplate;
+    private UserTaskMapper userTaskMapper;
+
+    public UserTaskDAO() {
+    }
+
+    @Autowired
+    public UserTaskDAO(JdbcTemplate jdbcTemplate, UserTaskMapper userTaskMapper) {
+        this.jdbcTemplate = jdbcTemplate;
+        this.userTaskMapper = userTaskMapper;
+    }
+
+    public UserTask getOnId(int id) {
+        String sql = "SELECT * FROM user_tasks WHERE id in (?) limit 1";
+        //TODO повторяется
+        return jdbcTemplate.query(sql, new Object[]{id}, userTaskMapper)
+                .stream().findAny().orElse(null);
+    }
+
+    @Override
+    public void save(UserTask userTask) {
+        String strSQL = "";
+        createStrSQLForSave(strSQL,userTask);
+
+        jdbcTemplate.update(strSQL);
+    }
+
+    @Override
+    public void save(List<UserTask> list) {
+        String strSQL = "";
+        for(int i =0;i<list.size();i++){
+            createStrSQLForSave(strSQL,list.get(i));
+        }
+
+        jdbcTemplate.update(strSQL);
+    }
+
+    private String createStrSQLForSave(String strSQL, UserTask userTask){
+        String sql = "insert into user_task (" +
+                "id," +
+                "user_code," +
+                "id_task," +
+                "status," +
+                "time_last_repetition," +
+                "time_next_repetition," +
+                "correct_attempts_counter)" +
+                "values (" +
+                "nextval('id_user_task')" + "," +
+                userTask.getIdUser() + "," +
+                userTask.getIdTask() + "," +
+                userTask.getStatus() + "," +
+                userTask.getTimeLastRepetition() + "," +
+                userTask.getTimeNextRepetition() + "," +
+                userTask.getCorrectAttemptsCounter() + ");";
+
+        return strSQL + sql;
+    }
+
+
+    public UserTask getNext(User user) {
+        String sql = "SELECT * " +
+                "from user_tasks " +
+                "where user_code in (?)" +
+                "and status <> ('3')" + //это статус заданий для изучения/повторения, остальные или рано или уже выучили
+                "and time_next_repetition <= clock_timestamp()" + //наступившее
+                "order by time_next_repetition desc " + // но самое новое,
+                // иначе если пользователь будет редко заходить,
+                // он будет повторять только старые слова не доходя до недавних и тем самым,
+                // будут большие перерывы в повторении
+                //лучше выучить 1 слово хорошо, чем 100 - ни как
+                "limit 1";
+        return jdbcTemplate.query(sql, new Object[]{user.getId()}, userTaskMapper)
+                .stream().findAny().orElse(null);
+    }
+
+}
