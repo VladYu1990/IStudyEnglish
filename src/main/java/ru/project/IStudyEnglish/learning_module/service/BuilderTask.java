@@ -47,4 +47,8 @@ public class BuilderTask {
     public ArrayList<Task> getOnSource(Word word) {
         return null;
     }
+
+    public List<Task> getAll() {
+         return taskDAO.getAll();
+    }
 }

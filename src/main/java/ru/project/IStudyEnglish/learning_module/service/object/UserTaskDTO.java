@@ -1,53 +1,58 @@
 package ru.project.IStudyEnglish.learning_module.service.object;
 
-import ru.project.IStudyEnglish.learning_module.entity.Answer.Answer;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import ru.project.IStudyEnglish.learning_module.entity.Answer.AnswerOnQuestion;
 import ru.project.IStudyEnglish.learning_module.entity.UserTask.UserTask;
+import ru.project.IStudyEnglish.learning_module.service.BuilderListAnswers;
 
 import java.util.List;
 
+
+@Component
 public class UserTaskDTO {
 
     int  userTaskId;
     String question;
-    List<Answer> answersList;
-    String trueAnswer;
+    List<AnswerOnQuestion> listAnswer;
+    BuilderListAnswers builderListAnswers;
 
-    public UserTaskDTO(UserTask userTask, List<Answer> answersList, String answerTrue) {
-        this.answersList = answersList;
-        this.userTaskId = userTask.getId();
-        this.question = userTask.getTask().getQuestion();
-        this.trueAnswer = answerTrue;
+
+    public UserTaskDTO() {
+    }
+    @Autowired
+    public UserTaskDTO(BuilderListAnswers builderListAnswers) {
+        this.builderListAnswers = builderListAnswers;
+    }
+
+
+    public void setUserTask(UserTask userTask) {
+        setUserTaskId(userTask.getId());
+        setQuestion(userTask.getTask().getQuestion());
+        setListAnswer(userTask.getTask().getTrueAnswer(),4);
+    }
+
+    public void setUserTaskId(int userTaskId) {this.userTaskId = userTaskId;}
+
+    public void setQuestion(String question) {
+        this.question = question;
+    }
+
+    public void setListAnswer(int idTrueAnswer, int count) {
+        this.listAnswer = builderListAnswers.getRandomList(idTrueAnswer,count);
+
     }
 
     public int getUserTaskId() {
         return userTaskId;
     }
 
-    public void setUserTaskId(int userTaskId) {
-        this.userTaskId = userTaskId;
-    }
-
     public String getQuestion() {
         return question;
     }
 
-    public void setQuestion(String question) {
-        this.question = question;
+    public List<AnswerOnQuestion> getListAnswer() {
+        return listAnswer;
     }
 
-    public List<Answer> getAnswersList() {
-        return answersList;
-    }
-
-    public void setAnswersList(List<Answer> answersList) {
-        this.answersList = answersList;
-    }
-
-    public String getTrueAnswer() {
-        return trueAnswer;
-    }
-
-    public void setTrueAnswer(String trueAnswer) {
-        this.trueAnswer = trueAnswer;
-    }
 }

@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import ru.project.IStudyEnglish.learning_module.service.BuilderAnswer;
 import ru.project.IStudyEnglish.like_is_module.service.CreatorOfSimilarAnswers;
 
 @RestController
@@ -18,32 +17,22 @@ public class SimilarAnswersController {
     @Autowired
     CreatorOfSimilarAnswers creatorOfSimilarAnswers;
 
-    @Autowired
-    BuilderAnswer builderAnswer;
-
-
 
     @RequestMapping("/create/{id}")
     public String create(@PathVariable String token,  @PathVariable int id){
-        //TODO
-
-        creatorOfSimilarAnswers.create(builderAnswer.get(id));
-
-        return "ok";
-    }
-
-    @RequestMapping("/update/{id}")
-    public String update(@PathVariable String token, @PathVariable int source_str){
-        //TODO
+        //TODO for token
+        creatorOfSimilarAnswers.create(id);
 
         return "ok";
     }
 
-    @RequestMapping("/selete/{id}")
-    public String delete(@PathVariable String token, @PathVariable int source_str){
-        //TODO
+    @RequestMapping("/create_all")
+    public String create(@PathVariable String token){
+        //TODO for token
+        creatorOfSimilarAnswers.create();
 
         return "ok";
     }
+
 
 }

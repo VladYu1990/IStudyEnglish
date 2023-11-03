@@ -20,6 +20,12 @@ public class CreatorUserTask {
 
     private List<UserTask> userTasksList = new ArrayList<>();
 
+    private List<Task> tasksList = new ArrayList<>();
+
+    private User user;
+
+
+
 
     @Autowired
     public CreatorUserTask(BuilderTask builderTask, SourceUserTask sourceUserTask) {
@@ -29,28 +35,48 @@ public class CreatorUserTask {
 
 
     public void create(User user, Task task) {
-        this.userTasksList.clear();
-        cre(user,task);
-        sourceUserTask.save(this.userTasksList);
+        clear();
+        this.user = user;
+        this.tasksList.add(task);
+        cre1();
     }
 
 
     public void create(User user, List<Task> list) {
+        clear();
+        this.user = user;
+        this.tasksList = list;
+        cre1();
+    }
+
+    public void createAll(User user){
+        clear();
+        this.sourceUserTask.truncate();
+        this.user = user;
+        this.tasksList = builderTask.getAll();
+        cre1();
+    }
+
+    private void clear(){
         this.userTasksList.clear();
-        for (int i = 0; i < list.size(); i++) {
-            cre(user, list.get(i));
+        this.tasksList.clear();
+    }
+
+    private void cre1(){
+        for (int i = 0; i < tasksList.size(); i++) {
+            cre(user, tasksList.get(i));
         }
         sourceUserTask.save(this.userTasksList);
     }
 
 
     private void cre(User user, Task task) {
-
         userTasksList.add(new UserTask(user,task));
     }
 
     private void save(List<UserTask> userTaskList){
         sourceUserTask.save(userTaskList);
     }
+
 }
 

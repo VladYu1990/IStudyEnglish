@@ -112,6 +112,25 @@ public class TaskDAO implements SourceTask {
     public void update(Task task) {
 
     }
+    @Override
+    public void truncate() {
 
+        String sql = "TRUNCATE tasks";
+        try {
+            jdbcTemplate.update(sql);
+        }
+        catch (Exception e){}
+    }
+
+    @Override
+    public List<Task> getAll() {
+        String sql =
+                "SELECT * " +
+                        "FROM tasks ";
+
+        return jdbcTemplate.query(sql, taskMapper);
+    }
 }
+
+
 

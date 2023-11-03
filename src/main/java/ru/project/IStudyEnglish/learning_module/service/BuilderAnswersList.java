@@ -22,7 +22,7 @@ public class BuilderAnswersList {
 
     public List<Answer> get(int id){
 
-        return builderAnswer.get(answerListDAO.get(id));
+        return null; //builderAnswer.get(answerListDAO.get(id,4));
     }
 
 }

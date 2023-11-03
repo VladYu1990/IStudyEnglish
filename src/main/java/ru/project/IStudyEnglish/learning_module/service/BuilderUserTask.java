@@ -2,8 +2,6 @@ package ru.project.IStudyEnglish.learning_module.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import ru.project.IStudyEnglish.learning_module.entity.Task.Task;
-import ru.project.IStudyEnglish.user_module.entity.User.User;
 import ru.project.IStudyEnglish.learning_module.entity.UserTask.UserTask;
 import ru.project.IStudyEnglish.learning_module.repository.UserTask.SourceUserTask;
 
@@ -23,16 +21,9 @@ public class BuilderUserTask {
         this.sourceUserTask = sourceUserTask;
     }
 
-    public UserTask createUserTask(User user, Task task){
-        UserTask userTask = new UserTask(user,task);
-        return userTask;
-    }
 
-    public UserTask getOnId(int id) {
+    public UserTask get(int id) {
         return sourceUserTask.getOnId(id);
     }
 
-    public UserTask getNext(User user) {
-        return sourceUserTask.getNext(user);
-    }
 }

@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 import ru.project.IStudyEnglish.learning_module.entity.Answer.Answer;
-import ru.project.IStudyEnglish.learning_module.entity.Answer.TypeAnswer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -90,11 +89,10 @@ public class AnswersDAO {
     }
 
 
-    public List<Answer> getAll(TypeAnswer typeAnswer) {
+    public List<Answer> getAll() {
         String sql =
                 "SELECT * " +
-                        "FROM  answers " +
-                        "where type in ('" + typeAnswer.toString() + "');";
+                        "FROM  answers ";
         return jdbcTemplate.query(sql, answerMapper);
     }
 }

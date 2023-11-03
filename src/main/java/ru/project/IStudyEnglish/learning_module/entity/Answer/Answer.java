@@ -23,10 +23,6 @@ public class Answer {
 
     }
 
-    //TODO delete
-    public Answer(String answer_true, boolean b) {
-    }
-
     public int getId() {
         return id;
     }

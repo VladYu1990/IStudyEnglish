@@ -17,8 +17,10 @@ public class BuilderSource {
 
     List<Source> listSource = new ArrayList<>();
 
+
     @Autowired
     public BuilderSource(BuilderWord builderWord) {
+
         this.builderWord = builderWord;
     }
 
@@ -30,8 +32,9 @@ public class BuilderSource {
         return source;
     }
 
-    public List<Source> get(){
+    public List<Source> getAll(){
         get(TypeSource.word);
+
         //TODO добавить другие типы источников, когда они появятся
         return this.listSource;
     }

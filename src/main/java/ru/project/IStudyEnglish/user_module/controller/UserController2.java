@@ -43,7 +43,7 @@ public class UserController2 {
     public Object authorization(@PathVariable String login, @PathVariable String password) {
 
         try {
-            return builderToken.getToken(builderUser.getUser(login,password));
+            return builderToken.get(builderUser.getUser(login,password));
         }
         catch (IOException e){
             return "не верный логин и пароль";

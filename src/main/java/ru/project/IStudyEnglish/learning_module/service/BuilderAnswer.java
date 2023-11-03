@@ -3,7 +3,6 @@ package ru.project.IStudyEnglish.learning_module.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import ru.project.IStudyEnglish.learning_module.entity.Answer.Answer;
-import ru.project.IStudyEnglish.learning_module.entity.Answer.TypeAnswer;
 import ru.project.IStudyEnglish.learning_module.repository.Answer.AnswersDAO;
 
 import java.util.List;
@@ -32,7 +31,7 @@ public class BuilderAnswer {
         return answersDAO.get(str);
     }
 
-    public List<Answer> getAll(TypeAnswer typeAnswer) {
-        return answersDAO.getAll(typeAnswer);
+    public List<Answer> getAll() {
+        return answersDAO.getAll();
     }
 }

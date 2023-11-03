@@ -85,9 +85,14 @@ token_date_die timestamptz)
 ================AnswerAndSimilar==============
 
 
+drop table answer_and_similar;
+
+
 create table answer_and_similar (
-answer_true integer not null UNIQUE,
-similar_str text)
+answer_id integer,
+similar_id integer,
+similarity real,
+UNIQUE (answer_id,similar_id));
 
 
 ===============Answer============

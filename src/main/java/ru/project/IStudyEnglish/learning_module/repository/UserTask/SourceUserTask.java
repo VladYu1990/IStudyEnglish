@@ -11,11 +11,13 @@ import java.util.List;
 public interface SourceUserTask {
 
 
-    UserTask getNext(User user);
+    int getNext(User user);
     UserTask getOnId(int id);
 
     void save(UserTask userTask);
 
     void save(List<UserTask> list);
+
+    void truncate();
 
 }

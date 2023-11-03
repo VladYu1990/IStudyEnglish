@@ -24,4 +24,7 @@ public interface SourceTask {
 
     List<Task> get(TypeSource typeSource, int id);
 
+    void truncate();
+
+    List<Task> getAll();
 }

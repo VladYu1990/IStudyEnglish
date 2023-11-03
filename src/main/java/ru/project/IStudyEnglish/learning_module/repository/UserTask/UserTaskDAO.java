@@ -76,10 +76,11 @@ public class UserTaskDAO implements SourceUserTask {
     }
 
 
-    public UserTask getNext(User user) {
+    public int getNext(User user) {
         String sql = "SELECT * " +
                 "from user_tasks " +
                 "where user_code in (?)" +
+                //TODO fix status code
                 "and status <> ('3')" + //это статус заданий для изучения/повторения, остальные или рано или уже выучили
                 "and time_next_repetition <= clock_timestamp()" + //наступившее
                 "order by time_next_repetition desc " + // но самое новое,
@@ -88,23 +89,31 @@ public class UserTaskDAO implements SourceUserTask {
                 // будут большие перерывы в повторении
                 //лучше выучить 1 слово хорошо, чем 100 - ни как
                 "limit 1";
-        return jdbcTemplate.query(sql, new Object[]{user.getId()}, userTaskMapper)
+        UserTask userTask = jdbcTemplate.query(sql, new Object[]{user.getId()}, userTaskMapper)
                 .stream().findAny().orElse(null);
+
+        return userTask.getId();
     }
 
-    public boolean ifExist(int idUser,int idTask) {
-        String sql = "SELECT * " +
-                "FROM user_tasks " +
-                "WHERE user_code = " + idUser;
-        //" and id_task = " + idTask;
-        //TODO повторяется
+    public void update(UserTask userTask){
+        String sql = "update user_tasks u " +
+                "set " +
+                    "status = ('" + userTask.getStatus() +
+                    "'), correct_attempts_counter = ('" + userTask.getCorrectAttemptsCounter()  +
+                    "'), time_last_repetition = ('" + userTask.getTimeLastRepetition() +
+                    "'), time_next_repetition = ('" + userTask.getTimeNextRepetition() +
+                "') where id = " + userTask.getId();
 
-        if (jdbcTemplate.query(sql, userTaskMapper).size() == 0) {
+        jdbcTemplate.update(sql);
 
-            return false;
-        } else {
-            return true;
+    }
+
+    public void truncate() {
+
+        String sql = "TRUNCATE user_tasks";
+        try {
+            jdbcTemplate.update(sql);
         }
+        catch (Exception e){}
     }
-
 }

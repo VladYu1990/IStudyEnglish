@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import ru.project.IStudyEnglish.dictionary_module.entity.Source;
+import ru.project.IStudyEnglish.dictionary_module.service.BuilderSource;
 import ru.project.IStudyEnglish.learning_module.entity.Task.Task;
 import ru.project.IStudyEnglish.learning_module.entity.Task.TranslationDirection;
 import ru.project.IStudyEnglish.learning_module.entity.Task.TypeTask;
@@ -19,37 +20,52 @@ import java.util.List;
 @Scope("prototype")
 public class CreatorTask {
     //TODO добавить работу с артиклями, to и подобным
+
+
+    private List<Source> sourceList = new ArrayList<>();
     private Source source;
     private List<Task> taskList = new ArrayList<>();
     private SourceTask sourceTask;
 
     private BuilderAnswer builderAnswer;
+    private BuilderSource builderSource;
 
     @Autowired
-    public CreatorTask(Source source, SourceTask sourceTask,  BuilderAnswer builderAnswer) {
-        this.source = source;
+    public CreatorTask(SourceTask sourceTask, BuilderAnswer builderAnswer, BuilderSource builderSource) {
         this.sourceTask = sourceTask;
         this.builderAnswer = builderAnswer;
+        this.builderSource = builderSource;
     }
 
     public void create(Source source) {
-        List<Source> sourceList = new ArrayList<>();
-        sourceList.add(source);
-        create(sourceList);
+        this.sourceList.add(source);
+        cre1();
     }
 
     public void create(List<Source> sourceList) {
-        for (int i=0;i<sourceList.size();i++) {
-            this.source = sourceList.get(i);
+        this.sourceList = sourceList;
+        cre1();
+    }
+
+    public void createAll(){
+        this.sourceTask.truncate();
+        this.sourceList.clear();
+        this.sourceList.addAll(builderSource.getAll());
+        cre1();
+    }
+
+    private void  cre1(){
+        for (int i=0;i<this.sourceList.size();i++) {
+            this.source = this.sourceList.get(i);
             cre();
         }
-        sourceTask.save(taskList);
+        sourceTask.save(this.taskList);
     }
 
     private void cre(){
-        source.writing = true;
-        source.reading = true;
-        source.typeSource = TypeSource.word;
+        //TODO  в бд не хватает полей, приходится заполнять атрибуты хардкодом
+        this.source.writing = true;
+        this.source.typeSource = TypeSource.word;
 
         createWriting();
         createReading();

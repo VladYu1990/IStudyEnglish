@@ -4,6 +4,8 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
+import ru.project.IStudyEnglish.learning_module.entity.Answer.AnswerOnQuestion;
+import ru.project.IStudyEnglish.like_is_module.SimilarityAnswer;
 
 import java.util.List;
 
@@ -11,34 +13,49 @@ import java.util.List;
 @Log4j2
 public class AnswersListDAO {
     private JdbcTemplate jdbcTemplate;
-    private ListAnswersMapper listAnswersMapper;
+    private AnswersOnQuestionMapper answersOnQuestionMapper;
 
     @Autowired
-    public AnswersListDAO(JdbcTemplate jdbcTemplate, ListAnswersMapper listAnswersMapper) {
+    public AnswersListDAO(JdbcTemplate jdbcTemplate, AnswersOnQuestionMapper answersOnQuestionMapper) {
         this.jdbcTemplate = jdbcTemplate;
-        this.listAnswersMapper = listAnswersMapper;
+        this.answersOnQuestionMapper = answersOnQuestionMapper;
     }
 
-    public List<Integer> get(int id) {
+    public List<AnswerOnQuestion> get(int id,int count) {
         String sql =
-                "SELECT * " +
-                        "FROM  answer_and_similar " +
-                        "where answer_true = (?) ";
+                        "select id, a.value, 'true' bool, 100 similarity \n" +
+                        "from \n" +
+                        "answers a\n" +
+                        "where a.id  = "+id+"\n" +
+                        "union all \n" +
+                        "select similar_id  id, a.value, 'false' bool, similarity  \n" +
+                        "from answer_and_similar aas,\n" +
+                        "answers a\n" +
+                        "where a.id =aas.similar_id\n" +
+                        "and aas.answer_id  = " + id +"\n" +
+                        "order by similarity desc limit "+ count;
+        log.info(sql);
 
-
-        return jdbcTemplate.query(sql, new Object[]{id}, listAnswersMapper )
-                .stream().findAny().orElse(null);
+        return jdbcTemplate.query(sql, answersOnQuestionMapper);
     }
 
-    public void  create(int id_true, String id_answer){
-        String sql = "insert into answer_and_similar (answer_true,similar_str) " +
-                "values ('"+ String.valueOf(id_true) + "','" + id_answer +"');";
+    public void  create(List<SimilarityAnswer> similarity){
+        String sql = "";
+        for (int i=0;i<similarity.size();i++) {
+            sql = sql + "insert into answer_and_similar " +
+                    "(answer_id,similar_id,similarity) " +
+                    "values " +
+                    "(" + similarity.get(i).id + ","
+                    + similarity.get(i).similar_id + ","
+                    + similarity.get(i).similarity + ");";
+
+
+        }
         jdbc(sql);
     }
 
 
     public void jdbc(String sql){
-        log.info("run save answer");
         try {
             jdbcTemplate.update(sql);
         }
@@ -47,4 +64,12 @@ public class AnswersListDAO {
     }
 
 
+    public void truncateTable() {
+
+        String sql = "TRUNCATE answer_and_similar";
+        try {
+            jdbcTemplate.update(sql);
+        }
+        catch (Exception e){}
+    }
 }

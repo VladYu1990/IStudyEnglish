@@ -22,16 +22,17 @@ public class BuilderToken {
     }
 
 
-    public Token getToken(String tokenStr){
+    public Token get(String tokenStr){
+        //тут же должна быть валдидация токена
         return this.tokenDAO.getToken(tokenStr);
     }
 
-    public List<Token> getToken(ArrayList<String> tokenStrList){
+    public List<Token> get(ArrayList<String> tokenStrList){
 
         return this.tokenDAO.getToken(tokenStrList);
     }
 
-    public Token getToken(User user) throws IOException {
+    public Token get(User user) throws IOException {
         return tokenDAO.getToken(user.getId());
     }
 }
