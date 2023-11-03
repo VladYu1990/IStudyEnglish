@@ -1,4 +1,4 @@
-package ru.project.IStudyEnglish.learning_module.service.object;
+package ru.project.IStudyEnglish.learning_module.service.UserTask;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

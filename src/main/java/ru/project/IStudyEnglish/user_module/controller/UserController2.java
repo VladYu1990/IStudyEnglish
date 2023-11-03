@@ -5,9 +5,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import ru.project.IStudyEnglish.learning_module.service.BuilderUser;
+import ru.project.IStudyEnglish.learning_module.service.User.BuilderUser;
 import ru.project.IStudyEnglish.learning_module.service.BuilderToken;
-import ru.project.IStudyEnglish.learning_module.service.CreatorUser;
+import ru.project.IStudyEnglish.learning_module.service.User.CreatorUser;
 
 import java.io.IOException;
 

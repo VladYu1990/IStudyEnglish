@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ru.project.IStudyEnglish.learning_module.controller.GetUserByTokenString;
 import ru.project.IStudyEnglish.learning_module.entity.UserTask.UserTask;
-import ru.project.IStudyEnglish.learning_module.service.AnswerChecker;
-import ru.project.IStudyEnglish.learning_module.service.BuilderUserTask;
-import ru.project.IStudyEnglish.learning_module.service.CreatorUserTask;
+import ru.project.IStudyEnglish.learning_module.service.Answer.AnswerChecker;
+import ru.project.IStudyEnglish.learning_module.service.UserTask.BuilderUserTask;
+import ru.project.IStudyEnglish.learning_module.service.UserTask.CreatorUserTask;
 import ru.project.IStudyEnglish.learning_module.service.object.UserTaskDTO;
-import ru.project.IStudyEnglish.learning_module.service.object.VoterNextUserTask;
+import ru.project.IStudyEnglish.learning_module.service.UserTask.VoterNextUserTask;
 import ru.project.IStudyEnglish.user_module.entity.User.User;
 
 @RestController

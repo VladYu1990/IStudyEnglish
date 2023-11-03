@@ -1,4 +1,4 @@
-package ru.project.IStudyEnglish.learning_module.service;
+package ru.project.IStudyEnglish.learning_module.service.Task;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +11,7 @@ import ru.project.IStudyEnglish.learning_module.entity.Task.TranslationDirection
 import ru.project.IStudyEnglish.learning_module.entity.Task.TypeTask;
 import ru.project.IStudyEnglish.learning_module.entity.TypeSource;
 import ru.project.IStudyEnglish.learning_module.repository.Task.SourceTask;
+import ru.project.IStudyEnglish.learning_module.service.Answer.BuilderAnswer;
 
 import java.util.ArrayList;
 import java.util.List;

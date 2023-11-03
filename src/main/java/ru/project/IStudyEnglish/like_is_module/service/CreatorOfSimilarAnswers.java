@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import ru.project.IStudyEnglish.learning_module.entity.Answer.Answer;
 import ru.project.IStudyEnglish.learning_module.repository.Answer.AnswersListDAO;
-import ru.project.IStudyEnglish.learning_module.service.BuilderAnswer;
+import ru.project.IStudyEnglish.learning_module.service.Answer.BuilderAnswer;
 import ru.project.IStudyEnglish.like_is_module.SimilarityAnswer;
 
 import java.util.ArrayList;

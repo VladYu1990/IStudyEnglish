@@ -4,10 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import ru.project.IStudyEnglish.dictionary_module.service.BuilderSource;
 import ru.project.IStudyEnglish.learning_module.entity.TypeSource;
-import ru.project.IStudyEnglish.learning_module.service.BuilderAnswer;
-import ru.project.IStudyEnglish.learning_module.service.BuilderTask;
+import ru.project.IStudyEnglish.learning_module.service.Answer.BuilderAnswer;
+import ru.project.IStudyEnglish.learning_module.service.Task.BuilderTask;
 import ru.project.IStudyEnglish.learning_module.service.CreatorAnswer;
-import ru.project.IStudyEnglish.learning_module.service.CreatorTask;
+import ru.project.IStudyEnglish.learning_module.service.Task.CreatorTask;
 
 @Component
 public class ControllerHandler {
