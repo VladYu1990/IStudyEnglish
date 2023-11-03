@@ -9,7 +9,7 @@ import ru.project.IStudyEnglish.dictionary_module.service.BuilderSource;
 import ru.project.IStudyEnglish.learning_module.entity.Task.Task;
 import ru.project.IStudyEnglish.learning_module.entity.Task.TranslationDirection;
 import ru.project.IStudyEnglish.learning_module.entity.Task.TypeTask;
-import ru.project.IStudyEnglish.learning_module.entity.TypeSource;
+import ru.project.IStudyEnglish.dictionary_module.entity.TypeSource;
 import ru.project.IStudyEnglish.learning_module.repository.Task.SourceTask;
 import ru.project.IStudyEnglish.learning_module.service.Answer.BuilderAnswer;
 

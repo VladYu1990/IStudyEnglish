@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 import ru.project.IStudyEnglish.learning_module.entity.Task.Task;
-import ru.project.IStudyEnglish.learning_module.entity.TypeSource;
+import ru.project.IStudyEnglish.dictionary_module.entity.TypeSource;
 
 import java.util.ArrayList;
 import java.util.List;

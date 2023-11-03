@@ -2,9 +2,8 @@ package ru.project.IStudyEnglish.dictionary_module.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import ru.project.IStudyEnglish.dictionary_module.BuilderWord;
 import ru.project.IStudyEnglish.dictionary_module.entity.Source;
-import ru.project.IStudyEnglish.learning_module.entity.TypeSource;
+import ru.project.IStudyEnglish.dictionary_module.entity.TypeSource;
 
 import java.util.ArrayList;
 import java.util.List;

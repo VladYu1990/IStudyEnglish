@@ -1,7 +1,6 @@
 package ru.project.IStudyEnglish.dictionary_module.entity;
 
 import org.springframework.stereotype.Component;
-import ru.project.IStudyEnglish.learning_module.entity.TypeSource;
 
 @Component
 public class Source {

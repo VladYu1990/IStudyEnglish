@@ -11,7 +11,7 @@ import ru.project.IStudyEnglish.learning_module.entity.UserTask.UserTask;
 import ru.project.IStudyEnglish.learning_module.service.Answer.AnswerChecker;
 import ru.project.IStudyEnglish.learning_module.service.UserTask.BuilderUserTask;
 import ru.project.IStudyEnglish.learning_module.service.UserTask.CreatorUserTask;
-import ru.project.IStudyEnglish.learning_module.service.object.UserTaskDTO;
+import ru.project.IStudyEnglish.learning_module.controller.UserTaskDTO;
 import ru.project.IStudyEnglish.learning_module.service.UserTask.VoterNextUserTask;
 import ru.project.IStudyEnglish.user_module.entity.User.User;
 

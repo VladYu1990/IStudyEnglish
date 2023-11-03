@@ -5,7 +5,7 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
 import ru.project.IStudyEnglish.dictionary_module.entity.PartOfSpeech;
 import ru.project.IStudyEnglish.dictionary_module.entity.Word;
-import ru.project.IStudyEnglish.learning_module.entity.TypeSource;
+import ru.project.IStudyEnglish.dictionary_module.entity.TypeSource;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

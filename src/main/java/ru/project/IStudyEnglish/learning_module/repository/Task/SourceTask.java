@@ -3,7 +3,7 @@ package ru.project.IStudyEnglish.learning_module.repository.Task;
 
 import org.springframework.stereotype.Component;
 import ru.project.IStudyEnglish.learning_module.entity.Task.Task;
-import ru.project.IStudyEnglish.learning_module.entity.TypeSource;
+import ru.project.IStudyEnglish.dictionary_module.entity.TypeSource;
 
 import java.util.List;
 
