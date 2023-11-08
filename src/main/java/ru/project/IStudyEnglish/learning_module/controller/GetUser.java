@@ -8,21 +8,21 @@ import ru.project.IStudyEnglish.user_module.entity.User.Token;
 import ru.project.IStudyEnglish.user_module.entity.User.User;
 
 @Component
-public class GetUserByTokenString {
+public class GetUser {
 
     BuilderToken builderToken;
     BuilderUser builderUser;
 
-    public GetUserByTokenString() {
+    public GetUser() {
     }
 
     @Autowired
-    public GetUserByTokenString(BuilderToken builderToken, BuilderUser builderUser) {
+    public GetUser(BuilderToken builderToken, BuilderUser builderUser) {
         this.builderToken = builderToken;
         this.builderUser = builderUser;
     }
 
-    public User get(String tokenStr){
+    public User getByToken(String tokenStr){
         Token token = builderToken.get(tokenStr);
         User user = builderUser.getUser(token);
 

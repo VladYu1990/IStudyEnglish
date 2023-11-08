@@ -7,12 +7,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7fbeed74-25ef-4154-a687-4792b9d50a21" name="Changes" comment="visual ref">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/controller/rest/ForUserTaskController.java" afterDir="false" />
+    <list default="true" id="7fbeed74-25ef-4154-a687-4792b9d50a21" name="Changes" comment="add NewModule">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/DirectionTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/TypeTask.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/app.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/app2.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/app2.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/controller/rest/UserTaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/controller/rest/UserTaskController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/StatusUserTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/StatusUserTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/UserTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/UserTask.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,8 +31,8 @@
         <option value="Record" />
         <option value="AnnotationType" />
         <option value="Interface" />
-        <option value="Enum" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -209,7 +211,8 @@
       <workItem from="1698719597270" duration="10369000" />
       <workItem from="1698834335239" duration="29630000" />
       <workItem from="1699068068017" duration="597000" />
-      <workItem from="1699182793501" duration="2987000" />
+      <workItem from="1699182793501" duration="22360000" />
+      <workItem from="1699710661122" duration="768000" />
     </task>
     <task id="LOCAL-00001" summary="restart project">
       <created>1672068848554</created>
@@ -386,7 +389,21 @@
       <option name="project" value="LOCAL" />
       <updated>1698986428502</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="move forController">
+      <created>1699202357639</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1699202357639</updated>
+    </task>
+    <task id="LOCAL-00027" summary="add NewModule">
+      <created>1699454011262</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1699454011262</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -475,7 +492,9 @@
     <MESSAGE value="MVP ready" />
     <MESSAGE value="MVP ready ref1" />
     <MESSAGE value="visual ref" />
-    <option name="LAST_COMMIT_MESSAGE" value="visual ref" />
+    <MESSAGE value="move forController" />
+    <MESSAGE value="add NewModule" />
+    <option name="LAST_COMMIT_MESSAGE" value="add NewModule" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -502,7 +521,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/UserTask/CreatorUserTask.java</url>
-          <line>46</line>
+          <line>44</line>
           <option name="timeStamp" value="123" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

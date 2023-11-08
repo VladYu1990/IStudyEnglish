@@ -6,18 +6,18 @@ import ru.project.IStudyEnglish.learning_module.entity.UserTask.UserTask;
 import ru.project.IStudyEnglish.learning_module.repository.UserTask.SourceUserTask;
 
 @Component
-public class BuilderUserTask {
+public class UserTackDAOAdapter {
 //инкапсулирует в себе разные способы создания UserTaskController
     // могут отличаться по источнику данных и по типу запроса id, next
 
     private SourceUserTask sourceUserTask;//как источник данных для UserTaskController
 
-    public BuilderUserTask() {
+    public UserTackDAOAdapter() {
     }
 
 
     @Autowired
-    public BuilderUserTask(SourceUserTask sourceUserTask) {
+    public UserTackDAOAdapter(SourceUserTask sourceUserTask) {
         this.sourceUserTask = sourceUserTask;
     }
 

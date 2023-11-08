@@ -15,7 +15,8 @@ import ru.project.IStudyEnglish.learning_module.controller.UserTaskDTO;
 public class UserTaskController {
 
     @Autowired
-    ForUserTaskController forUserTaskController;
+    UserTaskApiAdapter userTaskApiAdapter;
+
 
 
     @RequestMapping("/{source}/{id_source}/create/")
@@ -26,24 +27,24 @@ public class UserTaskController {
 
     @RequestMapping("/create_all/")
     public String createUserTaskAll(@PathVariable String token) {
-        forUserTaskController.createAll(token);
+        userTaskApiAdapter.createAll(token);
         return "ok";
     }
 
 
     @RequestMapping("/next/get/")
     public UserTaskDTO getNextUserTask(@PathVariable String token)  {
-        return forUserTaskController.getNextUserTask(token);
+        return userTaskApiAdapter.getNextUserTask(token);
     }
 
     @RequestMapping("/get/{id}")
     public UserTaskDTO getNextUserTask(@PathVariable String token,@PathVariable int id) {
-        return forUserTaskController.getUserTask(token,id);
+        return userTaskApiAdapter.getUserTask(token,id);
     }
 
     @RequestMapping("/{id_user_task}/response/{id_response}")
     public String response(@PathVariable String token,@PathVariable int id_user_task,@PathVariable int id_response) {
-        forUserTaskController.response(token,id_user_task,id_response);
+        userTaskApiAdapter.response(token,id_user_task,id_response);
         return "ok";
     }
 

@@ -17,15 +17,10 @@ public class VoterNextUserTask {
         this.userTaskDAO = userTaskDAO;
     }
 
-    public int getNext(User user){
-        this.user = user;
-        choose();
-        return nextUserTask;
+    public int getNext(int idUser){
+        return userTaskDAO.getNext(idUser);
     }
 
-    private void choose(){
-        this.nextUserTask = userTaskDAO.getNext(this.user);
-    }
 
 
 }
