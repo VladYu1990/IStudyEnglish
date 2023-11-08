@@ -15,15 +15,13 @@ import java.util.List;
 @Component
 public class CreatorUserTask {
 
-    public BuilderTask builderTask;
+    private BuilderTask builderTask;
 
-    public SourceUserTask sourceUserTask = new UserTaskDAO();
 
-    private List<UserTask> userTasksList = new ArrayList<>();
+    //todo такое делается через анатации спринга
+    private SourceUserTask sourceUserTask = new UserTaskDAO();
 
-    private List<Task> tasksList = new ArrayList<>();
-
-    private User user;
+    //уйти от хранения листов логике джавы, можно сложить в кеш или в бд сразу
 
 
 
@@ -59,6 +57,7 @@ public class CreatorUserTask {
     }
 
     private void clear(){
+        //TODO надо убрать
         this.userTasksList.clear();
         this.tasksList.clear();
     }

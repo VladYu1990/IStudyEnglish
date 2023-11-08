@@ -7,12 +7,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7fbeed74-25ef-4154-a687-4792b9d50a21" name="Changes" comment="visual ref">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/controller/rest/ForUserTaskController.java" afterDir="false" />
+    <list default="true" id="7fbeed74-25ef-4154-a687-4792b9d50a21" name="Changes" comment="move forController">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/StatusUserTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/Task.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/UserTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/Port/UserTaskDAOAdarterPort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/IStudyEnglish_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/IStudyEnglish_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/app.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/app2.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/app2.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/controller/GetUserByTokenString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/controller/GetUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/controller/rest/ForUserTaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/controller/rest/UserTaskApiAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/controller/rest/UserTaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/controller/rest/UserTaskController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/Answer/AnswerChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/Answer/AnswerChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/UserTask/BuilderUserTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/UserTask/UserTackDAOAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/UserTask/CreatorUserTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/UserTask/CreatorUserTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/UserTask/VoterNextUserTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/UserTask/VoterNextUserTask.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,7 +219,7 @@
       <workItem from="1698719597270" duration="10369000" />
       <workItem from="1698834335239" duration="29630000" />
       <workItem from="1699068068017" duration="597000" />
-      <workItem from="1699182793501" duration="2987000" />
+      <workItem from="1699182793501" duration="15521000" />
     </task>
     <task id="LOCAL-00001" summary="restart project">
       <created>1672068848554</created>
@@ -386,7 +396,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698986428502</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="move forController">
+      <created>1699202357639</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1699202357639</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -475,7 +492,8 @@
     <MESSAGE value="MVP ready" />
     <MESSAGE value="MVP ready ref1" />
     <MESSAGE value="visual ref" />
-    <option name="LAST_COMMIT_MESSAGE" value="visual ref" />
+    <MESSAGE value="move forController" />
+    <option name="LAST_COMMIT_MESSAGE" value="move forController" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -502,7 +520,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/learning_module/service/UserTask/CreatorUserTask.java</url>
-          <line>46</line>
+          <line>44</line>
           <option name="timeStamp" value="123" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
