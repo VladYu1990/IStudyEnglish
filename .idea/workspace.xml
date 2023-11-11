@@ -7,8 +7,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7fbeed74-25ef-4154-a687-4792b9d50a21" name="Changes" comment="add commit for domain object">
+    <list default="true" id="7fbeed74-25ef-4154-a687-4792b9d50a21" name="Changes" comment="add commit for domain object v3">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/BuilderListTasks.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/Exercise.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/IStudyEnglish_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/IStudyEnglish_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/DirectionTask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/StatusUserTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/StatusTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/StudentDayProgram.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/UserTask.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -382,7 +391,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698986428502</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="add commit for domain object v3">
+      <created>1699712451762</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1699712451762</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -472,7 +488,8 @@
     <MESSAGE value="MVP ready ref1" />
     <MESSAGE value="visual ref" />
     <MESSAGE value="add commit for domain object" />
-    <option name="LAST_COMMIT_MESSAGE" value="add commit for domain object" />
+    <MESSAGE value="add commit for domain object v3" />
+    <option name="LAST_COMMIT_MESSAGE" value="add commit for domain object v3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

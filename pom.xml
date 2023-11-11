@@ -21,31 +21,31 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
     </dependency>
     <!-- Spring -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-core</artifactId>
-      <version>5.3.23</version>
+      <version>6.0.6</version>
     </dependency>
 
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-beans</artifactId>
-      <version>5.3.23</version>
+      <version>6.0.9</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
-      <version>5.3.23</version>
+      <version>6.0.9</version>
     </dependency>
 
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
-      <exclusions>
+        <version>3.1.0</version>
+        <exclusions>
         <exclusion>
           <groupId>org.springframework.boot</groupId>
           <artifactId>spring-boot-starter-logging</artifactId>
@@ -62,7 +62,7 @@
           <artifactId>spring-boot-starter-logging</artifactId>
         </exclusion>
       </exclusions>
-      <version>3.0.1</version>
+      <version>3.1.0</version>
     </dependency>
 
     <dependency>
@@ -74,13 +74,13 @@
           <artifactId>spring-boot-starter-logging</artifactId>
         </exclusion>
       </exclusions>
-      <version>3.0.0</version>
+      <version>3.0.4</version>
     </dependency>
 
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter</artifactId>
-      <version>3.0.5</version>
+      <version>3.1.0</version>
       <exclusions>
         <exclusion>
           <groupId>org.springframework.boot</groupId>
@@ -94,7 +94,8 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-jdbc</artifactId>
-      <exclusions>
+        <version>3.0.4</version>
+        <exclusions>
         <exclusion>
           <groupId>org.springframework.boot</groupId>
           <artifactId>spring-boot-starter-logging</artifactId>
@@ -105,7 +106,7 @@
     <dependency>
       <groupId>org.postgresql</groupId>
       <artifactId>postgresql</artifactId>
-      <version>42.5.1</version>
+      <version>42.5.4</version>
       <scope>runtime</scope>
     </dependency>
     <dependency>
@@ -118,12 +119,12 @@
     <dependency>
       <groupId>org.mybatis</groupId>
       <artifactId>mybatis</artifactId>
-      <version>3.5.11</version>
+      <version>3.5.13</version>
     </dependency>
     <dependency>
       <groupId>org.apache.ant</groupId>
       <artifactId>ant</artifactId>
-      <version>1.8.1</version>
+      <version>1.10.13</version>
     </dependency>
 
     <dependency>
@@ -148,13 +149,13 @@
       <dependency>
           <groupId>org.testng</groupId>
           <artifactId>testng</artifactId>
-          <version>RELEASE</version>
+          <version>7.7.0</version>
           <scope>compile</scope>
       </dependency>
       <dependency>
           <groupId>org.jetbrains</groupId>
           <artifactId>annotations</artifactId>
-          <version>RELEASE</version>
+          <version>24.0.1</version>
           <scope>compile</scope>
       </dependency>
 
@@ -169,6 +170,7 @@
       <artifactId>commons-text</artifactId>
       <version>1.10.0</version>
     </dependency>
+
 
   </dependencies>
   <build>

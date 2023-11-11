@@ -2,49 +2,79 @@ package ru.project.IStudyEnglish.NewModule.Domein;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.sql.Time;
+import java.time.ZonedDateTime;
 
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
 /*
- * класс для хранения конкретного задания на обучения
- * своего рода задание из учебника, которое любой студент, допущенный к заданию может изучать
+ * Класс для хранения информации об изучении/обучении конретным студентом конкретной фразы/слова и тд
  */
 public class Task {
     /*
-     * уникальный идентификатор таски
+     * Связь с исходным упражнением
+     */
+    private Exercise exercise;
+    /*
+     * Уникальный код
      */
     private int id;
     /*
-     * вопрос, на который нужно ответить в рамках изучения
-     * для текстовых заданий текст
-     * для аудио/визуальных ссылка на картинку или звук
+     * Ссылка на студента, которому принадлежит таска
      */
-    private String question;
+    private StudentDayProgram studentDayProgram;
     /*
-     * правильный ответ на вопрос
-     * для текстовых заданий текст
-     * для аудио/визуальных ссылка на картинку или звук
+     * Время, после которого можно повторить задание
      */
-    private String answer;
+    private ZonedDateTime nextRepetition;
     /*
-     * пример использования слова/фразы из вопроса
+     * Время, когда последний раз повторяли задание
      */
-    private String example;
+    private ZonedDateTime lastRepetition;
     /*
-     * дата создания таски
-     * нужна, что служит для информации о периоде создания таски
-     * и принадлежности к версии словаря на тот момент
+     * Статус задания
      */
-    private Time create;
+    private StatusTask status;
     /*
-     * дата апдейта таски
-     * нужно, чтоб отслеживать обновляли ли таску после вноса изменений в исходную фразу/слово
+     * Количество верных ответов ПОДРЯД
      */
-    private Time update;
+    private int countRightResponses;
+
+    public Task(Exercise exercise, StudentDayProgram studentDayProgram){
+        this.exercise = exercise;
+        this.studentDayProgram = studentDayProgram;
+        this.nextRepetition = ZonedDateTime.now();
+        this.lastRepetition = ZonedDateTime.now();
+        this.status = StatusTask.NOT_READY;
+        this.countRightResponses = 0;
+    }
+
+    public void setCountRightResponses(int countRightResponses) {
+        this.countRightResponses = countRightResponses;
+        setStatusIfCountRightResponsesHasChanged();
+    }
+
+    public void updateIfAnswerIsTrue(){
+        setCountRightResponses(this.countRightResponses + 1);
+        setLastRepetition(ZonedDateTime.now());
+
+    }
+
+    public void updateIfAnswerIsFalse(){
+        setCountRightResponses(0);
+        setLastRepetition(ZonedDateTime.now());
+        setNextRepetition(ZonedDateTime.now().plusDays(this.countRightResponses*2));
+    }
+
+
+    private void setStatusIfCountRightResponsesHasChanged(){
+        if(this.countRightResponses > 0 || status.equals(StatusTask.READY)){
+            setStatus(StatusTask.STUDY);
+        }
+        if(this.countRightResponses > 7 || status.equals(StatusTask.STUDY)){
+            setStatus(StatusTask.LEARNED);
+        }
+    }
 }
