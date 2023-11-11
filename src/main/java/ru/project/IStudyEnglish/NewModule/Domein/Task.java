@@ -11,6 +11,7 @@ import java.sql.Time;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+<<<<<<< HEAD
 /*
  * класс для хранения конкретного задания на обучения
  * своего рода задание из учебника, которое любой студент, допущенный к заданию может изучать
@@ -48,4 +49,15 @@ public class Task {
      */
     private Time update;
 
+=======
+public class Task {
+    private int id;
+    private String question;
+    private String answer;
+    private String example;
+    private Time create;
+    private Time update;
+
+
+>>>>>>> origin/main
 }

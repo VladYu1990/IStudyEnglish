@@ -11,6 +11,7 @@ import java.sql.Time;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+<<<<<<< HEAD
 /*
  * класс для хранения информации об изучении/обучении конретным студентом конкретной фразу/слову и тд
  */
@@ -64,17 +65,37 @@ public class UserTask{
     public void setCountRightResponses(int countRightResponses) {
         this.countRightResponses = countRightResponses;
         setStatusIfCountRightResponsesHasChanged();
+=======
+public class UserTask extends Task{
+    int id;
+    private Student student;
+    private Time nextRepetition;
+    private Time lastRepetition;
+    private StatusUserTask status;
+    private int countRightResponses;
+
+    public void setCountRightResponses(int countRightResponses) {
+        this.countRightResponses = countRightResponses;
+        if(this.countRightResponses > 7 || status.equals(StatusUserTask.study)){
+            setStatus(StatusUserTask.learned);
+        }
+>>>>>>> origin/main
     }
     public void updateIfAnswerIsTrue(){
         setCountRightResponses(this.countRightResponses + 1);
         setLastRepetition(new Time(System.currentTimeMillis()));
+<<<<<<< HEAD
         setNextRepetition(new Time(System.currentTimeMillis() + daysToMilliseconds(1)));
+=======
+        setNextRepetition(new Time(System.currentTimeMillis() + 1*24*60*60*1000));
+>>>>>>> origin/main
 
     }
 
     public void updateIfAnswerIsFalse(){
         setCountRightResponses(0);
         setLastRepetition(new Time(System.currentTimeMillis()));
+<<<<<<< HEAD
         setNextRepetition(new Time(System.currentTimeMillis() + daysToMilliseconds(this.countRightResponses)));
     }
 
@@ -89,5 +110,11 @@ public class UserTask{
         if(this.countRightResponses > 7 || status.equals(StatusUserTask.STUDY)){
             setStatus(StatusUserTask.LEARNED);
         }
+=======
+        setNextRepetition(new Time(
+                System.currentTimeMillis() +
+                        this.countRightResponses*24*60*60*1000));
+
+>>>>>>> origin/main
     }
 }
