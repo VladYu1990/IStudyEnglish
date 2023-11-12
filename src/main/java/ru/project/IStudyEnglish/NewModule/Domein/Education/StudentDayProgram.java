@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -19,7 +20,7 @@ public class StudentDayProgram {
     /*
      * Уникальный код программы
      */
-    private int id;
+    private String id;
     /*
      * Код для связки с юзером
      */
@@ -31,5 +32,9 @@ public class StudentDayProgram {
     /*
      * Список заданий студента в этой программе
      */
-    private List<Task> listTasks;
+    private List<Task> taskList = new ArrayList<>();
+
+
+
+
 }
