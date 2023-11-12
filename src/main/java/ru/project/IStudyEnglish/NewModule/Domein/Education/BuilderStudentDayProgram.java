@@ -2,7 +2,6 @@ package ru.project.IStudyEnglish.NewModule.Domein.Education;
 
 
 import lombok.Getter;
-import ru.project.IStudyEnglish.NewModule.Domein.Autorisation.User;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -14,24 +13,24 @@ import java.util.List;
  */
 public class BuilderStudentDayProgram {
 
-    private User user;
+    private Student student;
     private LocalDate localDate;
 
     private StudentDayProgram studentDayProgram;
 
-    public BuilderStudentDayProgram(User user, LocalDate localDate) {
-        this.user = user;
+    public BuilderStudentDayProgram(Student student, LocalDate localDate) {
+        this.student = student;
         this.localDate = localDate;
         studentDayProgram = new StudentDayProgram(
                 generateId(),
-                this.user.getId(),
+                this.student.getId(),
                 localDate,
                 generateTaskList()
         );
     }
 
     private String generateId(){
-        return this.user + "/" + this.localDate.toString();
+        return this.student + "/" + this.localDate.toString();
     }
 
     private List<Task> generateTaskList() {

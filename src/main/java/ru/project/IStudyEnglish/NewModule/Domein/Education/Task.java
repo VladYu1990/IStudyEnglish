@@ -3,7 +3,6 @@ package ru.project.IStudyEnglish.NewModule.Domein.Education;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
-import ru.project.IStudyEnglish.NewModule.Domein.Autorisation.User;
 
 import java.time.ZonedDateTime;
 
@@ -11,7 +10,7 @@ import java.time.ZonedDateTime;
 @Setter
 @AllArgsConstructor
 /*
- * Класс для хранения информации об изучении/обучении конретным студентом конкретной фразы/слова и тд
+ * Класс для хранения информации об изучении/обучении конкретным студентом конкретной фразы/слова и тд
  */
 public class Task {
     /*
@@ -25,7 +24,7 @@ public class Task {
     /*
      * Идентификатор принадлежности задания студенту
      */
-    private int idUser;
+    private Student student;
     /*
      * Время, после которого можно повторить задание
      */
@@ -43,9 +42,9 @@ public class Task {
      */
     private int countRightResponses;
 
-    public Task(Exercise exercise, User user){
+    public Task(Exercise exercise, Student student){
         this.exercise = exercise;
-        this.idUser = user.getId();
+        this.student= student;
         this.nextRepetition = ZonedDateTime.now();
         this.lastRepetition = ZonedDateTime.now();
         this.status = StatusOfTask.NOT_READY;

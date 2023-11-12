@@ -24,7 +24,7 @@ public class StudentDayProgram {
     /*
      * Код для связки с юзером
      */
-    private int idUser;
+    private Student student;
     /*
      * Дата, на которую создана программа
      */
