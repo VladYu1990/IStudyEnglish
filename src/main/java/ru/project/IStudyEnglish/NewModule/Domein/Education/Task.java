@@ -1,8 +1,9 @@
-package ru.project.IStudyEnglish.NewModule.Domein;
+package ru.project.IStudyEnglish.NewModule.Domein.Education;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+import ru.project.IStudyEnglish.NewModule.Domein.Autorisation.User;
 
 import java.time.ZonedDateTime;
 
@@ -22,9 +23,9 @@ public class Task {
      */
     private int id;
     /*
-     * Ссылка на студента, которому принадлежит таска
+     * Идентификатор принадлежности задания студенту
      */
-    private StudentDayProgram studentDayProgram;
+    private int idUser;
     /*
      * Время, после которого можно повторить задание
      */
@@ -36,18 +37,18 @@ public class Task {
     /*
      * Статус задания
      */
-    private StatusTask status;
+    private StatusOfTask status;
     /*
      * Количество верных ответов ПОДРЯД
      */
     private int countRightResponses;
 
-    public Task(Exercise exercise, StudentDayProgram studentDayProgram){
+    public Task(Exercise exercise, User user){
         this.exercise = exercise;
-        this.studentDayProgram = studentDayProgram;
+        this.idUser = user.getId();
         this.nextRepetition = ZonedDateTime.now();
         this.lastRepetition = ZonedDateTime.now();
-        this.status = StatusTask.NOT_READY;
+        this.status = StatusOfTask.NOT_READY;
         this.countRightResponses = 0;
     }
 
@@ -56,25 +57,25 @@ public class Task {
         setStatusIfCountRightResponsesHasChanged();
     }
 
-    public void updateIfAnswerIsTrue(){
+    public void updateIfAnswerIsTrue(ZonedDateTime zonedDateTime){
         setCountRightResponses(this.countRightResponses + 1);
-        setLastRepetition(ZonedDateTime.now());
-
+        setLastRepetition(zonedDateTime);
+        setNextRepetition(zonedDateTime.plusDays(this.countRightResponses*2));
     }
 
-    public void updateIfAnswerIsFalse(){
+    public void updateIfAnswerIsFalse(ZonedDateTime zonedDateTime){
         setCountRightResponses(0);
-        setLastRepetition(ZonedDateTime.now());
-        setNextRepetition(ZonedDateTime.now().plusDays(this.countRightResponses*2));
+        setLastRepetition(zonedDateTime);
+        setNextRepetition(zonedDateTime.plusDays(1));
     }
 
 
     private void setStatusIfCountRightResponsesHasChanged(){
-        if(this.countRightResponses > 0 || status.equals(StatusTask.READY)){
-            setStatus(StatusTask.STUDY);
+        if(status.equals(StatusOfTask.READY)){
+            setStatus(StatusOfTask.STUDY);
         }
-        if(this.countRightResponses > 7 || status.equals(StatusTask.STUDY)){
-            setStatus(StatusTask.LEARNED);
+        if(this.countRightResponses > 7 || status.equals(StatusOfTask.STUDY)){
+            setStatus(StatusOfTask.LEARNED);
         }
     }
 }

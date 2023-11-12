@@ -1,4 +1,4 @@
-package ru.project.IStudyEnglish.NewModule.Domein;
+package ru.project.IStudyEnglish.NewModule.Domein.Education;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -32,5 +32,4 @@ public class StudentDayProgram {
      * Список заданий студента в этой программе
      */
     private List<Task> listTasks;
-
 }

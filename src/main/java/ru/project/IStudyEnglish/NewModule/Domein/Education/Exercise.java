@@ -1,4 +1,4 @@
-package ru.project.IStudyEnglish.NewModule.Domein;
+package ru.project.IStudyEnglish.NewModule.Domein.Education;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

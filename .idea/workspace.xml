@@ -7,17 +7,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7fbeed74-25ef-4154-a687-4792b9d50a21" name="Changes" comment="add commit for domain object v3">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/BuilderListTasks.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/Exercise.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/IStudyEnglish_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/IStudyEnglish_war_exploded.xml" afterDir="false" />
+    <list default="true" id="7fbeed74-25ef-4154-a687-4792b9d50a21" name="Changes" comment="add commit for domain object v4">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/Autorisation/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/Dictionary/Article.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/Dictionary/Example.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/Dictionary/Sentence.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/Dictionary/Word.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/DirectionTask.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/StatusUserTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/StatusTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/StudentDayProgram.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/UserTask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/Exercise.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/Education/Exercise.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/StatusTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/Education/StatusOfTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/StudentDayProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/Education/StudentDayProgram.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/Education/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/TypeTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/Education/TypeTask.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -398,7 +399,14 @@
       <option name="project" value="LOCAL" />
       <updated>1699712451762</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="add commit for domain object v4">
+      <created>1699729473254</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1699729473254</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -464,7 +472,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="restart project" />
     <MESSAGE value="I configurated connect with DB" />
     <MESSAGE value="get next topic on request" />
     <MESSAGE value="в БД релаьные слова&#10;слова бертуся из БД&#10;слова отправляются запросом&#10;я молодец)" />
@@ -489,7 +496,8 @@
     <MESSAGE value="visual ref" />
     <MESSAGE value="add commit for domain object" />
     <MESSAGE value="add commit for domain object v3" />
-    <option name="LAST_COMMIT_MESSAGE" value="add commit for domain object v3" />
+    <MESSAGE value="add commit for domain object v4" />
+    <option name="LAST_COMMIT_MESSAGE" value="add commit for domain object v4" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
