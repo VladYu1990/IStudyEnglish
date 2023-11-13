@@ -1,4 +1,4 @@
-package ru.project.IStudyEnglish.NewModule.Domein.Education;
+package ru.project.IStudyEnglish.NewModule.Domain.Education;
 
 /*
  * класс нужен для информирования системы какой тип изучения у конкретной таски

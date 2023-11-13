@@ -1,4 +1,4 @@
-package ru.project.IStudyEnglish.NewModule.Domein.Education;
+package ru.project.IStudyEnglish.NewModule.Domain.Education;
 
 /*
  * Класс для хранения статуса конкретной таски

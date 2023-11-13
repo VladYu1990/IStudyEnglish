@@ -7,8 +7,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7fbeed74-25ef-4154-a687-4792b9d50a21" name="Changes" comment="add BuilderStudentDayProgram.java">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/Education/Student.java" afterDir="false" />
+    <list default="true" id="7fbeed74-25ef-4154-a687-4792b9d50a21" name="Changes" comment="add Student.java">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/Autorisation/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domain/Autorisation/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/Dictionary/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domain/Dictionary/Article.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/Dictionary/Example.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domain/Dictionary/Example.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/Dictionary/Sentence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domain/Dictionary/Sentence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/Dictionary/Word.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domain/Dictionary/Word.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/Education/BuilderStudentDayProgram.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/Education/Exercise.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domain/Education/Exercise.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/Education/StatusOfTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domain/Education/StatusOfTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/Education/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domain/Education/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/Education/StudentDayProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domain/Education/StudentDayProgram.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/Education/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domain/Education/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domein/Education/TypeTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/project/IStudyEnglish/NewModule/Domain/Education/TypeTask.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -410,7 +422,14 @@
       <option name="project" value="LOCAL" />
       <updated>1699791385079</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="add Student.java">
+      <created>1699792658024</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1699792658024</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -476,7 +495,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="в БД релаьные слова&#10;слова бертуся из БД&#10;слова отправляются запросом&#10;я молодец)" />
     <MESSAGE value="удалил лишние атрибуты и функции" />
     <MESSAGE value="удалил несколько лишних файлов:&#10;ForLearning.java&#10;ProfController.java&#10;RepetitionExercise.java&#10;WordController.java" />
     <MESSAGE value="Add Notes.md" />
@@ -501,7 +519,8 @@
     <MESSAGE value="add commit for domain object v4" />
     <MESSAGE value="time and date -&gt; ZoneDateTime&#10;+ add new Bounded Contexts" />
     <MESSAGE value="add BuilderStudentDayProgram.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="add BuilderStudentDayProgram.java" />
+    <MESSAGE value="add Student.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="add Student.java" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
