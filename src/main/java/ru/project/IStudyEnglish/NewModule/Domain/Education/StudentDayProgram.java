@@ -35,6 +35,14 @@ public class StudentDayProgram {
      */
     private List<Task> taskList = new ArrayList<>();
     /*
+     * Статус прохождения программы
+     */
+    private StatusOfStudentDayProgram statusOfStudentDayProgram;
+    /*
+     * Количество пройденных заданий(успешно + неуспешно пройденные), не отрицательное число
+     */
+    private int countOfCompletedTasks;
+    /*
      * Максимальное число заданий в программе
      */
     private final int maxCountTaskForStudy = 10;
@@ -69,5 +77,7 @@ public class StudentDayProgram {
         this.taskList.remove(task);
     }
 
-
+    public void setCountOfCompletedTasks(int countOfCompletedTasks) {
+        this.countOfCompletedTasks = Integer.max(countOfCompletedTasks,0);
+    }
 }

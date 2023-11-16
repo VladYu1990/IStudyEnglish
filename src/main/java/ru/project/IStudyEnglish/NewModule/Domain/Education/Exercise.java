@@ -4,7 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.time.ZonedDateTime;
+import java.time.Instant;
+import java.util.UUID;
 
 @Getter
 @Setter
@@ -17,7 +18,7 @@ public class Exercise {
     /*
      * Уникальный идентификатор упражнения
      */
-    private int id;
+    private UUID uuid;
     /*
      * Слово/фраза, которую изучаем
      */
@@ -33,9 +34,18 @@ public class Exercise {
     /*
      * Дата/время создания упражнения
      */
-    private ZonedDateTime create;
+    private Instant create;
     /*
      * Дата/время последнего обновления упражнения
      */
-    private ZonedDateTime update;
+    private Instant update;
+
+    public Exercise(String question, String answer, String example, Instant create, Instant update) {
+        this.uuid = UUID.randomUUID();
+        this.question = question;
+        this.answer = answer;
+        this.example = example;
+        this.create = create;
+        this.update = update;
+    }
 }

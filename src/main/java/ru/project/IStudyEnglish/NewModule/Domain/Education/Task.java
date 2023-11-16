@@ -24,7 +24,7 @@ public class Task implements Comparable<Task> {
     /*
      * Уникальный код
      */
-    private int id;
+    private UUID uuid;
     /*
      * Идентификатор принадлежности задания студенту
      */
@@ -42,7 +42,7 @@ public class Task implements Comparable<Task> {
      */
     private StatusOfTask status;
     /*
-     * Количество верных ответов ПОДРЯД
+     * Количество верных ответов ПОДРЯД, не отрицательное число
      */
     private int countRightResponses;
 
@@ -56,7 +56,7 @@ public class Task implements Comparable<Task> {
     }
 
     public void setCountRightResponses(int countRightResponses) {
-        this.countRightResponses = countRightResponses;
+        this.countRightResponses = Integer.max(countRightResponses,0);
         setStatusIfCountRightResponsesHasChanged();
     }
 

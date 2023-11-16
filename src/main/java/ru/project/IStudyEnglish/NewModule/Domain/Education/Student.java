@@ -33,9 +33,17 @@ public class Student {
      * Список тасок находящихся сейчас на изучении у данного студента
      */
     private List<Task> taskListForStudy;
+    /*
+     * Список тасок находящихся сейчас на изучении у данного студента
+     */
+    private List<Task> taskListForLearned;
+    /*
+     * Дата создания студента
+     */
+    private Instant dateCreated;
 
     public static Student createStudent(UUID uuidUser, String fio) {
-        return new Student(UUID.randomUUID(),uuidUser,fio,new ArrayList<>());
+        return new Student(UUID.randomUUID(),uuidUser,fio,new ArrayList<>(),new ArrayList<>(),Instant.now());
     }
 
     public StudentDayProgram createStudentDayProgram(Instant studyDay){
