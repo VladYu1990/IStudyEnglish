@@ -1,22 +1,22 @@
-package ru.project.IStudyEnglish.NewModule.Domain.Education;
+package ru.project.IStudyEnglish.NewModule.domain.Education;
 
-/*
- * Класс для хранения статуса конкретной таски
+/**
+ * Статус конкретной таски
  */
-public enum StatusOfTask {
-    /*
+public enum TaskStatus {
+    /**
      * Задание еще рано изучать
      */
     NOT_READY,
-    /*
+    /**
      * Задание готово к изучению
      */
     READY,
-    /*
+    /**
      * Задание находится на стадии изучения
      */
     STUDY,
-    /*
+    /**
      * Задание изучено
      */
     LEARNED

@@ -1,4 +1,4 @@
-package ru.project.IStudyEnglish.NewModule.Domain.Autorisation;
+package ru.project.IStudyEnglish.NewModule.domain.Autorisation;
 
 import java.util.UUID;
 

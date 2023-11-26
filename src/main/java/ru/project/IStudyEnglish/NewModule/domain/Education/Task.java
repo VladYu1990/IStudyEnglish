@@ -1,6 +1,7 @@
-package ru.project.IStudyEnglish.NewModule.Domain.Education;
+package ru.project.IStudyEnglish.NewModule.domain.Education;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import org.jetbrains.annotations.NotNull;
@@ -13,46 +14,49 @@ import static java.time.temporal.ChronoUnit.DAYS;
 @Getter
 @Setter
 @AllArgsConstructor
-/*
- * Класс для хранения информации об изучении/обучении конкретным студентом конкретной фразы/слова и тд
+@Builder
+/**
+ * Хранит информации об изучении/обучении конкретным студентом конкретной фразы/слова и тд
  */
 public class Task implements Comparable<Task> {
-    /*
+    /**
      * Связь с исходным упражнением
      */
-    private Exercise exercise;
-    /*
+    private UUID exerciseUUID;
+    /**
      * Уникальный код
      */
     private UUID uuid;
-    /*
+    /**
      * Идентификатор принадлежности задания студенту
      */
     private UUID uuidStudent;
-    /*
+    /**
      * Время, после которого можно повторить задание
      */
     private Instant nextRepetition;
-    /*
+    /**
      * Время, когда последний раз повторяли задание
      */
     private Instant lastRepetition;
-    /*
+    /**
      * Статус задания
      */
-    private StatusOfTask status;
-    /*
+    private TaskStatus status;
+    /**
      * Количество верных ответов ПОДРЯД, не отрицательное число
      */
-    private int countRightResponses;
+    private int countRightResponses = 0;
 
-    public Task(Exercise exercise, UUID uuidStudent, Instant dateTimeCreated) {
-        this.exercise = exercise;
-        this.uuidStudent = uuidStudent;
-        this.nextRepetition = dateTimeCreated;
-        this.lastRepetition = dateTimeCreated;
-        this.status = StatusOfTask.NOT_READY;
-        this.countRightResponses = 0;
+    public static Task create(UUID exerciseUUID, UUID uuidStudent, Instant dateTimeCreated,TaskStatus taskStatus) {
+        return Task.builder().
+                uuid(UUID.randomUUID()).
+                exerciseUUID(exerciseUUID).
+                uuidStudent(uuidStudent).
+                nextRepetition(dateTimeCreated).
+                lastRepetition(dateTimeCreated).
+                status(taskStatus).
+                build();
     }
 
     public void setCountRightResponses(int countRightResponses) {
@@ -74,11 +78,22 @@ public class Task implements Comparable<Task> {
 
 
     private void setStatusIfCountRightResponsesHasChanged() {
-        if (status.equals(StatusOfTask.READY)) {
-            setStatus(StatusOfTask.STUDY);
+        if (status.equals(TaskStatus.READY)) {
+            setStatus(TaskStatus.STUDY);
         }
-        if (this.countRightResponses > 7 || status.equals(StatusOfTask.STUDY)) {
-            setStatus(StatusOfTask.LEARNED);
+        if (this.countRightResponses > 7 || status.equals(TaskStatus.STUDY)) {
+            setStatus(TaskStatus.LEARNED);
+        }
+    }
+
+    public void setStatus(TaskStatus status) {
+        /*
+        * Допустимо из вне получать только такой переход,
+        * остальные переходы управляются логикой самой таски
+         */
+        if ( this.status.equals(TaskStatus.NOT_READY)||
+                status.equals(TaskStatus.READY)) {
+            this.status = status;
         }
     }
 
