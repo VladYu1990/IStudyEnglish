@@ -23,9 +23,6 @@
 
         <property name="hibernate.current_session_context_class">thread</property>
 
-        <!-- Annotated entity classes -->
-        <mapping class="ru.project.IStudyEnglish.dictionary_module.repository.WordDAO"/>
-
 
 
     </session-factory>

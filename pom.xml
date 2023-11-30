@@ -4,8 +4,7 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>2.7.1</version>
-    <relativePath/> <!-- lookup parent from repository -->
+    <version>3.2.1</version>
   </parent>
   <groupId>ru.project.IStudyEnglish</groupId>
   <artifactId>IStudyEnglish</artifactId>
@@ -23,11 +22,6 @@
       <artifactId>junit</artifactId>
     </dependency>
     <!-- Spring -->
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-core</artifactId>
-      <version>6.0.6</version>
-    </dependency>
 
     <dependency>
       <groupId>org.springframework</groupId>
@@ -38,19 +32,13 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
-      <version>6.0.9</version>
+      <version>6.1.2</version>
     </dependency>
 
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
-        <version>3.1.0</version>
-        <exclusions>
-        <exclusion>
-          <groupId>org.springframework.boot</groupId>
-          <artifactId>spring-boot-starter-logging</artifactId>
-        </exclusion>
-      </exclusions>
+      <version>3.2.1</version>
     </dependency>
 
     <dependency>
@@ -68,12 +56,6 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-data-rest</artifactId>
-      <exclusions>
-        <exclusion>
-          <groupId>org.springframework.boot</groupId>
-          <artifactId>spring-boot-starter-logging</artifactId>
-        </exclusion>
-      </exclusions>
       <version>3.0.4</version>
     </dependency>
 
@@ -81,12 +63,6 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter</artifactId>
       <version>3.1.0</version>
-      <exclusions>
-        <exclusion>
-          <groupId>org.springframework.boot</groupId>
-          <artifactId>spring-boot-starter-logging</artifactId>
-        </exclusion>
-      </exclusions>
     </dependency>
 
 
@@ -94,13 +70,7 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-jdbc</artifactId>
-        <version>3.0.4</version>
-        <exclusions>
-        <exclusion>
-          <groupId>org.springframework.boot</groupId>
-          <artifactId>spring-boot-starter-logging</artifactId>
-        </exclusion>
-      </exclusions>
+      <version>3.0.4</version>
     </dependency>
 
     <dependency>
@@ -108,11 +78,6 @@
       <artifactId>postgresql</artifactId>
       <version>42.5.4</version>
       <scope>runtime</scope>
-    </dependency>
-    <dependency>
-          <groupId>ru.project.IStudyEnglish</groupId>
-          <artifactId>IStudyEnglish</artifactId>
-          <version>1.0-SNAPSHOT</version>
     </dependency>
 
 
@@ -147,12 +112,6 @@
         <scope>provided</scope>
     </dependency>
       <dependency>
-          <groupId>org.testng</groupId>
-          <artifactId>testng</artifactId>
-          <version>7.7.0</version>
-          <scope>compile</scope>
-      </dependency>
-      <dependency>
           <groupId>org.jetbrains</groupId>
           <artifactId>annotations</artifactId>
           <version>24.0.1</version>
@@ -169,6 +128,23 @@
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-text</artifactId>
       <version>1.10.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.tomcat.embed</groupId>
+      <artifactId>tomcat-embed-websocket</artifactId>
+      <version>10.1.17</version>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
+      <version>2.0.9</version>
+      <type>pom</type>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>2.0.9</version>
     </dependency>
 
 
