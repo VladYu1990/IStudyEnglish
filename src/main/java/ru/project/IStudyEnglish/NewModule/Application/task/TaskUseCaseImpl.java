@@ -28,13 +28,20 @@ public class TaskUseCaseImpl implements TaskUseCase {
     private Collection<Task> taskCollection = new ArrayList<>();
 
     @Autowired
-    public TaskUseCaseImpl(){
+    public TaskUseCaseImpl(TaskConvertTaskDTO taskConvertTaskDTO, TaskCreator taskCreator, TaskDAO taskDAO, Collection<Task> taskCollection) {
+        this.taskConvertTaskDTO = taskConvertTaskDTO;
+        this.taskCreator = taskCreator;
+        this.taskDAO = taskDAO;
+        this.taskCollection = taskCollection;
     }
+
+
+
 
 
     public void createTask(UUID studentUUID, UUID exerciseUUID){
         Task task = taskCreator.create(studentUUID,exerciseUUID);
-        this.taskCollection.clear();
+        this.taskCollection.removeAll();
         this.taskCollection.add(task);
         saveTaskList();
     }
